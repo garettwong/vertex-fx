@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebGL Hover — VERTEX FX</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+:root{--red:#E2231A;--black:#000;--muted:#9a9a9a;--line:rgba(255,255,255,.12);--font:'Archivo',system-ui,-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#050505;color:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.fx-badge{position:fixed;top:18px;left:18px;z-index:550;background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 16px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:9px}
+.fx-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
+.fx-hub{position:fixed;top:18px;right:18px;z-index:550;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 14px;transition:.3s}
+.fx-hub:hover{color:#fff;border-color:#fff}
+.fx-hint{position:fixed;bottom:20px;left:0;right:0;text-align:center;z-index:550;color:rgba(255,255,255,.65);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;pointer-events:none}
+
+.gwrap{min-height:100vh;display:grid;place-items:center;padding:90px 20px}
+.wgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;width:min(1100px,96vw)}
+.wi{position:relative;aspect-ratio:10/7;overflow:hidden;border-radius:6px;background:#111;cursor:pointer}
+.wi img,.wi canvas{position:absolute;inset:0;width:100%!important;height:100%!important;object-fit:cover}
+.wi img{filter:grayscale(.25);transition:transform .9s cubic-bezier(.22,.61,.36,1),filter .6s}
+.wi:hover img{transform:scale(1.06);filter:grayscale(0)}
+@media (max-width:680px){.wgrid{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+<div class="fx-badge"><span class="dot"></span>WebGL Hover Distortion</div>
+<a class="fx-hub" href="index.html">&#8617; All demos</a>
+<div class="fx-hint">Hover the images</div>
+<div class="gwrap"><div class="wgrid"><div class="wi" data-img="https://picsum.photos/seed/vtxg0a/1000/700" data-img2="https://picsum.photos/seed/vtxg0b/1000/700"><img src="https://picsum.photos/seed/vtxg0a/1000/700" alt=""></div><div class="wi" data-img="https://picsum.photos/seed/vtxg1a/1000/700" data-img2="https://picsum.photos/seed/vtxg1b/1000/700"><img src="https://picsum.photos/seed/vtxg1a/1000/700" alt=""></div><div class="wi" data-img="https://picsum.photos/seed/vtxg2a/1000/700" data-img2="https://picsum.photos/seed/vtxg2b/1000/700"><img src="https://picsum.photos/seed/vtxg2a/1000/700" alt=""></div><div class="wi" data-img="https://picsum.photos/seed/vtxg3a/1000/700" data-img2="https://picsum.photos/seed/vtxg3b/1000/700"><img src="https://picsum.photos/seed/vtxg3a/1000/700" alt=""></div></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+ if(!window.THREE)return;
+ var makeDisp=function(){var c=document.createElement('canvas');c.width=c.height=512;var x=c.getContext('2d');x.fillStyle='#000';x.fillRect(0,0,512,512);for(var i=0;i<70;i++){var ax=Math.random()*512,ay=Math.random()*512,r=40+Math.random()*130;var g=x.createRadialGradient(ax,ay,0,ax,ay,r);g.addColorStop(0,'rgba(255,255,255,'+(0.25+Math.random()*0.5)+')');g.addColorStop(1,'rgba(255,255,255,0)');x.fillStyle=g;x.beginPath();x.arc(ax,ay,r,0,7);x.fill();}return new THREE.CanvasTexture(c);};
+ var DISP=makeDisp();
+ var vsh='varying vec2 vUv;void main(){vUv=uv;gl_Position=vec4(position.xy,0.0,1.0);}';
+ var fsh='varying vec2 vUv;uniform sampler2D t1;uniform sampler2D t2;uniform sampler2D disp;uniform float dispFactor;uniform float intensity;void main(){vec4 d=texture2D(disp,vUv);float n=d.r;vec2 a=vec2(vUv.x+dispFactor*n*intensity,vUv.y+dispFactor*n*intensity*0.35);vec2 b=vec2(vUv.x-(1.0-dispFactor)*n*intensity,vUv.y-(1.0-dispFactor)*n*intensity*0.35);vec4 c1=texture2D(t1,a);vec4 c2=texture2D(t2,b);gl_FragColor=mix(c1,c2,dispFactor);}';
+ var ITEMS=[];
+ document.querySelectorAll('.wi').forEach(function(item){try{
+  var renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  var scene=new THREE.Scene(),cam=new THREE.Camera(),loader=new THREE.TextureLoader();loader.crossOrigin='anonymous';
+  var img1=item.dataset.img,img2=item.dataset.img2,loaded=0,t1,t2;
+  function size(){var r=item.getBoundingClientRect();renderer.setSize(r.width,r.height,false);}
+  function ready(){try{t1.minFilter=t2.minFilter=THREE.LinearFilter;var mat=new THREE.ShaderMaterial({uniforms:{t1:{value:t1},t2:{value:t2},disp:{value:DISP},dispFactor:{value:0},intensity:{value:0.42}},vertexShader:vsh,fragmentShader:fsh});scene.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2),mat));item.appendChild(renderer.domElement);var im=item.querySelector('img');if(im)im.style.opacity='0';size();renderer.render(scene,cam);var rec={mat:mat,df:0,target:0,r:renderer,s:scene,c:cam};ITEMS.push(rec);item.addEventListener('mouseenter',function(){rec.target=1;});item.addEventListener('mouseleave',function(){rec.target=0;});addEventListener('resize',function(){size();renderer.render(scene,cam);});}catch(e){var im2=item.querySelector('img');if(im2)im2.style.opacity='';}}
+  t1=loader.load(img1,function(){loaded++;if(loaded===2)ready();},undefined,function(){});
+  t2=loader.load(img2,function(){loaded++;if(loaded===2)ready();},undefined,function(){});
+ }catch(e){}});
+ (function tk(){for(var i=0;i<ITEMS.length;i++){var it=ITEMS[i];if(Math.abs(it.target-it.df)>0.001){it.df+=(it.target-it.df)*0.08;it.mat.uniforms.dispFactor.value=it.df;it.r.render(it.s,it.c);}}requestAnimationFrame(tk);})();
+})();
+</script>
+
+</body>
+</html>

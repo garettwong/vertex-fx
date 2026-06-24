@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Cursor — VERTEX FX</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+:root{--red:#E2231A;--black:#000;--muted:#9a9a9a;--line:rgba(255,255,255,.12);--font:'Archivo',system-ui,-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#050505;color:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.fx-badge{position:fixed;top:18px;left:18px;z-index:550;background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 16px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:9px}
+.fx-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
+.fx-hub{position:fixed;top:18px;right:18px;z-index:550;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 14px;transition:.3s}
+.fx-hub:hover{color:#fff;border-color:#fff}
+.fx-hint{position:fixed;bottom:20px;left:0;right:0;text-align:center;z-index:550;color:rgba(255,255,255,.65);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;pointer-events:none}
+
+.cwrap{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;text-align:center;padding:0 24px}
+.cwrap h2{font-size:clamp(2rem,6vw,4.5rem);font-weight:800;letter-spacing:-.02em}
+.cbtns{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
+.mag{padding:16px 32px;border:1px solid var(--line);border-radius:50px;font-weight:600;font-size:1rem;background:#111;color:#fff;will-change:transform;transition:background .3s}
+.mag.red{background:var(--red);border-color:var(--red)}
+.mag:hover{background:#1c1c1c}.mag.red:hover{background:#ff362c}
+.cursor,.cring{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;mix-blend-mode:difference}
+.cursor{width:8px;height:8px;background:#fff}
+.cring{width:42px;height:42px;border:1px solid rgba(255,255,255,.8);transition:width .3s,height .3s,background .3s}
+.cring.h{width:72px;height:72px;background:rgba(255,255,255,.1)}
+@media (hover:hover) and (pointer:fine){body.con,body.con button{cursor:none}}
+@media (hover:none),(pointer:coarse){.cursor,.cring{display:none!important}}
+
+</style>
+</head>
+<body>
+<div class="fx-badge"><span class="dot"></span>Custom Cursor + Magnetic</div>
+<a class="fx-hub" href="index.html">&#8617; All demos</a>
+<div class="fx-hint">Hover the buttons (desktop)</div>
+
+<div class="cwrap">
+ <h2>Move your mouse</h2>
+ <div class="cbtns"><button class="mag red">Get a quote</button><button class="mag">Our work</button><button class="mag">Contact</button></div>
+ <p style="color:var(--muted);max-width:42ch">A custom cursor that grows on hover, plus magnetic buttons that pull toward your pointer.</p>
+</div>
+
+
+<div class="cursor" id="cur"></div><div class="cring" id="rng"></div>
+<script>
+var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+if(fine){document.body.classList.add('con');var d=document.getElementById('cur'),r=document.getElementById('rng');var px=innerWidth/2,py=innerHeight/2,rx=px,ry=py;
+ addEventListener('mousemove',function(e){px=e.clientX;py=e.clientY;d.style.transform='translate('+px+'px,'+py+'px) translate(-50%,-50%)';});
+ (function rc(){rx+=(px-rx)*.18;ry+=(py-ry)*.18;r.style.transform='translate('+rx+'px,'+ry+'px) translate(-50%,-50%)';requestAnimationFrame(rc);})();
+ addEventListener('mouseover',function(e){if(e.target.closest('button'))r.classList.add('h');});
+ addEventListener('mouseout',function(e){if(e.target.closest('button'))r.classList.remove('h');});
+ document.querySelectorAll('.mag').forEach(function(el){el.addEventListener('mousemove',function(e){var b=el.getBoundingClientRect();el.style.transform='translate('+((e.clientX-(b.left+b.width/2))*.4)+'px,'+((e.clientY-(b.top+b.height/2))*.4)+'px)';});el.addEventListener('mouseleave',function(){el.style.transform='';});});
+}
+</script>
+
+</body>
+</html>

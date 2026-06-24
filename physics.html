@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physics — VERTEX FX</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+:root{--red:#E2231A;--black:#000;--muted:#9a9a9a;--line:rgba(255,255,255,.12);--font:'Archivo',system-ui,-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#050505;color:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.fx-badge{position:fixed;top:18px;left:18px;z-index:550;background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 16px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:9px}
+.fx-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
+.fx-hub{position:fixed;top:18px;right:18px;z-index:550;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 14px;transition:.3s}
+.fx-hub:hover{color:#fff;border-color:#fff}
+.fx-hint{position:fixed;bottom:20px;left:0;right:0;text-align:center;z-index:550;color:rgba(255,255,255,.65);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;pointer-events:none}
+
+.pbox{position:relative;height:100vh;overflow:hidden;background:radial-gradient(circle at 50% 20%,rgba(226,35,26,.08),transparent 60%)}
+.pill{position:absolute;top:0;left:0;display:inline-flex;align-items:center;padding:12px 24px;border-radius:50px;background:#161616;border:1px solid #2c2c2c;color:#fff;font-weight:600;font-size:clamp(.85rem,1.3vw,1.15rem);white-space:nowrap;cursor:grab;user-select:none;will-change:transform;opacity:0}
+.pill.red{background:var(--red);border-color:var(--red)}
+.pill:active{cursor:grabbing}
+.pbox.go .pill,.pbox.static .pill{opacity:1}
+.pbox.static{height:auto;min-height:100vh;display:flex;flex-wrap:wrap;gap:12px;padding:90px 30px;justify-content:center;align-items:center}
+.pbox.static .pill{position:static}
+
+</style>
+</head>
+<body>
+<div class="fx-badge"><span class="dot"></span>Physics &mdash; Drag &amp; Throw</div>
+<a class="fx-hub" href="index.html">&#8617; All demos</a>
+<div class="fx-hint">Grab &amp; throw the words (desktop)</div>
+<div class="pbox" id="physBox"><span class="pill red">Smooth Scroll</span><span class="pill">Custom Cursor</span><span class="pill">WebGL</span><span class="pill">Physics</span><span class="pill red">Parallax</span><span class="pill">Lightbox</span><span class="pill">Magnetic</span><span class="pill">Lenis</span><span class="pill red">Shaders</span><span class="pill">Transitions</span><span class="pill">Three.js</span><span class="pill">Interactive</span><span class="pill red">Drag &amp; Throw</span><span class="pill">Motion</span></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+<script>
+(function(){
+ var box=document.getElementById('physBox');var pills=[].slice.call(box.querySelectorAll('.pill'));
+ var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+ if(!window.Matter||!fine||matchMedia('(prefers-reduced-motion:reduce)').matches){box.classList.add('static');return;}
+ var M=Matter,engine=M.Engine.create(),world=engine.world;engine.gravity.y=1;
+ var W=box.clientWidth,H=box.clientHeight;
+ var walls=[M.Bodies.rectangle(W/2,H+30,W+240,60,{isStatic:true}),M.Bodies.rectangle(-30,H/2,60,H*3,{isStatic:true}),M.Bodies.rectangle(W+30,H/2,60,H*3,{isStatic:true})];
+ M.World.add(world,walls);box.classList.add('go');
+ var bodies=pills.map(function(p,i){var w=p.offsetWidth,h=p.offsetHeight;return M.Bodies.rectangle(80+Math.random()*(W-160),-80-i*64,w,h,{restitution:.55,friction:.4,frictionAir:.012,chamfer:{radius:h/2}});});
+ M.World.add(world,bodies);
+ var mouse=M.Mouse.create(box),mc=M.MouseConstraint.create(engine,{mouse:mouse,constraint:{stiffness:.2,render:{visible:false}}});
+ M.World.add(world,mc);
+ if(mouse.mousewheel){box.removeEventListener('wheel',mouse.mousewheel);box.removeEventListener('mousewheel',mouse.mousewheel);box.removeEventListener('DOMMouseScroll',mouse.mousewheel);}
+ M.Runner.run(M.Runner.create(),engine);
+ (function frame(){for(var i=0;i<pills.length;i++){var b=bodies[i],p=pills[i];p.style.transform='translate('+(b.position.x-p.offsetWidth/2).toFixed(1)+'px,'+(b.position.y-p.offsetHeight/2).toFixed(1)+'px) rotate('+b.angle.toFixed(3)+'rad)';}requestAnimationFrame(frame);})();
+ addEventListener('resize',function(){var nW=box.clientWidth,nH=box.clientHeight;M.Body.setPosition(walls[0],{x:nW/2,y:nH+30});M.Body.setPosition(walls[1],{x:-30,y:nH/2});M.Body.setPosition(walls[2],{x:nW+30,y:nH/2});});
+})();
+</script>
+
+</body>
+</html>
