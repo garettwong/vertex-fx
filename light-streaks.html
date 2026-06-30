@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Light Streaks — VERTEX FX</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+:root{--red:#E2231A;--black:#000;--muted:#9a9a9a;--line:rgba(255,255,255,.12);--font:'Archivo',system-ui,-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#050505;color:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.fx-badge{position:fixed;top:18px;left:18px;z-index:550;background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 16px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:9px}
+.fx-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
+.fx-hub{position:fixed;top:18px;right:18px;z-index:550;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 14px;transition:.3s}
+.fx-hub:hover{color:#fff;border-color:#fff}
+.fx-hint{position:fixed;bottom:20px;left:0;right:0;text-align:center;z-index:550;color:rgba(255,255,255,.65);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;pointer-events:none}
+
+.ls-wrap{height:100vh;position:relative;overflow:hidden;background:#04040a}
+#lscv{position:absolute;inset:0;width:100%;height:100%}
+.ls-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 clamp(28px,7vw,92px);z-index:2;pointer-events:none}
+.ls-inner .ey{color:#9fb4ff;font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;margin-bottom:16px}
+.ls-inner h2{font-size:clamp(2.4rem,7vw,5.2rem);font-weight:800;letter-spacing:-.02em;line-height:1.02;max-width:14ch}
+.ls-inner h2 i{font-style:italic;font-weight:500;color:#cdd9ff}
+.ls-card{position:absolute;top:23%;right:clamp(20px,5vw,72px);z-index:3;width:min(280px,78vw);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:20px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.ls-card .t{color:#cfe0ff;font-size:.82rem;display:flex;align-items:center;gap:7px}
+.ls-card .v{font-size:2.4rem;font-weight:800;margin-top:8px;letter-spacing:-.02em}
+.ls-card .d{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);border-radius:50px;padding:4px 12px;font-size:.78rem;font-weight:700;color:#bdf0cf}
+@media(max-width:680px){.ls-card{display:none}}
+
+</style>
+</head>
+<body>
+<div class="fx-badge"><span class="dot"></span>Light Streaks</div>
+<a class="fx-hub" href="index.html">&#8617; All demos</a>
+<div class="fx-hint">Flowing light-speed beams</div>
+<div class="ls-wrap"><canvas id="lscv"></canvas><div class="ls-inner"><span class="ey">VERTEX &middot; Light Engine</span><h2>We bend light<br><i>into motion.</i></h2></div><div class="ls-card"><div class="t">&#9650; Throughput</div><div class="v">$10,626</div><div class="d">+26% &middot; last 30 days</div></div></div>
+
+<script>
+(function(){
+ var cv=document.getElementById('lscv'),x=cv.getContext('2d'),W,H,st=[];
+ var COLS=['255,90,70','255,150,60','255,255,255','120,150,255','170,110,255'];
+ function mk(s){s.y=Math.random()*H;s.x=-Math.random()*W*0.6;s.len=150+Math.random()*440;s.sp=3+Math.random()*11;s.w=0.6+Math.random()*2.4;s.c=COLS[Math.floor(Math.random()*COLS.length)];s.a=0.25+Math.random()*0.6;return s;}
+ function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight;var n=Math.min(170,Math.floor(W/8));st=[];for(var i=0;i<n;i++)st.push(mk({}));}
+ rs();addEventListener('resize',rs);
+ (function frame(){
+  x.globalCompositeOperation='source-over';x.fillStyle='rgba(4,4,10,0.30)';x.fillRect(0,0,W,H);
+  x.globalCompositeOperation='lighter';
+  for(var i=0;i<st.length;i++){var s=st[i];s.x+=s.sp;if(s.x-s.len>W)mk(s);
+   var g=x.createLinearGradient(s.x-s.len,s.y,s.x,s.y);g.addColorStop(0,'rgba('+s.c+',0)');g.addColorStop(0.78,'rgba('+s.c+','+(s.a*0.6).toFixed(3)+')');g.addColorStop(1,'rgba('+s.c+','+s.a.toFixed(3)+')');
+   x.strokeStyle=g;x.lineWidth=s.w;x.beginPath();x.moveTo(s.x-s.len,s.y);x.lineTo(s.x,s.y);x.stroke();
+   x.fillStyle='rgba(255,255,255,'+(s.a*0.5).toFixed(3)+')';x.fillRect(s.x-1.5,s.y-s.w/2,3,s.w);}
+  requestAnimationFrame(frame);
+ })();
+})();
+</script>
+
+</body>
+</html>
