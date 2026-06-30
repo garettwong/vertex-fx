@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow Cards — VERTEX FX</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+:root{--red:#E2231A;--black:#000;--muted:#9a9a9a;--line:rgba(255,255,255,.12);--font:'Archivo',system-ui,-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#050505;color:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.fx-badge{position:fixed;top:18px;left:18px;z-index:550;background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 16px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:9px}
+.fx-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
+.fx-hub{position:fixed;top:18px;right:18px;z-index:550;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 14px;transition:.3s}
+.fx-hub:hover{color:#fff;border-color:#fff}
+.fx-hint{position:fixed;bottom:20px;left:0;right:0;text-align:center;z-index:550;color:rgba(255,255,255,.65);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;pointer-events:none}
+
+.gc-wrap{min-height:100vh;display:grid;place-items:center;padding:104px 24px;background:#060606}
+.gc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:18px;width:min(1080px,96vw)}
+.gc-card{position:relative;border-radius:14px;padding:30px;background:#0d0d0d;border:1px solid var(--line);overflow:hidden;min-height:200px}
+.gc-card::before{content:'';position:absolute;inset:0;border-radius:14px;opacity:0;transition:opacity .3s;background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%),rgba(226,35,26,.16),transparent 42%)}
+.gc-card:hover::before{opacity:1}
+.gc-card::after{content:'';position:absolute;inset:0;border-radius:14px;padding:1px;background:radial-gradient(280px circle at var(--mx,50%) var(--my,50%),rgba(226,35,26,.8),transparent 42%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s}
+.gc-card:hover::after{opacity:1}
+.gc-card h3{font-size:1.3rem;font-weight:800;position:relative;z-index:1}
+.gc-card p{color:var(--muted);margin-top:8px;font-size:.92rem;position:relative;z-index:1}
+
+</style>
+</head>
+<body>
+<div class="fx-badge"><span class="dot"></span>Glow Cards</div>
+<a class="fx-hub" href="index.html">&#8617; All demos</a>
+<div class="fx-hint">Hover across the grid</div>
+<div class="gc-wrap"><div class="gc-grid"><div class="gc-card"><h3>Spotlight</h3><p>Light that follows the pointer</p></div><div class="gc-card"><h3>Magnetic</h3><p>Buttons that pull toward you</p></div><div class="gc-card"><h3>Parallax</h3><p>Depth on every scroll</p></div><div class="gc-card"><h3>Shaders</h3><p>GPU-drawn gradients</p></div><div class="gc-card"><h3>Physics</h3><p>Throwable elements</p></div><div class="gc-card"><h3>Transitions</h3><p>Seamless page wipes</p></div></div></div>
+
+<script>
+document.querySelectorAll('.gc-card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');});});
+</script>
+
+</body>
+</html>

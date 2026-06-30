@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotlight — VERTEX FX</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+:root{--red:#E2231A;--black:#000;--muted:#9a9a9a;--line:rgba(255,255,255,.12);--font:'Archivo',system-ui,-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#050505;color:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.fx-badge{position:fixed;top:18px;left:18px;z-index:550;background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 16px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:9px}
+.fx-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
+.fx-hub{position:fixed;top:18px;right:18px;z-index:550;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 14px;transition:.3s}
+.fx-hub:hover{color:#fff;border-color:#fff}
+.fx-hint{position:fixed;bottom:20px;left:0;right:0;text-align:center;z-index:550;color:rgba(255,255,255,.65);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;pointer-events:none}
+
+.sp-wrap{height:100vh;position:relative;overflow:hidden;display:grid;place-items:center;background:#060606}
+.sp-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:46px 46px;-webkit-mask-image:radial-gradient(440px circle at var(--x,50%) var(--y,42%),#000,transparent 70%);mask-image:radial-gradient(440px circle at var(--x,50%) var(--y,42%),#000,transparent 70%)}
+.sp-light{position:absolute;inset:0;pointer-events:none;background:radial-gradient(560px circle at var(--x,50%) var(--y,42%),rgba(226,35,26,.16),transparent 60%)}
+.sp-inner{position:relative;z-index:2;text-align:center;padding:0 24px;pointer-events:none}
+.sp-inner h2{font-size:clamp(2.4rem,8vw,6rem);font-weight:800;letter-spacing:-.02em;background:linear-gradient(180deg,#fff,#8a8a8a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sp-inner p{color:var(--muted);margin-top:14px;letter-spacing:.06em}
+
+</style>
+</head>
+<body>
+<div class="fx-badge"><span class="dot"></span>Spotlight</div>
+<a class="fx-hub" href="index.html">&#8617; All demos</a>
+<div class="fx-hint">Move your cursor &middot; auto-drifts on touch</div>
+<div class="sp-wrap" id="spWrap"><div class="sp-grid"></div><div class="sp-light"></div><div class="sp-inner"><h2>Follow the light</h2><p>A spotlight that tracks your cursor</p></div></div>
+
+<script>
+(function(){var w=document.getElementById('spWrap'),active=false,t=0;
+ w.addEventListener('pointermove',function(e){active=true;var r=w.getBoundingClientRect();w.style.setProperty('--x',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');w.style.setProperty('--y',((e.clientY-r.top)/r.height*100).toFixed(1)+'%');});
+ w.addEventListener('pointerleave',function(){active=false;});
+ (function idle(){t+=0.008;if(!active){w.style.setProperty('--x',(50+Math.sin(t)*28).toFixed(1)+'%');w.style.setProperty('--y',(42+Math.cos(t*0.8)*16).toFixed(1)+'%');}requestAnimationFrame(idle);})();
+})();
+</script>
+
+</body>
+</html>
