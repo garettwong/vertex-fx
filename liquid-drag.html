@@ -72,13 +72,13 @@ void main(){
  vec2 uv=gl_FragCoord.xy/uRes.xy;float asp=uRes.x/uRes.y;
  vec2 p=vec2(uv.x*asp,uv.y);vec2 m=vec2(uMouse.x*asp,uMouse.y);
  float d=distance(p,m);float infl=exp(-d*3.2);
- p+=uVel*infl*1.7;
- p+=normalize(p-m+vec2(0.0001))*0.10*infl*uActive*sin(uTime*2.0+d*10.0);
+ p+=uVel*infl*0.85;
+ p+=normalize(p-m+vec2(0.0001))*0.055*infl*uActive*sin(uTime*2.0+d*10.0);
  float t=uTime*0.06;
  vec3 q=vec3(p*1.6,t);float w1=fbm(q);
  float w2=fbm(q+vec3(w1)+vec3(2.3,1.1,0.0));
  float f=fbm(vec3(p*1.6+vec2(w2*0.9),t*1.3));
- f+=0.16*sin(d*16.0-uTime*3.0)*exp(-d*3.0);
+ f+=0.09*sin(d*16.0-uTime*3.0)*exp(-d*3.0);
  f=f*0.5+0.5;
  vec3 c1=vec3(0.02,0.02,0.03),c2=vec3(0.886,0.137,0.102),c3=vec3(1.0,0.62,0.38);
  vec3 col=mix(c1,c2,smoothstep(0.25,0.62,f));
@@ -98,12 +98,12 @@ scene.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2),mat));
 function resize(){var w=cv.clientWidth||innerWidth,h=cv.clientHeight||innerHeight;renderer.setSize(w,h,false);uni.uRes.value.set(w*renderer.getPixelRatio(),h*renderer.getPixelRatio());}
 resize();addEventListener('resize',resize);
 var targetM=new THREE.Vector2(0.5,0.5),vel=new THREE.Vector2(0,0),down=0;
-function ev(e){var nx=e.clientX/innerWidth,ny=1.0-e.clientY/innerHeight;vel.set((nx-targetM.x)*2.6,(ny-targetM.y)*2.6);targetM.set(nx,ny);}
+function ev(e){var nx=e.clientX/innerWidth,ny=1.0-e.clientY/innerHeight;vel.set((nx-targetM.x)*1.35,(ny-targetM.y)*1.35);targetM.set(nx,ny);}
 cv.addEventListener('pointerdown',function(e){down=1;ev(e);try{cv.setPointerCapture(e.pointerId);}catch(_){}});
 addEventListener('pointermove',ev);
 addEventListener('pointerup',function(){down=0;});
 addEventListener('pointercancel',function(){down=0;});
-function tick(t){uni.uTime.value=t*0.001;uni.uMouse.value.lerp(targetM,0.3);uni.uVel.value.lerp(vel,0.45);vel.multiplyScalar(0.84);uni.uActive.value+=(down-uni.uActive.value)*0.12;renderer.render(scene,cam);requestAnimationFrame(tick);}
+function tick(t){uni.uTime.value=t*0.001;uni.uMouse.value.lerp(targetM,0.28);uni.uVel.value.lerp(vel,0.38);vel.multiplyScalar(0.80);uni.uActive.value+=(down-uni.uActive.value)*0.1;renderer.render(scene,cam);requestAnimationFrame(tick);}
 requestAnimationFrame(tick);
 })();
 </script>
