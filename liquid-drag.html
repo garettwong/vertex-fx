@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liquid Drag — VERTEX FX</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+:root{--red:#E2231A;--black:#000;--muted:#9a9a9a;--line:rgba(255,255,255,.12);--font:'Archivo',system-ui,-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#050505;color:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.fx-badge{position:fixed;top:18px;left:18px;z-index:550;background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 16px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:9px}
+.fx-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
+.fx-hub{position:fixed;top:18px;right:18px;z-index:550;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 14px;transition:.3s}
+.fx-hub:hover{color:#fff;border-color:#fff}
+.fx-hint{position:fixed;bottom:20px;left:0;right:0;text-align:center;z-index:550;color:rgba(255,255,255,.65);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;pointer-events:none}
+
+.liqd-wrap{height:100vh;position:relative;overflow:hidden;background:#050505}
+#liqdCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+#liqdCanvas:active{cursor:grabbing}
+.liqd-cap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;z-index:2;padding:0 20px}
+.liqd-cap h2{font-size:clamp(2.2rem,8vw,5rem);font-weight:900;letter-spacing:-.02em;color:#fff;text-shadow:0 4px 40px rgba(0,0,0,.5)}
+.liqd-cap p{margin-top:10px;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.9)}
+
+</style>
+</head>
+<body>
+<div class="fx-badge"><span class="dot"></span>Liquid Gradient &mdash; Drag</div>
+<a class="fx-hub" href="index.html">&#8617; All demos</a>
+<div class="fx-hint">Press &amp; drag with your finger</div>
+<div class="liqd-wrap"><canvas id="liqdCanvas"></canvas><div class="liqd-cap"><h2>Drag the liquid</h2><p>Press &amp; drag with your finger</p></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+if(!window.THREE)return;
+var NOISE=`
+vec3 mod289(vec3 x){return x-floor(x*(1.0/289.0))*289.0;}
+vec4 mod289(vec4 x){return x-floor(x*(1.0/289.0))*289.0;}
+vec4 permute(vec4 x){return mod289(((x*34.0)+1.0)*x);}
+vec4 taylorInvSqrt(vec4 r){return 1.79284291400159-0.85373472095314*r;}
+float snoise(vec3 v){
+ const vec2 C=vec2(1.0/6.0,1.0/3.0);const vec4 D=vec4(0.0,0.5,1.0,2.0);
+ vec3 i=floor(v+dot(v,C.yyy));vec3 x0=v-i+dot(i,C.xxx);
+ vec3 g=step(x0.yzx,x0.xyz);vec3 l=1.0-g;vec3 i1=min(g.xyz,l.zxy);vec3 i2=max(g.xyz,l.zxy);
+ vec3 x1=x0-i1+C.xxx;vec3 x2=x0-i2+C.yyy;vec3 x3=x0-D.yyy;
+ i=mod289(i);
+ vec4 p=permute(permute(permute(i.z+vec4(0.0,i1.z,i2.z,1.0))+i.y+vec4(0.0,i1.y,i2.y,1.0))+i.x+vec4(0.0,i1.x,i2.x,1.0));
+ float n_=0.142857142857;vec3 ns=n_*D.wyz-D.xzx;
+ vec4 j=p-49.0*floor(p*ns.z*ns.z);
+ vec4 x_=floor(j*ns.z);vec4 y_=floor(j-7.0*x_);
+ vec4 x=x_*ns.x+ns.yyyy;vec4 y=y_*ns.x+ns.yyyy;vec4 h=1.0-abs(x)-abs(y);
+ vec4 b0=vec4(x.xy,y.xy);vec4 b1=vec4(x.zw,y.zw);
+ vec4 s0=floor(b0)*2.0+1.0;vec4 s1=floor(b1)*2.0+1.0;vec4 sh=-step(h,vec4(0.0));
+ vec4 a0=b0.xzyw+s0.xzyw*sh.xxyy;vec4 a1=b1.xzyw+s1.xzyw*sh.zzww;
+ vec3 p0=vec3(a0.xy,h.x);vec3 p1=vec3(a0.zw,h.y);vec3 p2=vec3(a1.xy,h.z);vec3 p3=vec3(a1.zw,h.w);
+ vec4 norm=taylorInvSqrt(vec4(dot(p0,p0),dot(p1,p1),dot(p2,p2),dot(p3,p3)));
+ p0*=norm.x;p1*=norm.y;p2*=norm.z;p3*=norm.w;
+ vec4 m=max(0.6-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.0);m=m*m;
+ return 42.0*dot(m*m,vec4(dot(p0,x0),dot(p1,x1),dot(p2,x2),dot(p3,x3)));
+}
+`;
+var VS=`void main(){gl_Position=vec4(position.xy,0.0,1.0);}`;
+var FS=NOISE+`
+precision highp float;uniform float uTime;uniform vec2 uRes;uniform vec2 uMouse;uniform vec2 uVel;uniform float uActive;
+float fbm(vec3 p){float a=0.5,s=0.0;for(int i=0;i<5;i++){s+=a*snoise(p);p*=2.02;a*=0.5;}return s;}
+void main(){
+ vec2 uv=gl_FragCoord.xy/uRes.xy;float asp=uRes.x/uRes.y;
+ vec2 p=vec2(uv.x*asp,uv.y);vec2 m=vec2(uMouse.x*asp,uMouse.y);
+ float d=distance(p,m);float infl=exp(-d*3.2);
+ p+=uVel*infl*1.7;
+ p+=normalize(p-m+vec2(0.0001))*0.10*infl*uActive*sin(uTime*2.0+d*10.0);
+ float t=uTime*0.06;
+ vec3 q=vec3(p*1.6,t);float w1=fbm(q);
+ float w2=fbm(q+vec3(w1)+vec3(2.3,1.1,0.0));
+ float f=fbm(vec3(p*1.6+vec2(w2*0.9),t*1.3));
+ f+=0.16*sin(d*16.0-uTime*3.0)*exp(-d*3.0);
+ f=f*0.5+0.5;
+ vec3 c1=vec3(0.02,0.02,0.03),c2=vec3(0.886,0.137,0.102),c3=vec3(1.0,0.62,0.38);
+ vec3 col=mix(c1,c2,smoothstep(0.25,0.62,f));
+ col=mix(col,c3,smoothstep(0.68,0.95,f));
+ col+=vec3(1.0,0.5,0.3)*infl*0.22*uActive;
+ col*=1.0-0.45*pow(distance(uv,vec2(0.5)),2.0);
+ gl_FragColor=vec4(col,1.0);
+}`;
+
+var cv=document.getElementById('liqdCanvas');
+var renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.75));
+var scene=new THREE.Scene();var cam=new THREE.Camera();
+var uni={uTime:{value:0},uRes:{value:new THREE.Vector2(1,1)},uMouse:{value:new THREE.Vector2(0.5,0.5)},uVel:{value:new THREE.Vector2(0,0)},uActive:{value:0}};
+var mat=new THREE.ShaderMaterial({uniforms:uni,vertexShader:VS,fragmentShader:FS});
+scene.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2),mat));
+function resize(){var w=cv.clientWidth||innerWidth,h=cv.clientHeight||innerHeight;renderer.setSize(w,h,false);uni.uRes.value.set(w*renderer.getPixelRatio(),h*renderer.getPixelRatio());}
+resize();addEventListener('resize',resize);
+var targetM=new THREE.Vector2(0.5,0.5),vel=new THREE.Vector2(0,0),down=0;
+function ev(e){var nx=e.clientX/innerWidth,ny=1.0-e.clientY/innerHeight;vel.set((nx-targetM.x)*2.6,(ny-targetM.y)*2.6);targetM.set(nx,ny);}
+cv.addEventListener('pointerdown',function(e){down=1;ev(e);try{cv.setPointerCapture(e.pointerId);}catch(_){}});
+addEventListener('pointermove',ev);
+addEventListener('pointerup',function(){down=0;});
+addEventListener('pointercancel',function(){down=0;});
+function tick(t){uni.uTime.value=t*0.001;uni.uMouse.value.lerp(targetM,0.3);uni.uVel.value.lerp(vel,0.45);vel.multiplyScalar(0.84);uni.uActive.value+=(down-uni.uActive.value)*0.12;renderer.render(scene,cam);requestAnimationFrame(tick);}
+requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>
