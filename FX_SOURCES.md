@@ -84,3 +84,19 @@ the source clip:
   + base-pair rungs), standard-material lighting, drag-to-spin with inertia.
 - **Particle Wave Terrain** (`aura-wave.html`) — Three.js `Points` grid, vertex-shader sine-wave
   displacement, fog-faded horizon, warm-near/cool-far color ramp, drag to nudge the camera.
+
+## Demo 29 — Smoke Hero
+
+From an X post by [@chhddavid](https://x.com/chhddavid) — a 33-second screen recording of an AI
+app-builder ("Shipper") building a full analytics-SaaS landing page ("BUZZ") end-to-end, then
+generating an animated smoke/ink background video for the hero via a text-to-video step. Reviewed
+via downloaded video + `ffmpeg` frame extraction (33 frames, one per second, full duration).
+
+This isn't a single interaction technique like the other entries — it's a screen recording of a
+tool's build process. The reusable piece catalogued here is the **hero composition** the tool
+produced: full-bleed animated monochrome background, real nav bar, status badge, a three-line
+headline with the middle line dimmed, subtext, and two CTA buttons (solid + ghost). Rebuilt from
+scratch — own fictional brand ("NIMBUS"), own copy, and the background is a live WebGL fragment
+shader (domain-warped fbm noise, same `snoise` primitive as the Liquid/Resin demos, recolored to
+monochrome with tighter thresholds for sparse wispy tendrils) rather than an AI-generated video
+clip, so it's infinitely-looping and interactive (mouse-reactive) with no video asset to host.
