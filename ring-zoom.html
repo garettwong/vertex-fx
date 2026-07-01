@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Image Ring — Zoom &amp; Select — VERTEX FX</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+:root{--red:#E2231A;--black:#000;--muted:#9a9a9a;--line:rgba(255,255,255,.12);--font:'Archivo',system-ui,-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#050505;color:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.fx-badge{position:fixed;top:18px;left:18px;z-index:550;background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 16px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:9px}
+.fx-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
+.fx-hub{position:fixed;top:18px;right:18px;z-index:550;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 14px;transition:.3s}
+.fx-hub:hover{color:#fff;border-color:#fff}
+.fx-hint{position:fixed;bottom:20px;left:0;right:0;text-align:center;z-index:550;color:rgba(255,255,255,.65);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;pointer-events:none}
+
+.rz-scene{height:100vh;display:grid;place-items:center;perspective:1100px;overflow:hidden;background:radial-gradient(circle at 50% 50%,#160405,#050505 72%);touch-action:none;cursor:grab}
+.rz-scene:active{cursor:grabbing}
+.rz-ring{position:relative;width:clamp(150px,40vw,230px);height:calc(clamp(150px,40vw,230px)*1.25);transform-style:preserve-3d;will-change:transform}
+.rz-item{position:absolute;inset:0;border-radius:12px;background-size:cover;background-position:center;box-shadow:0 20px 50px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.08);overflow:hidden}
+.rz-item::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(226,35,26,.35))}
+.rz-zoomlabel{position:fixed;left:50%;bottom:64px;transform:translateX(-50%);z-index:550;background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:7px 16px;font-size:.68rem;font-weight:700;letter-spacing:.1em;color:var(--muted);pointer-events:none;transition:color .25s;white-space:nowrap}
+.rz-zoomlabel.ready{color:#ffb4a8}
+.rz-lbx{position:fixed;inset:0;z-index:600;background:rgba(5,5,6,.94);display:none;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.rz-lbx.open{display:flex;opacity:1}
+.rz-lbx img{max-width:88vw;max-height:84vh;object-fit:contain;border-radius:10px;box-shadow:0 30px 90px rgba(0,0,0,.6)}
+.rz-lbx button{position:absolute;top:22px;right:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.28);color:#fff;width:46px;height:46px;border-radius:50%;font-size:1.25rem;cursor:pointer;display:grid;place-items:center}
+.rz-lbx button:hover{background:var(--red);border-color:var(--red)}
+
+</style>
+</head>
+<body>
+<div class="fx-badge"><span class="dot"></span>3D Image Ring — Zoom &amp; Select</div>
+<a class="fx-hub" href="index.html">&#8617; All demos</a>
+<div class="fx-hint">Scroll or pinch to zoom &middot; click a card once zoomed in to select it</div>
+<div class="rz-scene" id="rzScene"><div class="rz-ring" id="rzRing"><div class="rz-item" data-i="0" style="background-image:url('https://picsum.photos/seed/vtxring0/500/620')"></div><div class="rz-item" data-i="1" style="background-image:url('https://picsum.photos/seed/vtxring1/500/620')"></div><div class="rz-item" data-i="2" style="background-image:url('https://picsum.photos/seed/vtxring2/500/620')"></div><div class="rz-item" data-i="3" style="background-image:url('https://picsum.photos/seed/vtxring3/500/620')"></div><div class="rz-item" data-i="4" style="background-image:url('https://picsum.photos/seed/vtxring4/500/620')"></div><div class="rz-item" data-i="5" style="background-image:url('https://picsum.photos/seed/vtxring5/500/620')"></div><div class="rz-item" data-i="6" style="background-image:url('https://picsum.photos/seed/vtxring6/500/620')"></div><div class="rz-item" data-i="7" style="background-image:url('https://picsum.photos/seed/vtxring7/500/620')"></div><div class="rz-item" data-i="8" style="background-image:url('https://picsum.photos/seed/vtxring8/500/620')"></div><div class="rz-item" data-i="9" style="background-image:url('https://picsum.photos/seed/vtxring9/500/620')"></div></div></div><div class="rz-zoomlabel" id="rzZoomLabel">100% &middot; SCROLL / PINCH TO ZOOM</div><div class="rz-lbx" id="rzLbx"><button id="rzClose">&#10005;</button><img id="rzLbxImg" alt=""></div>
+
+<script>
+(function(){
+ var scene=document.getElementById('rzScene'),ring=document.getElementById('rzRing');
+ var items=[].slice.call(ring.children),N=items.length,ang=360/N;
+ var iw=items[0].offsetWidth||200,RAD=Math.round((iw/2)/Math.tan(Math.PI/N))+20;
+ items.forEach(function(it,i){it.style.transform='rotateY('+(i*ang)+'deg) translateZ('+RAD+'px)';});
+ var rot=0,vel=0.06,dragging=false,lx=0,downX=0,downY=0,downT=0,moved=0,downTarget=null;
+ var zoom=1,zoomTarget=1,MIN_Z=1,MAX_Z=3,SEL_Z=1.2;
+ var pointers={};
+ var lbl=document.getElementById('rzZoomLabel');
+ var PERSP=1100,restScale=PERSP/(PERSP+RAD);
+ function dollyZ(mag){var s=restScale*mag;return PERSP-PERSP/s;}
+ function apply(){
+  ring.style.transform='translateZ('+dollyZ(zoom).toFixed(1)+'px) rotateY('+rot+'deg)';
+  lbl.textContent=Math.round(zoom*100)+'%'+(zoom>=SEL_Z?' · CLICK TO SELECT':' · SCROLL / PINCH TO ZOOM');
+  lbl.classList.toggle('ready',zoom>=SEL_Z);
+ }
+ function pinchDist(){var ks=Object.keys(pointers);if(ks.length<2)return 0;var a=pointers[ks[0]],b=pointers[ks[1]];return Math.hypot(a.x-b.x,a.y-b.y);}
+ var pinchStartDist=0,pinchStartZoom=1;
+ scene.addEventListener('pointerdown',function(e){
+  pointers[e.pointerId]={x:e.clientX,y:e.clientY};
+  try{scene.setPointerCapture(e.pointerId);}catch(_){}
+  var ks=Object.keys(pointers);
+  if(ks.length===1){dragging=true;lx=e.clientX;downX=e.clientX;downY=e.clientY;downT=Date.now();moved=0;downTarget=e.target;}
+  else if(ks.length===2){dragging=false;pinchStartDist=pinchDist();pinchStartZoom=zoom;}
+ });
+ addEventListener('pointermove',function(e){
+  if(!pointers[e.pointerId])return;
+  pointers[e.pointerId]={x:e.clientX,y:e.clientY};
+  var ks=Object.keys(pointers);
+  if(ks.length>=2){var d=pinchDist();if(pinchStartDist>0){zoomTarget=Math.max(MIN_Z,Math.min(MAX_Z,pinchStartZoom*(d/pinchStartDist)));}return;}
+  if(dragging){var dx=e.clientX-lx;lx=e.clientX;rot+=dx*0.35;vel=dx*0.06;moved=Math.abs(e.clientX-downX)+Math.abs(e.clientY-downY);}
+ });
+ function endPointer(e){
+  delete pointers[e.pointerId];
+  var ks=Object.keys(pointers);
+  if(ks.length===1){var p=pointers[ks[0]];dragging=true;lx=p.x;moved=999;}
+  else if(ks.length===0){
+   dragging=false;
+   if(moved<8&&(Date.now()-downT)<500){handleClick();}
+  }
+ }
+ addEventListener('pointerup',endPointer);
+ addEventListener('pointercancel',endPointer);
+ scene.addEventListener('wheel',function(e){e.preventDefault();zoomTarget=Math.max(MIN_Z,Math.min(MAX_Z,zoomTarget-e.deltaY*0.0016));},{passive:false});
+ function handleClick(){
+  var el=downTarget&&downTarget.closest?downTarget.closest('.rz-item'):null;if(!el)return;
+  var i=parseInt(el.getAttribute('data-i'),10);
+  if(zoom>=SEL_Z){openLbx(i);}
+  else{var target=-i*ang,diff=((target-rot+540)%360)-180;rot+=diff;}
+ }
+ var lbx=document.getElementById('rzLbx'),lbxImg=document.getElementById('rzLbxImg');
+ function openLbx(i){lbxImg.src='https://picsum.photos/seed/vtxring'+i+'/1200/1488';lbx.classList.add('open');document.body.style.overflow='hidden';}
+ function closeLbx(){lbx.classList.remove('open');document.body.style.overflow='';}
+ document.getElementById('rzClose').addEventListener('click',closeLbx);
+ lbx.addEventListener('click',function(e){if(e.target===lbx)closeLbx();});
+ addEventListener('keydown',function(e){if(e.key==='Escape')closeLbx();});
+ function tick(){
+  if(!dragging&&Object.keys(pointers).length<2){rot+=vel;vel+=(0.06-vel)*0.03;}
+  zoom+=(zoomTarget-zoom)*0.18;
+  apply();requestAnimationFrame(tick);
+ }
+ apply();requestAnimationFrame(tick);
+})();
+</script>
+
+</body>
+</html>
