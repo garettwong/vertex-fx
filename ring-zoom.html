@@ -23,23 +23,23 @@ a{color:inherit;text-decoration:none}
 .rz-scene{height:100vh;display:grid;place-items:center;perspective:1100px;overflow:hidden;background:radial-gradient(circle at 50% 50%,#160405,#050505 72%);touch-action:none;cursor:grab}
 .rz-scene:active{cursor:grabbing}
 .rz-ring{position:relative;width:clamp(150px,40vw,230px);height:calc(clamp(150px,40vw,230px)*1.25);transform-style:preserve-3d;will-change:transform}
-.rz-item{position:absolute;inset:0;border-radius:12px;background-size:cover;background-position:center;box-shadow:0 20px 50px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.08);overflow:hidden}
+.rz-item{position:absolute;inset:0;border-radius:12px;background-size:cover;background-position:center;box-shadow:0 20px 50px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.08);overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-mask-image:-webkit-radial-gradient(white,black);transform:translateZ(0)}
 .rz-item::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(226,35,26,.35))}
 .rz-zoomlabel{position:fixed;left:50%;bottom:64px;transform:translateX(-50%);z-index:550;background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:7px 16px;font-size:.68rem;font-weight:700;letter-spacing:.1em;color:var(--muted);pointer-events:none;transition:color .25s;white-space:nowrap}
 .rz-zoomlabel.ready{color:#ffb4a8}
 .rz-lbx{position:fixed;inset:0;z-index:600;background:rgba(5,5,6,.94);display:none;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
 .rz-lbx.open{display:flex;opacity:1}
 .rz-lbx img{max-width:88vw;max-height:84vh;object-fit:contain;border-radius:10px;box-shadow:0 30px 90px rgba(0,0,0,.6)}
-.rz-lbx button{position:absolute;top:22px;right:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.28);color:#fff;width:46px;height:46px;border-radius:50%;font-size:1.25rem;cursor:pointer;display:grid;place-items:center}
-.rz-lbx button:hover{background:var(--red);border-color:var(--red)}
+.rz-lbx-back{position:absolute;top:22px;left:22px;background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:10px 18px 10px 14px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;cursor:pointer;display:flex;align-items:center;gap:8px;transition:.25s}
+.rz-lbx-back:hover{border-color:var(--red);color:#ffb4a8}
 
 </style>
 </head>
 <body>
 <div class="fx-badge"><span class="dot"></span>3D Image Ring — Zoom &amp; Select</div>
 <a class="fx-hub" href="index.html">&#8617; All demos</a>
-<div class="fx-hint">Scroll or pinch to zoom &middot; click a card once zoomed in to select it</div>
-<div class="rz-scene" id="rzScene"><div class="rz-ring" id="rzRing"><div class="rz-item" data-i="0" style="background-image:url('https://picsum.photos/seed/vtxring0/500/620')"></div><div class="rz-item" data-i="1" style="background-image:url('https://picsum.photos/seed/vtxring1/500/620')"></div><div class="rz-item" data-i="2" style="background-image:url('https://picsum.photos/seed/vtxring2/500/620')"></div><div class="rz-item" data-i="3" style="background-image:url('https://picsum.photos/seed/vtxring3/500/620')"></div><div class="rz-item" data-i="4" style="background-image:url('https://picsum.photos/seed/vtxring4/500/620')"></div><div class="rz-item" data-i="5" style="background-image:url('https://picsum.photos/seed/vtxring5/500/620')"></div><div class="rz-item" data-i="6" style="background-image:url('https://picsum.photos/seed/vtxring6/500/620')"></div><div class="rz-item" data-i="7" style="background-image:url('https://picsum.photos/seed/vtxring7/500/620')"></div><div class="rz-item" data-i="8" style="background-image:url('https://picsum.photos/seed/vtxring8/500/620')"></div><div class="rz-item" data-i="9" style="background-image:url('https://picsum.photos/seed/vtxring9/500/620')"></div></div></div><div class="rz-zoomlabel" id="rzZoomLabel">100% &middot; SCROLL / PINCH TO ZOOM</div><div class="rz-lbx" id="rzLbx"><button id="rzClose">&#10005;</button><img id="rzLbxImg" alt=""></div>
+<div class="fx-hint">Drag to spin &middot; pinch or scroll to zoom &middot; tap to pause &middot; tap a card to view it</div>
+<div class="rz-scene" id="rzScene"><div class="rz-ring" id="rzRing"><div class="rz-item" data-i="0" style="background-image:url('https://picsum.photos/seed/vtxring0/700/868')"></div><div class="rz-item" data-i="1" style="background-image:url('https://picsum.photos/seed/vtxring1/700/868')"></div><div class="rz-item" data-i="2" style="background-image:url('https://picsum.photos/seed/vtxring2/700/868')"></div><div class="rz-item" data-i="3" style="background-image:url('https://picsum.photos/seed/vtxring3/700/868')"></div><div class="rz-item" data-i="4" style="background-image:url('https://picsum.photos/seed/vtxring4/700/868')"></div><div class="rz-item" data-i="5" style="background-image:url('https://picsum.photos/seed/vtxring5/700/868')"></div><div class="rz-item" data-i="6" style="background-image:url('https://picsum.photos/seed/vtxring6/700/868')"></div><div class="rz-item" data-i="7" style="background-image:url('https://picsum.photos/seed/vtxring7/700/868')"></div><div class="rz-item" data-i="8" style="background-image:url('https://picsum.photos/seed/vtxring8/700/868')"></div><div class="rz-item" data-i="9" style="background-image:url('https://picsum.photos/seed/vtxring9/700/868')"></div></div></div><div class="rz-zoomlabel" id="rzZoomLabel">100% &middot; TAP TO PAUSE</div><div class="rz-lbx" id="rzLbx"><button id="rzClose" class="rz-lbx-back">&#8617; Back</button><img id="rzLbxImg" alt=""></div>
 
 <script>
 (function(){
@@ -48,15 +48,16 @@ a{color:inherit;text-decoration:none}
  var iw=items[0].offsetWidth||200,RAD=Math.round((iw/2)/Math.tan(Math.PI/N))+20;
  items.forEach(function(it,i){it.style.transform='rotateY('+(i*ang)+'deg) translateZ('+RAD+'px)';});
  var rot=0,vel=0.06,dragging=false,lx=0,downX=0,downY=0,downT=0,moved=0,downTarget=null;
- var zoom=1,zoomTarget=1,MIN_Z=1,MAX_Z=3,SEL_Z=1.2;
+ var zoom=1,zoomTarget=1,MIN_Z=1,MAX_Z=3;
+ var spinning=true;
  var pointers={};
  var lbl=document.getElementById('rzZoomLabel');
  var PERSP=1100,restScale=PERSP/(PERSP+RAD);
  function dollyZ(mag){var s=restScale*mag;return PERSP-PERSP/s;}
  function apply(){
   ring.style.transform='translateZ('+dollyZ(zoom).toFixed(1)+'px) rotateY('+rot+'deg)';
-  lbl.textContent=Math.round(zoom*100)+'%'+(zoom>=SEL_Z?' · CLICK TO SELECT':' · SCROLL / PINCH TO ZOOM');
-  lbl.classList.toggle('ready',zoom>=SEL_Z);
+  lbl.textContent=Math.round(zoom*100)+'%'+(spinning?' · TAP TO PAUSE':' · TAP A CARD TO VIEW');
+  lbl.classList.toggle('ready',!spinning);
  }
  function pinchDist(){var ks=Object.keys(pointers);if(ks.length<2)return 0;var a=pointers[ks[0]],b=pointers[ks[1]];return Math.hypot(a.x-b.x,a.y-b.y);}
  var pinchStartDist=0,pinchStartZoom=1;
@@ -80,26 +81,28 @@ a{color:inherit;text-decoration:none}
   if(ks.length===1){var p=pointers[ks[0]];dragging=true;lx=p.x;moved=999;}
   else if(ks.length===0){
    dragging=false;
-   if(moved<8&&(Date.now()-downT)<500){handleClick();}
+   if(moved<8&&(Date.now()-downT)<500){handleTap();}
   }
  }
  addEventListener('pointerup',endPointer);
  addEventListener('pointercancel',endPointer);
  scene.addEventListener('wheel',function(e){e.preventDefault();zoomTarget=Math.max(MIN_Z,Math.min(MAX_Z,zoomTarget-e.deltaY*0.0016));},{passive:false});
- function handleClick(){
-  var el=downTarget&&downTarget.closest?downTarget.closest('.rz-item'):null;if(!el)return;
-  var i=parseInt(el.getAttribute('data-i'),10);
-  if(zoom>=SEL_Z){openLbx(i);}
-  else{var target=-i*ang,diff=((target-rot+540)%360)-180;rot+=diff;}
+ function handleTap(){
+  var el=downTarget&&downTarget.closest?downTarget.closest('.rz-item'):null;
+  if(spinning){spinning=false;vel=0;return;}
+  if(el){openLbx(parseInt(el.getAttribute('data-i'),10));}
+  else{spinning=true;}
  }
  var lbx=document.getElementById('rzLbx'),lbxImg=document.getElementById('rzLbxImg');
- function openLbx(i){lbxImg.src='https://picsum.photos/seed/vtxring'+i+'/1200/1488';lbx.classList.add('open');document.body.style.overflow='hidden';}
- function closeLbx(){lbx.classList.remove('open');document.body.style.overflow='';}
+ function openLbx(i){lbxImg.src='https://picsum.photos/seed/vtxring'+i+'/1400/1736';lbx.classList.add('open');document.body.style.overflow='hidden';}
+ function closeLbx(){lbx.classList.remove('open');document.body.style.overflow='';spinning=true;vel=0.06;}
  document.getElementById('rzClose').addEventListener('click',closeLbx);
- lbx.addEventListener('click',function(e){if(e.target===lbx)closeLbx();});
- addEventListener('keydown',function(e){if(e.key==='Escape')closeLbx();});
+ addEventListener('keydown',function(e){if(e.key==='Escape'&&lbx.classList.contains('open'))closeLbx();});
  function tick(){
-  if(!dragging&&Object.keys(pointers).length<2){rot+=vel;vel+=(0.06-vel)*0.03;}
+  if(!dragging&&Object.keys(pointers).length<2){
+   if(spinning){rot+=vel;vel+=(0.06-vel)*0.03;}
+   else{rot+=vel;vel*=0.9;}
+  }
   zoom+=(zoomTarget-zoom)*0.18;
   apply();requestAnimationFrame(tick);
  }
