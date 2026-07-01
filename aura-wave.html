@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Particle Wave Terrain — VERTEX FX</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+:root{--red:#E2231A;--black:#000;--muted:#9a9a9a;--line:rgba(255,255,255,.12);--font:'Archivo',system-ui,-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#050505;color:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.fx-badge{position:fixed;top:18px;left:18px;z-index:550;background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 16px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:9px}
+.fx-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
+.fx-hub{position:fixed;top:18px;right:18px;z-index:550;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 14px;transition:.3s}
+.fx-hub:hover{color:#fff;border-color:#fff}
+.fx-hint{position:fixed;bottom:20px;left:0;right:0;text-align:center;z-index:550;color:rgba(255,255,255,.65);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;pointer-events:none}
+
+.aurawrap{height:100vh;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 30%,#150607,#050505 70%)}
+#auraCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none}
+.aura-cap{position:absolute;left:0;right:0;top:14%;text-align:center;pointer-events:none;z-index:2;padding:0 20px}
+.aura-cap h2{font-size:clamp(2rem,6vw,4rem);font-weight:800;letter-spacing:-.02em}
+.aura-cap p{color:var(--muted);margin-top:10px;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}
+
+</style>
+</head>
+<body>
+<div class="fx-badge"><span class="dot"></span>Particle Wave Terrain</div>
+<a class="fx-hub" href="index.html">&#8617; All demos</a>
+<div class="fx-hint">Drag to nudge the view &middot; endless rolling dust</div>
+<div class="aurawrap"><canvas id="auraCanvas"></canvas><div class="aura-cap"><h2>Rolling terrain</h2><p>A wave-field of drifting particles</p></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+if(!window.THREE)return;
+var VS=`
+uniform float uTime;attribute float aRand;varying float vH;
+void main(){
+ vec3 p=position;
+ float h=sin(p.x*0.9+uTime*0.6)*0.5+sin(p.z*0.7-uTime*0.45)*0.4+sin((p.x+p.z)*0.35+uTime*0.3)*0.35;
+ p.y=h*0.55;vH=h;
+ vec4 mv=modelViewMatrix*vec4(p,1.0);
+ gl_PointSize=min(5.5,(1.6+aRand*1.3)*(16.0/max(1.5,-mv.z)));
+ gl_Position=projectionMatrix*mv;
+}`;
+var FS=`
+precision highp float;varying float vH;uniform vec3 uColA;uniform vec3 uColB;
+void main(){
+ vec2 d=gl_PointCoord-vec2(0.5);if(dot(d,d)>0.25)discard;
+ vec3 col=mix(uColA,uColB,clamp(vH*0.5+0.5,0.0,1.0));
+ gl_FragColor=vec4(col,0.85);
+}`;
+
+var cv=document.getElementById('auraCanvas');
+var small=Math.min(innerWidth,innerHeight)<640;
+var renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+var scene=new THREE.Scene();scene.fog=new THREE.Fog(0x050505,4,15);
+var camera=new THREE.PerspectiveCamera(55,1,0.1,50);camera.position.set(0,2.4,6.2);camera.lookAt(0,-1.2,-6);
+var GX=small?60:90,GZ=small?34:50;
+var positions=new Float32Array(GX*GZ*3),rnd=new Float32Array(GX*GZ),k=0;
+for(var iz=0;iz<GZ;iz++){for(var ix=0;ix<GX;ix++){
+ positions[k*3]=(ix/(GX-1)-0.5)*16;positions[k*3+1]=0;positions[k*3+2]=-(iz/(GZ-1))*15;rnd[k]=Math.random();k++;
+}}
+var geo=new THREE.BufferGeometry();
+geo.setAttribute('position',new THREE.BufferAttribute(positions,3));
+geo.setAttribute('aRand',new THREE.BufferAttribute(rnd,1));
+var uni={uTime:{value:0},uColA:{value:new THREE.Color(0xffe2df)},uColB:{value:new THREE.Color(0x4d0a08)}};
+var mat=new THREE.ShaderMaterial({uniforms:uni,vertexShader:VS,fragmentShader:FS,transparent:true,depthWrite:false});
+scene.add(new THREE.Points(geo,mat));
+function resize(){var w=cv.clientWidth||innerWidth,h=cv.clientHeight||innerHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}
+resize();addEventListener('resize',resize);
+var dragRotY=0,dragging=false,lastX=0,lastY=0,pitch=0;
+cv.addEventListener('pointerdown',function(e){dragging=true;lastX=e.clientX;lastY=e.clientY;});
+addEventListener('pointerup',function(){dragging=false;});
+addEventListener('pointermove',function(e){if(!dragging)return;var dx=e.clientX-lastX,dy=e.clientY-lastY;lastX=e.clientX;lastY=e.clientY;dragRotY+=dx*0.004;pitch=Math.max(-0.3,Math.min(0.3,pitch+dy*0.002));});
+function tick(t){uni.uTime.value=t*0.001;camera.position.x=Math.sin(dragRotY)*1.5;camera.lookAt(0,-1.2+pitch*4,-6);renderer.render(scene,camera);requestAnimationFrame(tick);}
+requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>

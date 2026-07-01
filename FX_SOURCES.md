@@ -55,3 +55,32 @@ SVG route, and a boarding-pass card flips to new content in sync with each arriv
 cinemagraph layer (Ken Burns pan/zoom + looping walk-cycle figures + light glint, pure CSS) so
 the photo feels alive inside the frame, matching the "animated clip in a frame" quality of the
 source without embedding its actual video.
+
+## Demos 24–27 — from @GabeTognon's Framer showreel
+
+An 8-second reel posted by [@GabeTognon](https://x.com/GabeTognon) ("2026 so far... Built in
+@framer") cutting between ~8 different hero designs: Verth (liquid ribbon), Starks (radial hub
+arcs), Aeterna (dissolve/materialize hand), Avenir (smoky portfolio bg), Nodes (particle burst
+under a CTA), DNA (rotating 3D helix), AURA (particle wave terrain), plus a repeated rainbow
+AI-agents hero. Reviewed via downloaded video + `ffmpeg` frame extraction across the full
+duration (10 frames, not just the thumbnail) — see [[x-post-video-review-workflow]].
+
+Garett picked 4 of the 7 distinct techniques to catalogue; **Verth's liquid ribbon, Nodes'
+particle burst, and Avenir's smoky portfolio background were shown but not selected** — noting
+here rather than dropping them silently, in case they're wanted later.
+
+All 4 rebuilt from scratch — original code, own palette/copy, no assets or code reused from
+the source clip:
+
+- **Dissolve Hand** (`aeterna-hand.html`) — canvas particle system; ✋ emoji sampled into a
+  target point cloud, particles spring between a scattered "dust" ring and the hand target on
+  a continuous quintic-eased loop, plus cursor-repel. Physics-based, so edges are intentionally
+  soft/painterly rather than a crisp vector outline.
+- **Radial Hub Arcs** (`starks-hub.html`) — SVG arcs computed at runtime from each nav link's
+  actual `getBoundingClientRect()` position down to a center badge, per-arc hue sweep, stroke-
+  dasharray draw-in, `animateMotion` pulse dots (same primitive as the original Animated Map
+  demo, recomposed for a nav-tied hero instead of a world map).
+- **3D DNA Helix** (`dna-helix.html`) — Three.js `InstancedMesh` double helix (red/blue strands
+  + base-pair rungs), standard-material lighting, drag-to-spin with inertia.
+- **Particle Wave Terrain** (`aura-wave.html`) — Three.js `Points` grid, vertex-shader sine-wave
+  displacement, fog-faded horizon, warm-near/cool-far color ramp, drag to nudge the camera.
