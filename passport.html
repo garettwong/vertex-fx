@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Passport Journey Card — VERTEX FX</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+:root{--red:#E2231A;--black:#000;--muted:#9a9a9a;--line:rgba(255,255,255,.12);--font:'Archivo',system-ui,-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:#050505;color:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.fx-badge{position:fixed;top:18px;left:18px;z-index:550;background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 16px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:9px}
+.fx-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--red)}
+.fx-hub{position:fixed;top:18px;right:18px;z-index:550;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:rgba(17,17,17,.92);border:1px solid var(--line);border-radius:50px;padding:9px 14px;transition:.3s}
+.fx-hub:hover{color:#fff;border-color:#fff}
+.fx-hint{position:fixed;bottom:20px;left:0;right:0;text-align:center;z-index:550;color:rgba(255,255,255,.65);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;pointer-events:none}
+
+.pp-wrap{min-height:100vh;position:relative;overflow:hidden;background:radial-gradient(ellipse at 30% 20%,#0f5f6e,#073947 55%,#052a34);display:flex;align-items:center;justify-content:center;padding:60px 20px}
+.pp-cloud{position:absolute;border-radius:50%;background:rgba(255,255,255,.85);filter:blur(18px);opacity:.5}
+.pp-book{position:relative;width:min(980px,94vw);aspect-ratio:16/9.4;background:#eef0ea;border-radius:8px;box-shadow:0 40px 90px rgba(0,0,0,.45);border:1px solid rgba(0,0,0,.5);display:grid;grid-template-columns:1fr 1fr}
+.pp-book::before{content:'';position:absolute;top:0;bottom:0;left:50%;width:2px;background:rgba(10,30,35,.15);transform:translateX(-1px)}
+.pp-left{position:relative;padding:34px}
+.pp-left h3{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#1b3a44;font-weight:800;display:flex;align-items:center;gap:8px}
+.pp-left p.sub{font-size:.6rem;letter-spacing:.16em;color:#7c8f92;text-transform:uppercase;margin-top:3px}
+.pp-svg{width:100%;height:calc(100% - 40px);margin-top:14px}
+.pp-dot{stroke:#9fb0af;stroke-width:2;stroke-dasharray:1 7;fill:none}
+.pp-fg{stroke:#1b3a44;stroke-width:2.4;fill:none;stroke-linecap:round}
+.node-c{fill:#eef0ea;stroke:#9fb0af;stroke-width:2;transition:fill .3s,stroke .3s}
+.node-c.on{fill:#1b3a44;stroke:#1b3a44}
+.node-lbl{font-size:9px;letter-spacing:.06em;fill:#7c8f92;text-transform:uppercase;transition:fill .3s}
+.node-lbl.on{fill:#1b3a44;font-weight:700}
+.plane{font-size:15px;fill:#c1401f;filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))}
+.pp-right{position:relative}
+.pp-card{position:absolute;top:50%;right:26px;transform:translateY(-50%);width:min(258px,84%);background:#faf8f2;border-radius:10px;box-shadow:0 26px 60px rgba(0,0,0,.4);border:2px solid #1b3a44;padding:14px;transform-style:preserve-3d;transition:transform .3s ease}
+.pp-card.flip{transform:translateY(-50%) rotateY(-88deg)}
+.pp-stamp{position:absolute;top:-14px;right:-10px;width:52px;height:52px;border-radius:50%;border:2px dashed #c1401f;color:#c1401f;font-size:.5rem;font-weight:800;letter-spacing:.05em;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.1;transform:rotate(-16deg);background:#faf8f2}
+.pp-photo-frame{position:relative;overflow:hidden;border-radius:5px;aspect-ratio:4/3;background:#111}
+.pp-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.9) sepia(.3) contrast(1.08) brightness(1.05);animation:ppKen 9s ease-in-out infinite alternate;transform-origin:60% 40%}
+@keyframes ppKen{from{transform:scale(1) translate(0,0)}to{transform:scale(1.15) translate(-2.5%,-1.5%)}}
+.pp-glint{position:absolute;top:0;left:-45%;width:30%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent);animation:ppGlint 7s ease-in-out infinite;pointer-events:none}
+@keyframes ppGlint{0%,68%{left:-45%}100%{left:125%}}
+.pp-scene{position:absolute;left:0;right:0;bottom:6%;height:16%;pointer-events:none;overflow:hidden}
+.pp-walker{position:absolute;bottom:0;font-size:.8rem;animation:ppWalk 6.5s linear infinite;filter:drop-shadow(0 1px 1px rgba(0,0,0,.45))}
+.pp-walker.w2{animation-duration:8.5s;animation-delay:1.6s;font-size:.62rem;opacity:.75}
+.pp-walker.w3{animation-duration:5.4s;animation-delay:3s;font-size:.68rem;opacity:.85;bottom:2%}
+@keyframes ppWalk{from{transform:translateX(-12%) scaleX(1)}49%{transform:translateX(60%) scaleX(1)}50%{transform:translateX(60%) scaleX(-1)}to{transform:translateX(-12%) scaleX(-1)}}
+.pp-div{border-top:1px dashed #b9c2b4;margin:12px 0}
+.pp-route{display:flex;align-items:center;justify-content:space-between;font-size:1.35rem;font-weight:800;color:#1b3a44;letter-spacing:.02em}
+.pp-arrow{font-size:.9rem;color:#c1401f}
+.pp-sub{display:flex;justify-content:space-between;font-size:.55rem;letter-spacing:.1em;color:#7c8f92;text-transform:uppercase;margin-top:2px}
+.pp-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px}
+.pp-grid label,.pp-row label{display:block;font-size:.48rem;letter-spacing:.1em;color:#9aa79c;text-transform:uppercase;margin-bottom:2px}
+.pp-grid div div,.pp-row>div{font-size:.68rem;font-weight:700;color:#1b3a44}
+.pp-row{margin-top:10px}
+@media(max-width:760px){.pp-book{grid-template-columns:1fr;aspect-ratio:auto;min-height:640px}.pp-book::before{display:none}.pp-right{min-height:300px}.pp-card{right:50%;transform:translate(50%,-50%)}.pp-card.flip{transform:translate(50%,-50%) rotateY(-88deg)}}
+
+</style>
+</head>
+<body>
+<div class="fx-badge"><span class="dot"></span>Passport Journey Card</div>
+<a class="fx-hub" href="index.html">&#8617; All demos</a>
+<div class="fx-hint">Watch the plane fly &middot; the ticket flips in sync</div>
+
+<div class="pp-wrap">
+ <div class="pp-cloud" style="width:220px;height:90px;top:8%;left:4%"></div>
+ <div class="pp-cloud" style="width:160px;height:70px;bottom:10%;right:6%"></div>
+ <div class="pp-cloud" style="width:120px;height:60px;top:60%;left:2%"></div>
+ <div class="pp-book">
+  <div class="pp-left">
+   <h3>&#9992; The Grand Tour</h3>
+   <p class="sub">5 stops &middot; one carry-on</p>
+   <svg class="pp-svg" viewBox="0 0 480 620" preserveAspectRatio="xMidYMid meet">
+    <path class="pp-dot" d="M420,55 Q300,70 245,130"/>
+    <path class="pp-dot" d="M245,130 Q220,220 340,270"/>
+    <path class="pp-dot" d="M340,270 Q250,230 125,300"/>
+    <path class="pp-dot" d="M125,300 Q150,400 275,450"/>
+    <path class="pp-dot" d="M275,450 Q230,520 110,555"/>
+    <path class="pp-fg" id="leg0" d="M420,55 Q300,70 245,130"/>
+    <path class="pp-fg" id="leg1" d="M245,130 Q220,220 340,270"/>
+    <path class="pp-fg" id="leg2" d="M340,270 Q250,230 125,300"/>
+    <path class="pp-fg" id="leg3" d="M125,300 Q150,400 275,450"/>
+    <path class="pp-fg" id="leg4" d="M275,450 Q230,520 110,555"/>
+    <circle class="node-c" id="node0" cx="420" cy="55" r="5"/><text class="node-lbl" id="lbl0" x="432" y="59">Home</text>
+    <circle class="node-c" id="node1" cx="245" cy="130" r="5"/><text class="node-lbl" id="lbl1" x="257" y="134">New York</text>
+    <circle class="node-c" id="node2" cx="340" cy="270" r="5"/><text class="node-lbl" id="lbl2" x="352" y="274">San Francisco</text>
+    <circle class="node-c" id="node3" cx="125" cy="300" r="5"/><text class="node-lbl" id="lbl3" x="88" y="296" text-anchor="end">Seattle</text>
+    <circle class="node-c" id="node4" cx="275" cy="450" r="5"/><text class="node-lbl" id="lbl4" x="287" y="454">London</text>
+    <circle class="node-c" id="node5" cx="110" cy="555" r="5"/><text class="node-lbl" id="lbl5" x="73" y="551" text-anchor="end">Paris</text>
+    <text class="plane" id="plane" x="420" y="55" text-anchor="middle" dominant-baseline="middle">&#9992;</text>
+   </svg>
+  </div>
+  <div class="pp-right">
+   <div class="pp-card" id="ppCard">
+    <div class="pp-stamp">AIR<br>MAIL</div>
+    <div class="pp-photo-frame">
+     <img class="pp-photo" id="ppPhoto" alt="">
+     <div class="pp-glint"></div>
+     <div class="pp-scene"><span class="pp-walker">&#128694;</span><span class="pp-walker w2">&#128694;</span><span class="pp-walker w3">&#128663;</span></div>
+    </div>
+    <div class="pp-div"></div>
+    <div class="pp-route"><span id="ppFrom">HOM</span><span class="pp-arrow">&#9992;</span><span id="ppTo">JFK</span></div>
+    <div class="pp-sub"><span id="ppFromCity">Home</span><span id="ppToCity">New York</span></div>
+    <div class="pp-grid">
+     <div><label>Name</label><div>A. WANDERER</div></div>
+     <div><label>Date</label><div id="ppDate">14 JUN 2026</div></div>
+     <div><label>Time</label><div id="ppTime">07:30 AM</div></div>
+    </div>
+    <div class="pp-row"><label>Destination</label><div id="ppDest">New York, USA</div></div>
+    <div class="pp-row"><label>Note</label><div id="ppMsg">Skyline lights, subway nights.</div></div>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+<script>
+(function(){
+ var DATA=[
+  {to:"JFK",toCity:"New York",country:"New York, USA",date:"14 JUN 2026",time:"07:30 AM",msg:"Skyline lights, subway nights.",seed:"vtxpass-jfk"},
+  {to:"SFO",toCity:"San Francisco",country:"San Francisco, USA",date:"17 JUN 2026",time:"11:15 AM",msg:"Hills, fog & cable-car bells.",seed:"vtxpass-sfo"},
+  {to:"SEA",toCity:"Seattle",country:"Seattle, USA",date:"20 JUN 2026",time:"02:40 PM",msg:"Rain-soaked streets, coffee in hand.",seed:"vtxpass-sea"},
+  {to:"LHR",toCity:"London",country:"London, UK",date:"24 JUN 2026",time:"09:05 PM",msg:"Foggy mornings, double-decker dreams.",seed:"vtxpass-lhr"},
+  {to:"CDG",toCity:"Paris",country:"Paris, France",date:"28 JUN 2026",time:"06:30 PM",msg:"Cafes, cobblestones & city lights.",seed:"vtxpass-cdg"}
+ ];
+ var FROM=["HOM","JFK","SFO","SEA","LHR"],FROM_CITY=["Home","New York","San Francisco","Seattle","London"];
+ var legs=[],legLens=[],i;
+ for(i=0;i<5;i++){var p=document.getElementById('leg'+i);legs.push(p);var L=p.getTotalLength();legLens.push(L);p.style.strokeDasharray=L;p.style.strokeDashoffset=L;}
+ var nodes=[],labels=[];for(i=0;i<6;i++){nodes.push(document.getElementById('node'+i));labels.push(document.getElementById('lbl'+i));}
+ var plane=document.getElementById('plane');
+ var card=document.getElementById('ppCard'),photo=document.getElementById('ppPhoto');
+ var elFrom=document.getElementById('ppFrom'),elTo=document.getElementById('ppTo'),elFromCity=document.getElementById('ppFromCity'),elToCity=document.getElementById('ppToCity'),elDate=document.getElementById('ppDate'),elTime=document.getElementById('ppTime'),elDest=document.getElementById('ppDest'),elMsg=document.getElementById('ppMsg');
+ function fill(idx){var d=DATA[idx];elFrom.textContent=FROM[idx];elTo.textContent=d.to;elFromCity.textContent=FROM_CITY[idx];elToCity.textContent=d.toCity;elDate.textContent=d.date;elTime.textContent=d.time;elDest.textContent=d.country;elMsg.textContent=d.msg;photo.src='https://picsum.photos/seed/'+d.seed+'/500/375';}
+ fill(0);
+ var shown=0,flipping=false;
+ function updateCard(idx){if(flipping||idx===shown)return;flipping=true;card.classList.add('flip');setTimeout(function(){fill(idx);shown=idx;card.classList.remove('flip');flipping=false;},300);}
+ var LEG_DUR=2500,HOLD=1500,TOTAL=LEG_DUR*5+HOLD,start=null;
+ function tick(t){
+  if(start===null)start=t;
+  var el=(t-start)%TOTAL;
+  var legIndex=el>=LEG_DUR*5?4:Math.floor(el/LEG_DUR);
+  var legT=el>=LEG_DUR*5?1:(el%LEG_DUR)/LEG_DUR;
+  var completedCount=el>=LEG_DUR*5?5:legIndex;
+  var shownTarget=Math.max(0,Math.min(4,completedCount-1));
+  updateCard(shownTarget);
+  for(var j=0;j<5;j++){var frac=j<legIndex?1:(j===legIndex?legT:0);legs[j].style.strokeDashoffset=legLens[j]*(1-frac);}
+  for(j=0;j<6;j++){var visited=j<=legIndex;if(j===legIndex+1&&legT>0.96)visited=true;nodes[j].classList.toggle('on',visited);labels[j].classList.toggle('on',visited);}
+  var curLeg=legs[legIndex],pt=curLeg.getPointAtLength(legT*legLens[legIndex]);
+  var pt2=curLeg.getPointAtLength(Math.min(legLens[legIndex],(legT+0.02)*legLens[legIndex]));
+  var ang=Math.atan2(pt2.y-pt.y,pt2.x-pt.x)*180/Math.PI;
+  plane.setAttribute('x',pt.x);plane.setAttribute('y',pt.y);plane.setAttribute('transform','rotate('+ang.toFixed(1)+' '+pt.x+' '+pt.y+')');
+  requestAnimationFrame(tick);
+ }
+ requestAnimationFrame(tick);
+})();
+</script>
+
+</body>
+</html>
