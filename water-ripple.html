@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Water Ripple — VERTEX FX</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--red:#E2231A;--black:#000;--muted:#9a9a9a;--line:rgba(255,255,255,.12);--font:'Archivo',system-ui,-apple-system,sans-serif;--cyan:#77f7ff}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+body{font-family:var(--font);background:#02070b;color:#fff;-webkit-font-smoothing:antialiased;line-height:1.6;touch-action:none}
+a{color:inherit;text-decoration:none}
+.fx-badge{position:fixed;top:18px;left:18px;z-index:550;background:rgba(3,8,14,.76);backdrop-filter:blur(16px);border:1px solid rgba(119,247,255,.22);border-radius:50px;padding:9px 16px;font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:9px;box-shadow:0 18px 44px rgba(0,0,0,.28)}
+.fx-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px var(--cyan)}
+.fx-hub{position:fixed;top:18px;right:18px;z-index:550;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.72);background:rgba(3,8,14,.76);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.16);border-radius:50px;padding:9px 14px;transition:.3s}
+.fx-hub:hover{color:#fff;border-color:rgba(119,247,255,.5)}
+.fx-hint{position:fixed;bottom:20px;left:0;right:0;text-align:center;z-index:550;color:rgba(255,255,255,.65);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;pointer-events:none}
+#water{position:fixed;inset:0;width:100vw;height:100vh;background:#02070b;display:block}
+.vignette{position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 36%,transparent 0 34%,rgba(0,0,0,.18) 62%,rgba(0,0,0,.68) 100%);z-index:3}
+.glow{position:fixed;inset:-20%;pointer-events:none;z-index:2;background:radial-gradient(circle at 20% 20%,rgba(119,247,255,.16),transparent 28%),radial-gradient(circle at 80% 18%,rgba(255,199,87,.10),transparent 24%),radial-gradient(circle at 50% 88%,rgba(25,80,160,.20),transparent 36%);mix-blend-mode:screen;animation:drift 14s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate3d(-1.5%,0,0) scale(1)}to{transform:translate3d(1.5%,-1%,0) scale(1.04)}}
+.hero{position:fixed;left:clamp(22px,7vw,92px);bottom:clamp(72px,13vh,140px);z-index:4;max-width:min(720px,86vw);pointer-events:none}
+.kicker{font-size:.74rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:16px;text-shadow:0 0 24px rgba(119,247,255,.5)}
+h1{font-size:clamp(3rem,9vw,8.2rem);line-height:.86;letter-spacing:-.075em;font-weight:900;text-wrap:balance;text-shadow:0 24px 70px rgba(0,0,0,.45)}
+.hero p{margin-top:22px;max-width:56ch;color:rgba(239,248,255,.78);font-size:clamp(1rem,1.55vw,1.25rem)}
+.controls{position:fixed;right:clamp(18px,4vw,54px);bottom:clamp(72px,10vh,116px);z-index:5;display:flex;flex-direction:column;gap:10px;width:min(260px,42vw)}
+.ctrl{border:1px solid rgba(255,255,255,.14);background:rgba(4,12,20,.62);backdrop-filter:blur(18px);border-radius:18px;padding:13px 14px;color:rgba(255,255,255,.82);font-size:.76rem;letter-spacing:.04em;box-shadow:0 18px 50px rgba(0,0,0,.23)}
+.ctrl strong{display:block;color:#fff;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:2px}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+button{font:inherit;border:1px solid rgba(119,247,255,.22);background:rgba(119,247,255,.08);color:#dffcff;border-radius:999px;padding:8px 10px;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.25s}
+button:hover,button.active{background:rgba(119,247,255,.18);border-color:rgba(119,247,255,.55);transform:translateY(-1px)}
+@media(max-width:760px){.controls{left:18px;right:18px;bottom:18px;width:auto;display:grid;grid-template-columns:1fr}.ctrl:nth-child(1){display:none}.hero{bottom:180px}.fx-hint{display:none}h1{font-size:clamp(2.6rem,18vw,5rem)}}
+@media(prefers-reduced-motion:reduce){.glow{animation:none}}
+</style>
+</head>
+<body>
+<div class="fx-badge"><span class="dot"></span>Water Ripple</div>
+<a class="fx-hub" href="index.html">&#8617; All demos</a>
+<div class="fx-hint">Click or drag on the water · hold to drop stones</div>
+<canvas id="water" aria-label="Real-time interactive water ripple canvas"></canvas>
+<div class="glow"></div>
+<div class="vignette"></div>
+<section class="hero">
+  <div class="kicker">MINAMO-inspired real-time water</div>
+  <h1>Code-drawn<br>water surface.</h1>
+  <p>This water is not a video or image. The browser draws the moving surface in real time: click for ripples, drag for waves, and hold to drop heavier stones.</p>
+</section>
+<aside class="controls">
+  <div class="ctrl"><strong>Try it</strong>Tap anywhere. Drag slowly. Hold for a larger droplet.</div>
+  <div class="ctrl"><strong>Scenes</strong><div class="btns"><button data-scene="night" class="active">Night</button><button data-scene="sunset">Sunset</button><button data-scene="rain">Rain</button><button data-scene="storm">Storm</button></div></div>
+</aside>
+<script>
+(function(){
+'use strict';
+var canvas=document.getElementById('water'),ctx=canvas.getContext('2d',{alpha:false});
+var W=0,H=0,S=2,DPR=1,cols=0,rows=0,size=0;
+var prev,curr,next,base,img;
+var mouseDown=false,lastDrop=0,lastX=0,lastY=0,scene='night',rainTimer=0;
+var scenes={
+ night:{top:[4,15,24],mid:[7,42,58],bot:[1,6,12],light:[130,240,255],damp:.986,spread:.50,rain:0},
+ sunset:{top:[34,18,30],mid:[135,73,49],bot:[5,18,24],light:[255,190,105],damp:.982,spread:.49,rain:0},
+ rain:{top:[6,16,24],mid:[11,61,76],bot:[2,8,14],light:[160,245,255],damp:.987,spread:.50,rain:.55},
+ storm:{top:[3,8,15],mid:[19,43,55],bot:[1,4,9],light:[210,245,255],damp:.978,spread:.515,rain:1.0}
+};
+function lerp(a,b,t){return a+(b-a)*t}
+function resize(){
+ DPR=Math.min(window.devicePixelRatio||1,2); W=innerWidth; H=innerHeight;
+ canvas.width=Math.floor(W*DPR); canvas.height=Math.floor(H*DPR); canvas.style.width=W+'px'; canvas.style.height=H+'px'; ctx.setTransform(DPR,0,0,DPR,0,0);
+ S=(W<760?3:2); cols=Math.ceil(W/S); rows=Math.ceil(H/S); size=cols*rows;
+ prev=new Float32Array(size); curr=new Float32Array(size); next=new Float32Array(size);
+ base=ctx.createImageData(cols,rows); img=ctx.createImageData(cols,rows); paintBase();
+ for(var i=0;i<8;i++)drop(Math.random()*W,Math.random()*H,40+Math.random()*90,Math.random()*.8);
+}
+function paintBase(){
+ var st=scenes[scene];
+ for(var y=0;y<rows;y++){
+  var yy=y/(rows-1||1),shine=Math.pow(Math.max(0,1-Math.abs(yy-.38)*2.2),2);
+  for(var x=0;x<cols;x++){
+   var xx=x/(cols-1||1),wave=Math.sin((xx*9+yy*2.2))*4+Math.sin((xx*3.3-yy*7))*3;
+   var t=yy<.5?yy/.5:(yy-.5)/.5;
+   var a=yy<.5?st.top:st.mid,b=yy<.5?st.mid:st.bot;
+   var idx=(y*cols+x)*4;
+   base.data[idx]=Math.max(0,Math.min(255,lerp(a[0],b[0],t)+wave+shine*st.light[0]*.12));
+   base.data[idx+1]=Math.max(0,Math.min(255,lerp(a[1],b[1],t)+wave+shine*st.light[1]*.10));
+   base.data[idx+2]=Math.max(0,Math.min(255,lerp(a[2],b[2],t)+wave+shine*st.light[2]*.12));
+   base.data[idx+3]=255;
+  }
+ }
+}
+function drop(px,py,r,force){
+ var cx=Math.floor(px/S),cy=Math.floor(py/S),rr=Math.max(2,Math.floor(r/S)),rr2=rr*rr;
+ for(var y=-rr;y<=rr;y++)for(var x=-rr;x<=rr;x++){
+  var d=x*x+y*y;if(d>rr2)continue;
+  var ix=cx+x,iy=cy+y;if(ix<2||iy<2||ix>=cols-2||iy>=rows-2)continue;
+  var fall=Math.cos(Math.sqrt(d)/rr*Math.PI/2); curr[iy*cols+ix]+=force*fall*255;
+ }
+}
+function step(){
+ var st=scenes[scene],spread=st.spread,damp=st.damp;
+ for(var y=1;y<rows-1;y++){
+  var off=y*cols;
+  for(var x=1;x<cols-1;x++){
+   var i=off+x;
+   next[i]=((curr[i-1]+curr[i+1]+curr[i-cols]+curr[i+cols])*spread - prev[i])*damp;
+  }
+ }
+ var tmp=prev;prev=curr;curr=next;next=tmp;next.fill(0);
+}
+function render(t){
+ step();
+ var st=scenes[scene],ld=st.light,ti=t*.001;
+ if(st.rain && t-rainTimer<1000/18){/* skip */} else if(st.rain){rainTimer=t; for(var k=0;k<Math.ceil(st.rain*3);k++)drop(Math.random()*W,Math.random()*H,8+Math.random()*18,0.35+Math.random()*.5)}
+ for(var y=1;y<rows-1;y++){
+  for(var x=1;x<cols-1;x++){
+   var i=y*cols+x,dx=curr[i+1]-curr[i-1],dy=curr[i+cols]-curr[i-cols];
+   var ox=Math.max(0,Math.min(cols-1,Math.floor(x+dx*.030)));
+   var oy=Math.max(0,Math.min(rows-1,Math.floor(y+dy*.030)));
+   var bi=(oy*cols+ox)*4,ii=i*4;
+   var normal=Math.max(0,Math.min(1,(dx*-0.014+dy*-0.010)+.5));
+   var spec=Math.pow(Math.max(0,normal),18)*185;
+   var caustic=(Math.sin(x*.16+y*.11+ti*1.6)+Math.sin(x*.07-y*.19-ti))*4;
+   img.data[ii]=Math.max(0,Math.min(255,base.data[bi]+spec*ld[0]/255+caustic));
+   img.data[ii+1]=Math.max(0,Math.min(255,base.data[bi+1]+spec*ld[1]/255+caustic));
+   img.data[ii+2]=Math.max(0,Math.min(255,base.data[bi+2]+spec*ld[2]/255+caustic));
+   img.data[ii+3]=255;
+  }
+ }
+ ctx.putImageData(img,0,0); ctx.imageSmoothingEnabled=true; ctx.drawImage(canvas,0,0,cols,rows,0,0,W,H);
+ requestAnimationFrame(render);
+}
+function point(e){var p=e.touches?e.touches[0]:e;return{x:p.clientX,y:p.clientY}}
+canvas.addEventListener('pointerdown',function(e){mouseDown=true;var p=point(e);lastX=p.x;lastY=p.y;lastDrop=performance.now();drop(p.x,p.y,42,1.15);try{canvas.setPointerCapture(e.pointerId)}catch(_){}});
+canvas.addEventListener('pointermove',function(e){var p=point(e),now=performance.now();if(mouseDown){var dist=Math.hypot(p.x-lastX,p.y-lastY);if(dist>6){drop(p.x,p.y,18+Math.min(44,dist*1.3),.55);lastX=p.x;lastY=p.y;} if(now-lastDrop>560){drop(p.x,p.y,64,1.4);lastDrop=now;}}});
+canvas.addEventListener('pointerup',function(e){mouseDown=false;var p=point(e);drop(p.x,p.y,30,.75)});
+canvas.addEventListener('pointerleave',function(){mouseDown=false});
+document.querySelectorAll('button[data-scene]').forEach(function(b){b.addEventListener('click',function(){scene=b.dataset.scene;document.querySelectorAll('button[data-scene]').forEach(function(x){x.classList.toggle('active',x===b)});paintBase();drop(W*.5,H*.5,90,1.2);});});
+addEventListener('keydown',function(e){if(e.code==='Space'){e.preventDefault();drop(Math.random()*W,Math.random()*H,72,1.5);}});
+addEventListener('resize',resize);
+resize();requestAnimationFrame(render);
+})();
+</script>
+</body>
+</html>
