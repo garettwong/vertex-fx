@@ -115,3 +115,9 @@ From Garett's recent X posts asking to save/rebuild strong website effects into 
 Created on **2026-07-05** from [@alexroyhe](https://x.com/alexroyhe/status/2073648320749486347), showing an AI/SaaS landing page with a transparent glass cube and a morphing organic 3D AI object inside the hero.
 
 Rebuilt from scratch as **AI Portal Glass Cube** (`ai-portal-glass-cube.html`) — own fictional brand, copy, layout, canvas animation and CSS cube; no source brand, logo, assets, prompt library content or code reused. The reusable pattern catalogued here is a premium SaaS hero with glassmorphism cube framing, reactive organic AI core, glow particles, status chips, metrics and conversion CTAs.
+
+## Demo 36 — Pixel Mosaic Transition
+
+Created on **2026-07-06** from [@zdkiel_labs](https://x.com/zdkiel_labs/status/2073397281345417326), surfaced by the X FX Scout as a high-value pixel-perfect image transition reference.
+
+Rebuilt from scratch as **Pixel Mosaic Transition** (`pixel-mosaic-transition.html`) — own fictional scenes, canvas renderer, color fields, tile choreography and copy; no source images, screenshots, client assets, code, logos, videos or template files reused. The reusable pattern catalogued here is a hero/portfolio image morph where generated visuals disassemble into hundreds of staggered pixel tiles, scatter with cursor-reactive inertia, then reassemble into the next scene.
