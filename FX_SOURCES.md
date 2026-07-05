@@ -121,3 +121,9 @@ Rebuilt from scratch as **AI Portal Glass Cube** (`ai-portal-glass-cube.html`) �
 Created on **2026-07-06** from [@zdkiel_labs](https://x.com/zdkiel_labs/status/2073397281345417326), surfaced by the X FX Scout as a high-value pixel-perfect image transition reference.
 
 Rebuilt from scratch as **Pixel Mosaic Transition** (`pixel-mosaic-transition.html`) — own fictional scenes, canvas renderer, color fields, tile choreography and copy; no source images, screenshots, client assets, code, logos, videos or template files reused. The reusable pattern catalogued here is a hero/portfolio image morph where generated visuals disassemble into hundreds of staggered pixel tiles, scatter with cursor-reactive inertia, then reassemble into the next scene.
+
+## Demo 37 — Curved Portfolio Cylinder
+
+Created on **2026-07-06** from [@lokidotdev](https://x.com/lokidotdev/status/2073872665140691345), surfaced by the X FX Scout as a high-value WebGL portfolio/cylinder reference: a landing-page surface bent into an interactive curved gallery with shader-like reflections.
+
+Rebuilt from scratch as **Curved Portfolio Cylinder** (`curved-portfolio-cylinder.html`) — own fictional case-study cards, gradient art, CSS 3D cylinder math, pointer controls and copy; no source images, screenshots, client artwork, code, logos, videos, shader files or template assets reused. The reusable pattern catalogued here is a portfolio/agency hero where flat project cards orbit as a reflective cylindrical wall, giving a standard work grid a tactile immersive navigation layer.
