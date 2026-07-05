@@ -100,3 +100,12 @@ scratch — own fictional brand ("NIMBUS"), own copy, and the background is a li
 shader (domain-warped fbm noise, same `snoise` primitive as the Liquid/Resin demos, recolored to
 monochrome with tighter thresholds for sparse wispy tendrils) rather than an AI-generated video
 clip, so it's infinitely-looping and interactive (mouse-reactive) with no video asset to host.
+
+## Demos 31–34 — Garett's X website-development inspiration queue
+
+From Garett's recent X posts asking to save/rebuild strong website effects into the `vertex-fx` demo library. All four demos are rebuilt from scratch with original placeholder copy/code; no source-site assets, videos, or template code are reused.
+
+- **Scroll Liquid Scrub** (`scroll-liquid-scrub.html`) — from [@php_martin](https://x.com/php_martin/status/2073291268055236765). The post showcases a Fable 5 / Wallow bath-body concept site where page scroll scrubs through liquid dye product visuals. Rebuilt as a procedural canvas ink/plume scene where scroll progress drives colour, density, copy and product pills.
+- **Marble Ocean Play** (`marble-ocean-play.html`) — from [@aurelien_gz](https://x.com/aurelien_gz/status/2073069364572528842), showing the Marble landing page with whimsical ocean, cursor water ripples, splashes, sparkles and hidden easter eggs. Rebuilt as an illustrated ocean hero with canvas ripples and playful micro-interactions.
+- **Clixr Neon SaaS** (`clixr-neon-saas.html`) — from [@Website_tmplts](https://x.com/Website_tmplts/status/2073029187099582729), showing a dark Webflow SaaS/product template with neon portrait cards, bold typography, pricing and rounded sections. Rebuilt as a reusable dark SaaS landing-page motion pattern.
+- **MODUS Architecture Scroll** (`modus-architecture-scroll.html`) — from [@website_tmplts](https://x.com/website_tmplts/status/2073512272366870741), showing the MODUS Extend architecture template with dark navy editorial layout, project cards, stats, services and CTA sections. Rebuilt as a sticky-scroll architecture portfolio pattern.
