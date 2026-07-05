@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Portal Glass Cube — VERTEX FX</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --font:'Archivo',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+  --ink:#07070b;
+  --panel:rgba(255,255,255,.08);
+  --line:rgba(255,255,255,.16);
+  --violet:#8c5cff;
+  --ember:#ff7a35;
+  --rose:#ff315f;
+  --mint:#78ffe5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{
+  font-family:var(--font);
+  background:
+    radial-gradient(circle at 18% 18%,rgba(140,92,255,.22),transparent 32%),
+    radial-gradient(circle at 76% 28%,rgba(255,122,53,.18),transparent 34%),
+    radial-gradient(circle at 50% 88%,rgba(120,255,229,.10),transparent 28%),
+    linear-gradient(135deg,#07070b 0%,#10101a 52%,#050509 100%);
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+#field{position:fixed;inset:0;width:100%;height:100%;display:block;opacity:.74}
+.noise{position:fixed;inset:0;pointer-events:none;opacity:.16;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
+.fx-badge,.fx-hub{position:fixed;top:18px;z-index:30;background:rgba(10,10,16,.62);border:1px solid var(--line);backdrop-filter:blur(18px);border-radius:999px;padding:9px 15px;font-size:.66rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+.fx-badge{left:18px;display:flex;align-items:center;gap:9px}.fx-badge:before{content:'';width:8px;height:8px;border-radius:50%;background:var(--violet);box-shadow:0 0 18px var(--violet)}.fx-hub{right:18px;color:rgba(255,255,255,.72);transition:.25s}.fx-hub:hover{color:#fff;border-color:rgba(255,255,255,.45)}
+.nav{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:22px;width:min(1120px,calc(100% - 36px));margin:78px auto 0;padding:13px 16px;border:1px solid var(--line);background:rgba(255,255,255,.055);backdrop-filter:blur(24px);border-radius:26px;box-shadow:0 18px 80px rgba(0,0,0,.28)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.03em}.logo i{width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,var(--violet),var(--ember));box-shadow:inset 0 1px rgba(255,255,255,.55),0 0 28px rgba(140,92,255,.45);transform:rotate(14deg)}
+.links{display:flex;gap:24px;color:rgba(255,255,255,.62);font-size:.78rem;font-weight:700}.links span{white-space:nowrap}.login{display:flex;align-items:center;gap:12px;font-size:.78rem;font-weight:800}.login b{background:#fff;color:#08080d;border-radius:999px;padding:9px 14px}
+.hero{position:relative;z-index:4;width:min(1120px,calc(100% - 36px));height:calc(100vh - 150px);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,520px);align-items:center;gap:clamp(22px,5vw,66px)}
+.copy{padding-bottom:6vh}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#f4d7ff;background:rgba(140,92,255,.14);border:1px solid rgba(140,92,255,.35);border-radius:999px;padding:8px 12px;font-size:.68rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase}.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 18px var(--mint)}
+h1{margin-top:22px;font-size:clamp(3.2rem,8vw,7.6rem);line-height:.82;letter-spacing:-.085em;max-width:760px;text-wrap:balance}.grad{background:linear-gradient(105deg,#fff 10%,#c9bbff 48%,#ffaf79 86%);-webkit-background-clip:text;background-clip:text;color:transparent}
+p{max-width:560px;margin-top:22px;color:rgba(255,255,255,.66);font-size:clamp(1rem,1.6vw,1.18rem);line-height:1.65}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.cta a{border-radius:999px;padding:14px 18px;font-size:.8rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.cta .primary{background:linear-gradient(135deg,var(--violet),var(--rose));box-shadow:0 18px 44px rgba(140,92,255,.32)}.cta .ghost{border:1px solid var(--line);background:rgba(255,255,255,.06)}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:32px;max-width:600px}.metric{border:1px solid var(--line);background:rgba(255,255,255,.055);border-radius:20px;padding:15px}.metric strong{display:block;font-size:1.15rem}.metric span{display:block;margin-top:4px;color:rgba(255,255,255,.54);font-size:.68rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.stage{position:relative;display:grid;place-items:center;min-height:560px;perspective:1100px}.cube-wrap{position:relative;width:min(76vw,430px);aspect-ratio:1;display:grid;place-items:center;transform-style:preserve-3d;animation:float 5.6s ease-in-out infinite}.cube{position:absolute;inset:12%;transform-style:preserve-3d;transform:rotateX(58deg) rotateZ(45deg);filter:drop-shadow(0 40px 80px rgba(0,0,0,.38))}.face{position:absolute;inset:0;border:1px solid rgba(255,255,255,.28);background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.035));backdrop-filter:blur(12px);box-shadow:inset 0 1px rgba(255,255,255,.55),inset 0 -1px rgba(255,255,255,.08),0 0 34px rgba(140,92,255,.10)}.front{transform:translateZ(95px)}.back{transform:rotateY(180deg) translateZ(95px)}.right{transform:rotateY(90deg) translateZ(95px)}.left{transform:rotateY(-90deg) translateZ(95px)}.top{transform:rotateX(90deg) translateZ(95px)}.bottom{transform:rotateX(-90deg) translateZ(95px)}
+.portal{position:relative;width:74%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,rgba(255,255,255,.12),rgba(255,255,255,.04) 45%,transparent 68%);box-shadow:0 0 80px rgba(140,92,255,.38),0 0 140px rgba(255,122,53,.17)}#core{width:100%;height:100%;display:block;filter:saturate(1.15) contrast(1.08)}.ring{position:absolute;inset:4%;border:1px solid rgba(255,255,255,.18);border-radius:50%;animation:spin 13s linear infinite}.ring:before,.ring:after{content:'';position:absolute;width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 22px var(--mint)}.ring:before{left:12%;top:12%}.ring:after{right:9%;bottom:18%;background:var(--ember);box-shadow:0 0 22px var(--ember)}
+.orbit{position:absolute;inset:0;border-radius:38px;border:1px solid rgba(255,255,255,.10);transform:rotate(-14deg);animation:pulse 4s ease-in-out infinite}.chip{position:absolute;z-index:6;border:1px solid var(--line);background:rgba(8,8,13,.68);backdrop-filter:blur(14px);border-radius:18px;padding:12px 14px;font-size:.68rem;font-weight:900;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.72);box-shadow:0 20px 60px rgba(0,0,0,.28)}.chip.one{left:0;top:20%}.chip.two{right:0;bottom:18%}.chip b{color:#fff}.hint{position:fixed;z-index:20;left:0;right:0;bottom:20px;text-align:center;color:rgba(255,255,255,.48);font-size:.66rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;pointer-events:none}
+@keyframes float{0%,100%{transform:translateY(0) rotateX(0) rotateY(0)}50%{transform:translateY(-18px) rotateX(3deg) rotateY(-4deg)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{0%,100%{opacity:.34;transform:rotate(-14deg) scale(.95)}50%{opacity:.9;transform:rotate(-10deg) scale(1.03)}}
+@media(max-width:860px){html,body{overflow:auto}.nav{margin-top:72px}.links{display:none}.hero{height:auto;min-height:calc(100vh - 130px);grid-template-columns:1fr;padding:38px 0 86px}.copy{padding-bottom:0;order:2}.stage{order:1;min-height:390px}.cube-wrap{width:min(82vw,350px)}.chip{display:none}.metrics{grid-template-columns:1fr 1fr}.metric:last-child{grid-column:1/-1}.fx-badge{left:12px}.fx-hub{right:12px}}
+</style>
+</head>
+<body>
+<canvas id="field"></canvas><div class="noise"></div>
+<div class="fx-badge">AI Portal Glass Cube</div><a class="fx-hub" href="index.html">↩ All demos</a>
+<nav class="nav"><div class="logo"><i></i>NOVA//FLOW</div><div class="links"><span>Platform</span><span>Systems</span><span>Workflow</span><span>Pricing</span></div><div class="login"><span>Log in</span><b>Launch</b></div></nav>
+<main class="hero">
+  <section class="copy">
+    <div class="eyebrow"><i></i>Created 2026-07-05 · X-inspired rebuild</div>
+    <h1>AI strategy inside a <span class="grad">living glass portal.</span></h1>
+    <p>A reusable premium SaaS hero: transparent cube, morphing organic AI core, floating status chips and clean conversion copy. Rebuilt from scratch without the source brand, logo, assets or prompt.</p>
+    <div class="cta"><a class="primary" href="#">Start system →</a><a class="ghost" href="#">View motion spec</a></div>
+    <div class="metrics"><div class="metric"><strong>3.7×</strong><span>flow lift</span></div><div class="metric"><strong>24ms</strong><span>response cue</span></div><div class="metric"><strong>∞</strong><span>live loop</span></div></div>
+  </section>
+  <section class="stage" aria-label="Animated glass cube AI portal">
+    <div class="orbit"></div>
+    <div class="chip one">Model sync <b>98%</b></div><div class="chip two">Growth path <b>live</b></div>
+    <div class="cube-wrap">
+      <div class="cube"><div class="face front"></div><div class="face back"></div><div class="face right"></div><div class="face left"></div><div class="face top"></div><div class="face bottom"></div></div>
+      <div class="portal"><canvas id="core"></canvas><div class="ring"></div></div>
+    </div>
+  </section>
+</main>
+<div class="hint">Move pointer · glass core reacts</div>
+<script>
+(function(){
+  const field=document.getElementById('field'),fctx=field.getContext('2d');
+  const core=document.getElementById('core'),ctx=core.getContext('2d');
+  let W=0,H=0,D=1,t=0,mouse={x:.52,y:.46};
+  const pts=Array.from({length:90},(_,i)=>({a:i*Math.PI*2/90,r:.18+Math.random()*.33,z:Math.random()*Math.PI*2,s:.6+Math.random()*1.6}));
+  const sparks=Array.from({length:95},()=>({x:Math.random(),y:Math.random(),z:Math.random(),v:.18+Math.random()*.72}));
+  function resize(){D=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;field.width=W*D;field.height=H*D;field.style.width=W+'px';field.style.height=H+'px';fctx.setTransform(D,0,0,D,0,0);const r=core.getBoundingClientRect();core.width=r.width*D;core.height=r.height*D;ctx.setTransform(D,0,0,D,0,0)}
+  function bg(){fctx.clearRect(0,0,W,H);for(const s of sparks){s.y+=s.v*.0009;if(s.y>1.05){s.y=-.05;s.x=Math.random()}const dx=(s.x-.5)*W,dy=(s.y-.5)*H;const a=.15+s.z*.4;fctx.fillStyle=`rgba(${150+s.z*80},${110+s.z*70},255,${a})`;fctx.beginPath();fctx.arc(W/2+dx+Math.sin(t*.001+s.z*8)*16,H/2+dy,1.1+s.z*1.8,0,7);fctx.fill()}}
+  function drawCore(){const w=core.clientWidth,h=core.clientHeight,cx=w/2,cy=h/2,R=Math.min(w,h)*.34;ctx.clearRect(0,0,w,h);let grad=ctx.createRadialGradient(cx,cy,4,cx,cy,R*1.55);grad.addColorStop(0,'rgba(255,240,220,.95)');grad.addColorStop(.25,'rgba(255,122,53,.78)');grad.addColorStop(.58,'rgba(150,65,255,.66)');grad.addColorStop(1,'rgba(255,49,95,0)');ctx.fillStyle=grad;ctx.beginPath();for(let i=0;i<pts.length;i++){const p=pts[i];const wob=Math.sin(t*.002*p.s+p.a*3)+Math.cos(t*.0015+p.z*2);const pull=1+(mouse.x-.5)*.12*Math.cos(p.a)+(mouse.y-.5)*.12*Math.sin(p.a);const rr=R*(.86+p.r*.46+wob*.08)*pull;const x=cx+Math.cos(p.a+t*.00025)*rr;const y=cy+Math.sin(p.a+t*.00032)*rr*.82;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)}ctx.closePath();ctx.shadowColor='rgba(255,100,70,.75)';ctx.shadowBlur=34;ctx.fill();ctx.shadowBlur=0;ctx.globalCompositeOperation='screen';for(let k=0;k<28;k++){const a=k*.72+t*.0012;const rr=R*(.18+(k%9)*.075+Math.sin(t*.002+k)*.05);ctx.strokeStyle=k%2?'rgba(120,255,229,.28)':'rgba(255,205,120,.24)';ctx.lineWidth=1.2;ctx.beginPath();ctx.arc(cx+Math.cos(a)*rr*.12,cy+Math.sin(a)*rr*.12,rr,0,Math.PI*1.45);ctx.stroke()}ctx.globalCompositeOperation='source-over'}
+  function tick(ms){t=ms;bg();drawCore();requestAnimationFrame(tick)}
+  addEventListener('pointermove',e=>{mouse.x=e.clientX/innerWidth;mouse.y=e.clientY/innerHeight});addEventListener('resize',resize);resize();requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>

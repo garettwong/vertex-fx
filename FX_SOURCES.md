@@ -109,3 +109,9 @@ From Garett's recent X posts asking to save/rebuild strong website effects into 
 - **Marble Ocean Play** (`marble-ocean-play.html`) — from [@aurelien_gz](https://x.com/aurelien_gz/status/2073069364572528842), showing the Marble landing page with whimsical ocean, cursor water ripples, splashes, sparkles and hidden easter eggs. Rebuilt as an illustrated ocean hero with canvas ripples and playful micro-interactions.
 - **Clixr Neon SaaS** (`clixr-neon-saas.html`) — from [@Website_tmplts](https://x.com/Website_tmplts/status/2073029187099582729), showing a dark Webflow SaaS/product template with neon portrait cards, bold typography, pricing and rounded sections. Rebuilt as a reusable dark SaaS landing-page motion pattern.
 - **MODUS Architecture Scroll** (`modus-architecture-scroll.html`) — from [@website_tmplts](https://x.com/website_tmplts/status/2073512272366870741), showing the MODUS Extend architecture template with dark navy editorial layout, project cards, stats, services and CTA sections. Rebuilt as a sticky-scroll architecture portfolio pattern.
+
+## Demo 35 — AI Portal Glass Cube
+
+Created on **2026-07-05** from [@alexroyhe](https://x.com/alexroyhe/status/2073648320749486347), showing an AI/SaaS landing page with a transparent glass cube and a morphing organic 3D AI object inside the hero.
+
+Rebuilt from scratch as **AI Portal Glass Cube** (`ai-portal-glass-cube.html`) — own fictional brand, copy, layout, canvas animation and CSS cube; no source brand, logo, assets, prompt library content or code reused. The reusable pattern catalogued here is a premium SaaS hero with glassmorphism cube framing, reactive organic AI core, glow particles, status chips, metrics and conversion CTAs.
