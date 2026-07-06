@@ -127,3 +127,9 @@ Rebuilt from scratch as **Pixel Mosaic Transition** (`pixel-mosaic-transition.ht
 Created on **2026-07-06** from [@lokidotdev](https://x.com/lokidotdev/status/2073872665140691345), surfaced by the X FX Scout as a high-value WebGL portfolio/cylinder reference: a landing-page surface bent into an interactive curved gallery with shader-like reflections.
 
 Rebuilt from scratch as **Curved Portfolio Cylinder** (`curved-portfolio-cylinder.html`) — own fictional case-study cards, gradient art, CSS 3D cylinder math, pointer controls and copy; no source images, screenshots, client artwork, code, logos, videos, shader files or template assets reused. The reusable pattern catalogued here is a portfolio/agency hero where flat project cards orbit as a reflective cylindrical wall, giving a standard work grid a tactile immersive navigation layer.
+
+## Demo 38 — Cinematic Strip Gallery
+
+Created on **2026-07-06** from [@mannatgupta146](https://x.com/mannatgupta146/status/2073744847627002240), surfaced by the X FX Scout as a high-value GSAP-style portfolio/gallery reference: a dark horizontal project gallery with dynamic counters, animated strips and cinematic block transitions.
+
+Rebuilt from scratch as **Cinematic Strip Gallery** (`cinematic-strip-gallery.html`) — own fictional project names, procedural CSS art, original interaction code, swipe/tap controls and responsive layout; no source screenshots, images, videos, portfolio assets, code, logos, GSAP snippets or client-specific visuals reused. The reusable pattern catalogued here is a case-study carousel that uses staggered black strip wipes to make project navigation feel like an edited film trailer.
