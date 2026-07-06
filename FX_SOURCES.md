@@ -157,3 +157,9 @@ Rebuilt from scratch as **Typographic Market Collage** (`typographic-market-coll
 Created on **2026-07-07** from [@denis_uixi](https://x.com/denis_uixi/status/2074196793710043148), surfaced by the X FX Scout as a high-value infrastructure landing-page reference: a premium liquid/water ring hero for an edge-AI colocation site.
 
 Rebuilt from scratch as **Liquid Cooling Ring** (`liquid-cooling-ring.html`) — own fictional brand/copy ("Edge Flow"), procedural canvas droplets, caustic glows, responsive conversion layout and mobile QA marker; no source images, screenshots, videos, Webflow/Cinema 4D files, code, logo, font, client copy or proprietary data-center visuals reused. The reusable pattern catalogued here is a liquid-cooling/data-center hero where an abstract water torus makes cooling capacity feel tangible without requiring hosted video or licensed 3D assets.
+
+## Demo 43 — Taste Deck Showcase
+
+Created on **2026-07-07** from [@vincemask](https://x.com/vincemask/status/2074154219922415700), after re-checking the attached video as a polished Taste Skill marketing-site tour rather than merely a workflow note. The source video shows a warm/light product page with floating interface mockups, a terminal install box, design-system controls, changelog cards, docs/GitHub sections and smooth presentation motion.
+
+Rebuilt from scratch as **Taste Deck Showcase** (`taste-deck-showcase.html`) — own fictional brand/copy ("Aesthetic Ops" / "aesthetic-deck"), generated UI shapes, CSS 3D floating stack, terminal CTA, design dials, feature cards and mobile-safe stacked layout; no Taste Skill logo, source screenshots, README text, website assets, repo files, code, fonts, brand copy or proprietary visuals reused. The reusable pattern catalogued here is a premium AI-agent/product landing composition where the visual effect is disciplined taste: floating mockups + command card + design controls + changelog rhythm, not a fake workflow bookmark.
