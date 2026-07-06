@@ -157,11 +157,3 @@ Rebuilt from scratch as **Typographic Market Collage** (`typographic-market-coll
 Created on **2026-07-07** from [@denis_uixi](https://x.com/denis_uixi/status/2074196793710043148), surfaced by the X FX Scout as a high-value infrastructure landing-page reference: a premium liquid/water ring hero for an edge-AI colocation site.
 
 Rebuilt from scratch as **Liquid Cooling Ring** (`liquid-cooling-ring.html`) — own fictional brand/copy ("Edge Flow"), procedural canvas droplets, caustic glows, responsive conversion layout and mobile QA marker; no source images, screenshots, videos, Webflow/Cinema 4D files, code, logo, font, client copy or proprietary data-center visuals reused. The reusable pattern catalogued here is a liquid-cooling/data-center hero where an abstract water torus makes cooling capacity feel tangible without requiring hosted video or licensed 3D assets.
-
-## Workflow reference — Taste Skill / Anti-Slop Frontend Rules
-
-Saved on **2026-07-07** from [@vincemask](https://x.com/vincemask/status/2074154219922415700), pointing to [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill): an MIT-licensed "anti-slop frontend" skill set for AI coding agents.
-
-This is **not a visual FX demo yet**. It is saved as a workflow/reference for future `vertex-fx` and client-site builds: avoid generic AI UI defaults, do a one-line **Design Read** before coding, and steer output with the repo's three dials — `DESIGN_VARIANCE`, `MOTION_INTENSITY`, and `VISUAL_DENSITY`.
-
-Safety note: saved as reference only; not installed or executed. Lightweight intake found MIT license, Markdown skill files, and a `skill.sh` helper plus repo scripts, so installation/execution still needs a separate repo scan before use.
