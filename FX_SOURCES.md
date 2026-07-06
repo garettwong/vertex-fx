@@ -139,3 +139,9 @@ Rebuilt from scratch as **Cinematic Strip Gallery** (`cinematic-strip-gallery.ht
 Created on **2026-07-06** from [@MengTo](https://x.com/MengTo/status/2073741260909900089), surfaced by the X FX Scout as a high-value cinematic Three.js/shader landing-page reference: a scrollable sakura-river experience with water ripples, drifting petals and day-to-night mood shifts.
 
 Rebuilt from scratch as **River Petal Drift** (`river-petal-drift.html`) — own fictional copy, procedural canvas river, original petal/ripple animation, generated colors and responsive layout; no source screenshots, images, video, shader code, prompt text, assets, logos or client-specific visuals reused. The reusable pattern catalogued here is a scroll-linked atmospheric hero where one canvas scene changes palette and storytelling chapter while pointer/touch input creates tactile water ripples.
+
+## Demo 40 — Agency Stepper Scroll
+
+Created on **2026-07-07** from [@Shakib2O1](https://x.com/Shakib2O1/status/2073355636482453735), surfaced by the X FX Scout as a high-value agency/portfolio landing-page reference: a grid-based minimalist site where scroll-driven section numbers, bold typography, device-like service cards and project-gallery motion make a standard creative agency page feel deliberately sequenced.
+
+Rebuilt from scratch as **Agency Stepper Scroll** (`agency-stepper-scroll.html`) — own fictional brand ("ARCLINE"), copy, CSS/JS interaction, device mockups and generated project chips; no source screenshots, images, videos, code, logos, template files, fonts or client-specific visuals reused. The reusable pattern catalogued here is an IntersectionObserver-driven landing page where each scroll chapter owns the hero stage state: live index, copy, palette, progress bar and project rail all update together, with explicit 390px mobile guardrails.
