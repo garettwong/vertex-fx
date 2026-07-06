@@ -151,3 +151,11 @@ Rebuilt from scratch as **Agency Stepper Scroll** (`agency-stepper-scroll.html`)
 Created on **2026-07-07** from [@ripplix_](https://x.com/ripplix_/status/2072138379345477806), surfaced by the X FX Scout as a high-value editorial landing-page reference: a clean hero where oversized typography is interleaved with small animated image/data windows, ticker-like metrics and business-context collage motion.
 
 Rebuilt from scratch as **Typographic Market Collage** (`typographic-market-collage.html`) — own fictional brand ("CIVIC SIGNAL"), copy, CSS-generated media windows, live metric cards and ticker bars; no source tagline, screenshots, photos, videos, logos, code, fonts, template files, financial-brand assets or proprietary visuals reused. The reusable pattern catalogued here is a B2B/finance/research hero where abstract evidence appears inside and around the headline, giving a static value proposition the feel of a living data montage while remaining asset-free and mobile-safe.
+
+## Workflow reference — Taste Skill / Anti-Slop Frontend Rules
+
+Saved on **2026-07-07** from [@vincemask](https://x.com/vincemask/status/2074154219922415700), pointing to [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill): an MIT-licensed "anti-slop frontend" skill set for AI coding agents.
+
+This is **not a visual FX demo yet**. It is saved as a workflow/reference for future `vertex-fx` and client-site builds: avoid generic AI UI defaults, do a one-line **Design Read** before coding, and steer output with the repo's three dials — `DESIGN_VARIANCE`, `MOTION_INTENSITY`, and `VISUAL_DENSITY`.
+
+Safety note: saved as reference only; not installed or executed. Lightweight intake found MIT license, Markdown skill files, and a `skill.sh` helper plus repo scripts, so installation/execution still needs a separate repo scan before use.
