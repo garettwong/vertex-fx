@@ -133,3 +133,9 @@ Rebuilt from scratch as **Curved Portfolio Cylinder** (`curved-portfolio-cylinde
 Created on **2026-07-06** from [@mannatgupta146](https://x.com/mannatgupta146/status/2073744847627002240), surfaced by the X FX Scout as a high-value GSAP-style portfolio/gallery reference: a dark horizontal project gallery with dynamic counters, animated strips and cinematic block transitions.
 
 Rebuilt from scratch as **Cinematic Strip Gallery** (`cinematic-strip-gallery.html`) — own fictional project names, procedural CSS art, original interaction code, swipe/tap controls and responsive layout; no source screenshots, images, videos, portfolio assets, code, logos, GSAP snippets or client-specific visuals reused. The reusable pattern catalogued here is a case-study carousel that uses staggered black strip wipes to make project navigation feel like an edited film trailer.
+
+## Demo 39 — River Petal Drift
+
+Created on **2026-07-06** from [@MengTo](https://x.com/MengTo/status/2073741260909900089), surfaced by the X FX Scout as a high-value cinematic Three.js/shader landing-page reference: a scrollable sakura-river experience with water ripples, drifting petals and day-to-night mood shifts.
+
+Rebuilt from scratch as **River Petal Drift** (`river-petal-drift.html`) — own fictional copy, procedural canvas river, original petal/ripple animation, generated colors and responsive layout; no source screenshots, images, video, shader code, prompt text, assets, logos or client-specific visuals reused. The reusable pattern catalogued here is a scroll-linked atmospheric hero where one canvas scene changes palette and storytelling chapter while pointer/touch input creates tactile water ripples.
