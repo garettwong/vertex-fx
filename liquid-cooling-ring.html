@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liquid Cooling Ring — VERTEX FX</title>
+<style>
+:root{
+  --ink:#050814;
+  --panel:#09111f;
+  --panel2:#0c1828;
+  --cyan:#65f7ff;
+  --aqua:#18d5c7;
+  --lime:#b8ff7d;
+  --line:rgba(255,255,255,.13);
+  --text:#f6fbff;
+  --muted:#94a9bd;
+  --hot:#e2231a;
+  --qa-marker:liquid-cooling-ring-mobile-qa-2026-07-07;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--ink)}
+body{min-height:100vh;background:
+  radial-gradient(circle at 18% 12%,rgba(24,213,199,.16),transparent 34rem),
+  radial-gradient(circle at 82% 4%,rgba(101,247,255,.13),transparent 29rem),
+  linear-gradient(180deg,#050814 0%,#06101b 48%,#03060c 100%);
+  color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.demo-wrap{width:min(1180px,100%);margin:0 auto;padding:24px clamp(16px,4vw,44px) 80px;position:relative}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:8px 0 34px;position:relative;z-index:5}
+.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;color:#dffcff}
+.brand i{width:10px;height:10px;border-radius:999px;background:var(--cyan);box-shadow:0 0 22px rgba(101,247,255,.85)}
+.back-link{position:fixed;right:18px;top:18px;z-index:20;border:1px solid var(--line);background:rgba(4,9,18,.78);backdrop-filter:blur(18px);border-radius:999px;padding:10px 14px;color:#e5fbff;font-size:.68rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 12px 34px rgba(0,0,0,.24)}
+.back-link:hover{border-color:rgba(101,247,255,.7);transform:translateY(-1px)}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(101,247,255,.24);background:rgba(101,247,255,.08);color:#bafcff;border-radius:999px;padding:8px 12px;font-size:.68rem;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
+.pill .pulse{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 20px rgba(184,255,125,.82);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.55;transform:scale(.8)}50%{opacity:1;transform:scale(1.18)}}
+.hero{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(320px,.98fr);gap:clamp(28px,5vw,70px);align-items:center;min-height:calc(100svh - 120px)}
+.copy{position:relative;z-index:3;max-width:640px}.eyebrow{margin-bottom:20px}.copy h1{font-size:clamp(3rem,8.4vw,7.6rem);line-height:.86;letter-spacing:-.08em;font-weight:930;text-transform:uppercase}.copy h1 span{display:block;background:linear-gradient(92deg,#fff 0%,#8ffcff 46%,#c7ffe1 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 42px rgba(101,247,255,.13)}
+.copy p{margin-top:24px;max-width:540px;color:#9fb5c8;font-size:clamp(1rem,2vw,1.18rem)}
+.ctas{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:30px}.cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;padding:0 18px;font-size:.75rem;font-weight:950;letter-spacing:.12em;text-transform:uppercase;transition:.26s}.cta.primary{background:#f5ffff;color:#061018;box-shadow:0 18px 48px rgba(101,247,255,.18)}.cta.ghost{border:1px solid var(--line);color:#e8fbff;background:rgba(255,255,255,.035)}.cta:hover{transform:translateY(-2px)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:32px;max-width:560px}.stat{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.028));border-radius:18px;padding:14px 14px 12px;min-width:0}.stat strong{display:block;color:#f6ffff;font-size:1.05rem;letter-spacing:-.03em}.stat span{display:block;color:#7692a8;font-size:.64rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase;margin-top:3px}
+.visual{position:relative;display:flex;justify-content:center;align-items:center;min-width:0}.ring-stage{width:min(560px,100%);aspect-ratio:1/1;position:relative;border-radius:40px;overflow:hidden;border:1px solid rgba(101,247,255,.18);background:
+  linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.018)),
+  radial-gradient(circle at 50% 47%,rgba(101,247,255,.18),transparent 33%),
+  radial-gradient(circle at 52% 52%,#071526 0%,#050814 64%,#03060c 100%);
+  box-shadow:inset 0 0 70px rgba(101,247,255,.08),0 34px 110px rgba(0,0,0,.48)}
+.ring-stage::before{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px),
+  linear-gradient(0deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(circle at 50% 50%,#000 0 38%,transparent 70%);opacity:.4}
+.ring-stage::after{content:"";position:absolute;inset:10%;border-radius:50%;background:radial-gradient(circle,rgba(101,247,255,.12),transparent 46%);filter:blur(18px);opacity:.75;animation:breath 4.6s ease-in-out infinite}
+@keyframes breath{0%,100%{transform:scale(.94);opacity:.56}50%{transform:scale(1.04);opacity:.95}}
+#waterRing{position:absolute;inset:0;width:100%;height:100%;z-index:1}.core-card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:min(58%,310px);aspect-ratio:1;border-radius:32px;border:1px solid rgba(255,255,255,.16);background:linear-gradient(180deg,rgba(7,18,31,.76),rgba(5,8,20,.5));backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px;box-shadow:inset 0 1px rgba(255,255,255,.16),0 28px 80px rgba(0,0,0,.3)}
+.core-card b{font-size:clamp(1.3rem,4vw,2.5rem);line-height:.9;letter-spacing:-.08em;text-transform:uppercase}.core-card span{margin-top:12px;color:#96e9ef;font-size:.62rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.core-card em{font-style:normal;color:#b8ff7d}.orbit-label{position:absolute;z-index:3;border:1px solid rgba(255,255,255,.16);background:rgba(4,9,18,.64);backdrop-filter:blur(12px);border-radius:999px;padding:9px 12px;color:#d6fbff;font-size:.62rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 12px 30px rgba(0,0,0,.28)}.orbit-label.one{left:5%;top:15%}.orbit-label.two{right:6%;bottom:18%}.orbit-label.three{left:9%;bottom:9%;color:#e7ffd0}
+.scroll-panel{margin-top:70px;display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;align-items:start}.panel{border:1px solid var(--line);border-radius:30px;background:rgba(255,255,255,.048);padding:28px;box-shadow:0 24px 80px rgba(0,0,0,.2)}.panel h2{font-size:clamp(1.7rem,4vw,3rem);line-height:.96;letter-spacing:-.05em}.panel p{margin-top:14px;color:#95aabd}.feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.feature{min-height:170px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(180deg,rgba(101,247,255,.075),rgba(255,255,255,.025));border-radius:24px;padding:18px;position:relative;overflow:hidden}.feature::after{content:"";position:absolute;right:-30px;top:-30px;width:86px;height:86px;border-radius:50%;background:rgba(101,247,255,.13);filter:blur(4px)}.feature b{display:block;font-size:1rem;letter-spacing:-.02em}.feature span{display:block;margin-top:10px;color:#8ba1b7;font-size:.86rem}.num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:rgba(101,247,255,.14);color:#bbfbff;font-weight:950;margin-bottom:18px}
+.safe-note{margin-top:18px;color:#7890a6;font-size:.82rem}.mobile-qa-marker{height:1px;width:1px;overflow:hidden;opacity:.01;color:transparent;pointer-events:none}.mobile-qa-marker::before{content:"liquid-cooling-ring-mobile-qa-2026-07-07"}
+@media (max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}.visual{order:-1}.ring-stage{width:min(520px,100%);border-radius:30px}.scroll-panel{grid-template-columns:1fr}.feature-grid{grid-template-columns:1fr}.copy h1{font-size:clamp(2.8rem,14vw,5.2rem)}}
+@media (max-width:520px){.demo-wrap{padding:18px 14px 62px}.topbar{padding-right:100px;padding-bottom:20px}.back-link{right:10px;top:10px;padding:9px 11px;font-size:.58rem}.hero{gap:22px}.ring-stage{border-radius:24px}.core-card{width:62%;border-radius:24px;padding:18px}.orbit-label{font-size:.5rem;padding:7px 9px}.orbit-label.one{left:4%;top:9%}.orbit-label.two{right:4%;bottom:12%}.orbit-label.three{left:6%;bottom:5%}.stats{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:1/-1}.copy p{font-size:.98rem}.ctas{align-items:stretch}.cta{width:100%}.panel{padding:22px;border-radius:24px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="back-link" href="index.html">All demos</a>
+<div class="demo-wrap">
+  <header class="topbar">
+    <div class="brand"><i></i> VERTEX FX</div>
+    <div class="pill"><span class="pulse"></span> procedural canvas</div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Liquid cooling ring hero effect">
+      <div class="copy">
+        <div class="eyebrow pill"><span class="pulse"></span> Mobile-safe hero pattern</div>
+        <h1>Liquid<br><span>Cooling Ring</span></h1>
+        <p>A premium infrastructure hero built from scratch: a mouse-reactive water torus, orbiting droplets, caustic glows and conversion copy that sells liquid-cooled capacity without relying on video, 3D assets, logos or source-site visuals.</p>
+        <div class="ctas">
+          <a class="cta primary" href="#anatomy">Study the effect</a>
+          <a class="cta ghost" href="index.html">Back to library</a>
+        </div>
+        <div class="stats" aria-label="Demo metrics">
+          <div class="stat"><strong>&lt;10k</strong><span>canvas points</span></div>
+          <div class="stat"><strong>390px</strong><span>QA target</span></div>
+          <div class="stat"><strong>0</strong><span>external assets</span></div>
+        </div>
+      </div>
+
+      <div class="visual">
+        <div class="ring-stage" data-mobile-qa="liquid-cooling-ring-mobile-qa-2026-07-07">
+          <canvas id="waterRing" aria-hidden="true"></canvas>
+          <div class="core-card">
+            <b>Edge<br>Flow</b>
+            <span><em>5–800kW</em> cooled racks</span>
+          </div>
+          <div class="orbit-label one">droplet orbit</div>
+          <div class="orbit-label two">caustic halo</div>
+          <div class="orbit-label three">mouse current</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scroll-panel" id="anatomy">
+      <div class="panel">
+        <h2>Why this belongs in the library</h2>
+        <p>The source idea is a high-end water-ring hero for AI infrastructure. This rebuild keeps the reusable pattern — liquid cooling made visible — while replacing the brand, copy and visuals with an original procedural system.</p>
+        <p class="safe-note">Non-infringing note: no source images, screenshots, video, Webflow/Cinema 4D files, logo, copy, code or client-specific graphics were used.</p>
+      </div>
+      <div class="feature-grid" aria-label="Effect ingredients">
+        <article class="feature"><span class="num">1</span><b>Elliptical torus illusion</b><span>Canvas droplets orbit an ellipse with depth-based size, alpha and streaking so a flat layer reads like a 3D water ring.</span></article>
+        <article class="feature"><span class="num">2</span><b>Pointer-driven flow</b><span>Mouse and touch tilt the current, bending the ring, nudging caustics and making the hero feel physically responsive.</span></article>
+        <article class="feature"><span class="num">3</span><b>Client-ready framing</b><span>Conversion badges, infrastructure metrics and CTA hierarchy make the effect useful for data-center, climate-tech and product demos.</span></article>
+      </div>
+    </section>
+  </main>
+  <div class="mobile-qa-marker" aria-hidden="true">liquid-cooling-ring-mobile-qa-2026-07-07</div>
+</div>
+
+<script>
+(function(){
+  const canvas=document.getElementById('waterRing');
+  const stage=canvas.closest('.ring-stage');
+  const ctx=canvas.getContext('2d');
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let w=0,h=0,dpr=1,t=0,last=0;
+  const mouse={x:0,y:0,tx:0,ty:0,active:false};
+  const drops=[];
+  function rand(a,b){return a+Math.random()*(b-a)}
+  function makeDrops(){drops.length=0;const count=reduce?120:310;for(let i=0;i<count;i++){drops.push({a:rand(0,Math.PI*2),lane:rand(-1,1),speed:rand(.18,.58),size:rand(.55,2.4),phase:rand(0,Math.PI*2),life:rand(.35,1),hue:rand(176,192)});}}
+  function resize(){const r=stage.getBoundingClientRect();dpr=Math.min(2,window.devicePixelRatio||1);w=Math.max(1,Math.floor(r.width*dpr));h=Math.max(1,Math.floor(r.height*dpr));canvas.width=w;canvas.height=h;canvas.style.width=r.width+'px';canvas.style.height=r.height+'px';}
+  function pointer(e){const r=stage.getBoundingClientRect();const p=e.touches?e.touches[0]:e;mouse.tx=((p.clientX-r.left)/r.width-.5)*2;mouse.ty=((p.clientY-r.top)/r.height-.5)*2;mouse.active=true;}
+  stage.addEventListener('mousemove',pointer,{passive:true});stage.addEventListener('touchmove',pointer,{passive:true});stage.addEventListener('mouseleave',()=>{mouse.active=false;mouse.tx=0;mouse.ty=0;},{passive:true});
+  window.addEventListener('resize',resize,{passive:true});resize();makeDrops();
+  function ellipsePoint(a,rx,ry,cx,cy,tilt,lane){const wob=Math.sin(a*3+t*1.25+lane*2)*7*dpr;return{x:cx+Math.cos(a)*rx+(mouse.x*26*dpr)+Math.sin(a+t*.7)*tilt+wob*lane,y:cy+Math.sin(a)*ry+(mouse.y*16*dpr)+Math.cos(a*2+t*.4)*5*dpr*lane,depth:(Math.sin(a)+1)/2};}
+  function drawRing(cx,cy,rx,ry){ctx.save();ctx.globalCompositeOperation='lighter';for(let k=0;k<5;k++){ctx.beginPath();ctx.ellipse(cx+mouse.x*10*dpr,cy+mouse.y*8*dpr,rx*(1+k*.022),ry*(1+k*.055),mouse.x*.04,0,Math.PI*2);ctx.strokeStyle=`rgba(${80+k*24},${220+k*6},255,${.045-k*.005})`;ctx.lineWidth=(14-k*2)*dpr;ctx.shadowBlur=(28+k*8)*dpr;ctx.shadowColor='rgba(101,247,255,.35)';ctx.stroke();}ctx.restore();}
+  function frame(now){const dt=Math.min(.04,(now-last)/1000||.016);last=now;t+=dt;mouse.x+=(mouse.tx-mouse.x)*.06;mouse.y+=(mouse.ty-mouse.y)*.06;ctx.clearRect(0,0,w,h);ctx.fillStyle='rgba(5,8,20,.18)';ctx.fillRect(0,0,w,h);const cx=w*.5,cy=h*.51,rx=w*.345,ry=h*.185;drawRing(cx,cy,rx,ry);
+    ctx.save();ctx.globalCompositeOperation='lighter';
+    for(const p of drops){p.a+=dt*p.speed*(mouse.active?1.28:1);const lane=p.lane;const q=ellipsePoint(p.a,rx*(1+lane*.06),ry*(1+lane*.12),cx,cy,mouse.x*22*dpr,lane);const q2=ellipsePoint(p.a-.028,rx*(1+lane*.06),ry*(1+lane*.12),cx,cy,mouse.x*22*dpr,lane);const alpha=(.18+q.depth*.72)*p.life;const sz=p.size*dpr*(.8+q.depth*1.85);ctx.beginPath();ctx.moveTo(q2.x,q2.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=`hsla(${p.hue},100%,${62+q.depth*22}%,${alpha*.45})`;ctx.lineWidth=Math.max(.6*dpr,sz*.75);ctx.shadowBlur=18*dpr*q.depth;ctx.shadowColor='rgba(101,247,255,.55)';ctx.stroke();ctx.beginPath();ctx.arc(q.x,q.y,sz,0,Math.PI*2);ctx.fillStyle=`hsla(${p.hue},100%,${72+q.depth*18}%,${alpha})`;ctx.fill();}
+    for(let i=0;i<9;i++){const a=t*.45+i*.698;const rrx=rx*(.78+Math.sin(t+i)*.045);const rry=ry*(.72+Math.cos(t*.8+i)*.04);const p=ellipsePoint(a,rrx,rry,cx,cy,mouse.x*18*dpr,0);ctx.beginPath();ctx.arc(p.x,p.y,(2.5+p.depth*4)*dpr,0,Math.PI*2);ctx.fillStyle=`rgba(216,255,244,${.12+p.depth*.2})`;ctx.fill();}
+    ctx.restore();ctx.save();ctx.globalCompositeOperation='screen';const grad=ctx.createRadialGradient(cx,cy,0,cx,cy,Math.max(rx,ry));grad.addColorStop(0,'rgba(184,255,125,.055)');grad.addColorStop(.44,'rgba(101,247,255,.05)');grad.addColorStop(1,'rgba(101,247,255,0)');ctx.fillStyle=grad;ctx.fillRect(0,0,w,h);ctx.restore();if(!reduce)requestAnimationFrame(frame);}requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
