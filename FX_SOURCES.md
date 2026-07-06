@@ -145,3 +145,9 @@ Rebuilt from scratch as **River Petal Drift** (`river-petal-drift.html`) — own
 Created on **2026-07-07** from [@Shakib2O1](https://x.com/Shakib2O1/status/2073355636482453735), surfaced by the X FX Scout as a high-value agency/portfolio landing-page reference: a grid-based minimalist site where scroll-driven section numbers, bold typography, device-like service cards and project-gallery motion make a standard creative agency page feel deliberately sequenced.
 
 Rebuilt from scratch as **Agency Stepper Scroll** (`agency-stepper-scroll.html`) — own fictional brand ("ARCLINE"), copy, CSS/JS interaction, device mockups and generated project chips; no source screenshots, images, videos, code, logos, template files, fonts or client-specific visuals reused. The reusable pattern catalogued here is an IntersectionObserver-driven landing page where each scroll chapter owns the hero stage state: live index, copy, palette, progress bar and project rail all update together, with explicit 390px mobile guardrails.
+
+## Demo 41 — Typographic Market Collage
+
+Created on **2026-07-07** from [@ripplix_](https://x.com/ripplix_/status/2072138379345477806), surfaced by the X FX Scout as a high-value editorial landing-page reference: a clean hero where oversized typography is interleaved with small animated image/data windows, ticker-like metrics and business-context collage motion.
+
+Rebuilt from scratch as **Typographic Market Collage** (`typographic-market-collage.html`) — own fictional brand ("CIVIC SIGNAL"), copy, CSS-generated media windows, live metric cards and ticker bars; no source tagline, screenshots, photos, videos, logos, code, fonts, template files, financial-brand assets or proprietary visuals reused. The reusable pattern catalogued here is a B2B/finance/research hero where abstract evidence appears inside and around the headline, giving a static value proposition the feel of a living data montage while remaining asset-free and mobile-safe.
