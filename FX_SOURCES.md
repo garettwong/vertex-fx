@@ -162,3 +162,27 @@ Rebuilt from scratch as **Liquid Cooling Ring** (`liquid-cooling-ring.html`) —
 Created on **2026-07-07** from [@vincemask](https://x.com/vincemask/status/2074154219922415700), after the full-motion audit corrected the earlier mistake. The post is primarily about **Taste Skill**: an anti-slop frontend framework for AI agents. The video shows the Taste Skill site and GitHub README over time: warm hero, install command, floating design examples, Works-with-agents section, design-system controls, changelog/docs, then README installation/skill tables. The important dynamic meaning is not just a pretty marketing page; it is **AI frontend taste control**: brief-read before code, anti-template rules, `DESIGN_VARIANCE`, `MOTION_INTENSITY`, and `VISUAL_DENSITY` dials.
 
 Rebuilt from scratch as **Anti-Slop Design Switch** (`anti-slop-design-switch.html`) — an interactive before/after comparator where generic AI-slop output is constrained by brief-reading, anti-template rules and design dials. The old `taste-deck-showcase.html` remains as a compatibility alias with the corrected content, but the hub now points to the corrected demo. No Taste Skill logo, screenshots, README text, repo files, code, fonts, brand copy or proprietary visuals reused.
+
+## Demo 44 — Spectral Curtain Hero
+
+Created on **2026-07-07** from [@ebaqdesign](https://x.com/ebaqdesign/status/2073784503856701601), surfaced by the X FX Scout as a concrete website/landing-page effect: an interactive hero shader responding to cursor movement in a Webflow/UseWonder-built AI site.
+
+Semantic gate verdict: **Build** — the source caption is about the visible hero shader, not a prompt pack, coding workflow, repo/tool install or design philosophy. Rebuilt from scratch as **Spectral Curtain Hero** (`spectral-curtain-hero.html`) — fictional SaaS copy, original canvas light-curtain renderer, responsive mock hero and mobile QA marker; no Webflow export, UseWonder shader code, source copy, healthcare/client video, logo, fonts, screenshots or proprietary assets reused. Score: **91**.
+
+## Demo 45 — Luminous Gallery Beams
+
+Created on **2026-07-07** from [@ankydesigns](https://x.com/ankydesigns/status/2072714610004971643), surfaced by the X FX Scout as a premium Framer art-gallery hero where an artwork is brought to life by glowing eyes, horizontal light beams and subtle particles.
+
+Semantic gate verdict: **Build** — the source post asks about turning a concrete animated artwork hero into a full landing page; it is not workflow/advice. Rebuilt from scratch as **Luminous Gallery Beams** (`luminous-gallery-beams.html`) — original abstract mask/portrait, CSS-generated ornaments, canvas beam particles and fictional gallery framing; no original portrait, cultural artwork, logo, screenshots, Framer file, source fonts, code or client copy reused. Score: **88**.
+
+## Demo 46 — Geometric Wipe Loader
+
+Created on **2026-07-07** from [@Solodesign30](https://x.com/Solodesign30/status/2072517269679194582), surfaced by the X FX Scout as a clean geometric Framer loading-screen/intro effect: black-and-white stair-step blocks wipe over centered type.
+
+Semantic gate verdict: **Build** — although the caption mentions Framer, the actual post is centered on a concrete visual loading-screen effect. Rebuilt from scratch as **Geometric Wipe Loader** (`geometric-wipe-loader.html`) — own copy, three original block choreography patterns, CSS timing and responsive controls; no Framer prototype/GIF/source, code, screenshots, fonts or brand assets reused. Score: **83**.
+
+## Semantic-gate rejects from this run
+
+- [@Kashberg_0](https://x.com/Kashberg_0/status/2072503933189398886) cursor-scrubbed dual-video fashion hero: visually strong, but the post is primarily a long prompt/implementation spec for Opus/React/Tailwind/video behavior. Routed as AI Command Brief / sanitized prompt-method candidate, not an FX-library build.
+- [@Oluwaphilemon1](https://x.com/Oluwaphilemon1/status/2072273887828590788) PrismFlow WebGL fluid background: visually attractive, but the caption is mainly about AI-prompt workflow/tool substitution and overlaps existing liquid/shader demos. Not built this run.
+- [@_saranshbarua](https://x.com/_saranshbarua/status/2071980015693255124) metallic blog fluid hero: beautiful, but the thread centers heavily on vibe-coding/AI iteration reflections and overlaps existing fluid/shader library entries. Kept as reference only.
