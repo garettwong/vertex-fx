@@ -202,6 +202,12 @@ Created on **2026-07-07** from the autonomous X FX Scout. All four passed the ma
 - **Pixel Grid Cursor Trail** (`pixel-grid-cursor-trail.html`) — from [@kon_coder](https://x.com/kon_coder/status/2072802497190666635)'s grid/pixel cursor reaction. Semantic gate verdict: **Build** — a concrete pointer-surface effect suitable for landing-page heroes. Rebuilt with original canvas grid math, interpolated trails, fictional copy and responsive controls; no source code or exact visual layout reused. Score: **85**.
 - **Reflector Shatter Hero** (`reflector-shatter-hero.html`) — from [@lokidotdev](https://x.com/lokidotdev/status/2072378388770373653)'s analysis/recreation target for a glossy Three.js portfolio landing page using reflector/shader material. Semantic gate verdict: **Build** — the reusable visual is a concrete portfolio hero effect; rebuilt as CSS/JS acrylic panel, procedural gradients and generated shatter fragments without photos, MeshReflectorMaterial code, CodeSandbox, portfolio assets or proprietary site visuals. Score: **88**.
 
+## Demo 52 — Butterfly Course Hero
+
+Created on **2026-07-07** from [@koteduc](https://x.com/koteduc/status/2074046692970914234), which shows a cheerful AI Image Generation course hero. Motion audit: the post meaning is “subtle background video + micro interactions”: bright rolling green hills, flower field, many depth-layered butterflies flapping across the screen, staggered headline entrance, tilted image cards, blue particle/orb sparkle around the first card, cursor hover lifts/tilts cards, and a bouncy CTA hover.
+
+Semantic gate verdict: **Build** — this is a concrete landing-page visual/interaction effect, not just a tool/workflow post. Rebuilt from scratch as **Butterfly Course Hero** (`butterfly-course-hero.html`) using procedural CSS landscape, canvas butterflies, CSS-generated card art, card hover math, and blue particle orbit; no Midjourney output, Framer file, source video frames, original card images, logo, copy, code, fonts or proprietary assets reused. Score: **90**.
+
 ## Additional semantic-gate rejects / non-builds from this scout pass
 
 - [@viktoroddy](https://x.com/viktoroddy/status/2072997643412979925) scroll-driven video/glass-panel hero: visually strong, but the post is primarily a premium AI website prompt/spec and prompt-library funnel. Routed as AI Command Brief / sanitized prompt-method candidate, not an FX-library build.
