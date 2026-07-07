@@ -181,6 +181,12 @@ Created on **2026-07-07** from [@Solodesign30](https://x.com/Solodesign30/status
 
 Semantic gate verdict: **Build** — although the caption mentions Framer, the actual post is centered on a concrete visual loading-screen effect. Rebuilt from scratch as **Geometric Wipe Loader** (`geometric-wipe-loader.html`) — own copy, three original block choreography patterns, CSS timing and responsive controls; no Framer prototype/GIF/source, code, screenshots, fonts or brand assets reused. Score: **83**.
 
+## Demo 47 — Marketplace Flow Diagram
+
+Created on **2026-07-07** from [@helloAlexBender](https://x.com/helloAlexBender/status/1959876863309881550), surfaced by the X FX Scout as a concrete 3D-style marketplace/trading landing-page explainer: Seller → Hub → Stores → Buyer with packages, glowing routes and payout coins.
+
+Semantic gate verdict: **Build** — the caption/context is about a visible landing-page hero animation / explainable flow diagram, not a workflow, prompt, repo/install, taste rule or design philosophy. Rebuilt from scratch as **Marketplace Flow Diagram** (`marketplace-flow-diagram.html`) — original SVG/isometric geometry, fictional marketplace copy, owned packet-path animation and responsive hero layout; no Cinema 4D/Redshift scene, source video frames, client/product name, copy, code, logos, screenshots, 3D assets or proprietary visuals reused. Score: **86**.
+
 ## Semantic-gate rejects from this run
 
 - [@Kashberg_0](https://x.com/Kashberg_0/status/2072503933189398886) cursor-scrubbed dual-video fashion hero: visually strong, but the post is primarily a long prompt/implementation spec for Opus/React/Tailwind/video behavior. Routed as AI Command Brief / sanitized prompt-method candidate, not an FX-library build.

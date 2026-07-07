@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketplace Flow Diagram — VERTEX FX</title>
+<style>
+:root{
+  --red:#E2231A;
+  --ink:#050505;
+  --panel:#101010;
+  --line:rgba(255,255,255,.13);
+  --muted:#9c9c9c;
+  --soft:#f4f0e8;
+  --violet:#8e5cff;
+  --gold:#ffd36e;
+  --cyan:#7ee8ff;
+  --green:#72ffb8;
+  --font:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--ink)}
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at 18% 12%,rgba(142,92,255,.24),transparent 27rem),
+    radial-gradient(circle at 84% 20%,rgba(226,35,26,.23),transparent 26rem),
+    linear-gradient(180deg,#070707,#030303 66%,#0b0606);
+  color:#fff;
+  font-family:var(--font);
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.fx-badge{position:fixed;top:18px;left:18px;z-index:30;background:rgba(17,17,17,.9);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:9px;backdrop-filter:blur(18px)}
+.fx-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 18px var(--red)}
+.fx-hub{position:fixed;top:18px;right:18px;z-index:30;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d6d6d6;background:rgba(17,17,17,.9);border:1px solid var(--line);border-radius:999px;padding:9px 14px;transition:.25s;backdrop-filter:blur(18px)}
+.fx-hub:hover{color:#fff;border-color:#fff;transform:translateY(-1px)}
+.fx-hint{position:fixed;bottom:20px;left:0;right:0;text-align:center;z-index:30;color:rgba(255,255,255,.62);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;pointer-events:none}
+.wrap{width:min(1180px,100%);margin:0 auto;padding:118px clamp(16px,4vw,52px) 88px}
+.hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center;gap:clamp(22px,4vw,60px);min-height:calc(100vh - 120px)}
+.kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.055);border-radius:999px;padding:9px 13px 9px 10px;color:#dadada;font-size:.74rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;backdrop-filter:blur(16px)}
+.kicker span{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:rgba(226,35,26,.18);color:#ffb8b0;box-shadow:0 0 22px rgba(226,35,26,.45)}
+h1{font-size:clamp(3.1rem,8vw,7.2rem);line-height:.88;letter-spacing:-.075em;font-weight:900;max-width:9ch;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--red);text-shadow:0 0 36px rgba(226,35,26,.4)}
+.lede{margin-top:24px;max-width:34rem;color:#c9c9c9;font-size:clamp(1rem,1.7vw,1.16rem);line-height:1.75}
+.actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{border:1px solid rgba(255,255,255,.2);background:#fff;color:#080808;border-radius:999px;padding:14px 20px;font-weight:900;letter-spacing:.03em;box-shadow:0 16px 34px rgba(0,0,0,.28);cursor:pointer;transition:.22s}.btn:hover{transform:translateY(-2px);box-shadow:0 20px 42px rgba(226,35,26,.22)}.btn.ghost{background:rgba(255,255,255,.04);color:#fff}.score-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:34px;max-width:34rem}.score{min-width:0;border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:20px;padding:15px}.score strong{display:block;font-size:1.38rem;line-height:1;font-weight:900}.score span{display:block;margin-top:6px;color:var(--muted);font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.stage-card{position:relative;width:100%;max-width:720px;margin:0 auto;border:1px solid rgba(255,255,255,.16);border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.045));box-shadow:0 30px 120px rgba(0,0,0,.62),inset 0 1px 0 rgba(255,255,255,.17);overflow:hidden;isolation:isolate;transform-style:preserve-3d}.stage-card:before{content:"";position:absolute;inset:-25%;background:radial-gradient(circle at var(--mx,50%) var(--my,45%),rgba(255,255,255,.22),transparent 26%),radial-gradient(circle at 50% 50%,rgba(226,35,26,.18),transparent 44%);opacity:.85;transition:.2s;z-index:-1}.stage-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 18px 0}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.14);background:rgba(5,5,5,.45);border-radius:999px;padding:9px 12px;color:#e7e7e7;font-size:.68rem;font-weight:850;letter-spacing:.11em;text-transform:uppercase}.pill i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 18px var(--green);display:block}.stage-meta{color:rgba(255,255,255,.56);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800}.diagram{width:100%;display:block;aspect-ratio:680/470;padding:4px 8px 6px}.diagram svg{display:block;width:100%;height:100%;overflow:visible}.pipe{fill:none;stroke-linecap:round;stroke-width:18;stroke:rgba(255,255,255,.1)}.pipe-glow{fill:none;stroke-linecap:round;stroke-width:5;stroke-dasharray:14 24;animation:dash 2.8s linear infinite;filter:url(#pipeGlow)}.pipe-glow.red{stroke:rgba(226,35,26,.85)}.pipe-glow.cyan{stroke:rgba(126,232,255,.85)}.pipe-glow.gold{stroke:rgba(255,211,110,.88)}@keyframes dash{to{stroke-dashoffset:-76}}.node-shadow{filter:url(#drop)}.cube-face{stroke:rgba(255,255,255,.24);stroke-width:1.2}.node-title{font-size:18px;font-weight:900;letter-spacing:.12em;fill:#fff}.node-sub{font-size:10px;font-weight:800;letter-spacing:.16em;fill:rgba(255,255,255,.62)}.hub-label{font-size:15px;font-weight:950;letter-spacing:.18em;fill:#fff}.packet{filter:url(#packetGlow)}.packet rect{rx:8;ry:8}.packet text{font-size:9px;font-weight:900;letter-spacing:.08em;fill:#080808;text-anchor:middle;dominant-baseline:middle}.spark{transform-origin:center;animation:pulse 1.6s ease-in-out infinite}.spark:nth-of-type(2){animation-delay:.35s}.spark:nth-of-type(3){animation-delay:.7s}@keyframes pulse{0%,100%{opacity:.25;transform:scale(.76)}50%{opacity:1;transform:scale(1.1)}}.rail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:0 18px 18px}.rail-card{border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.28);border-radius:18px;padding:12px;min-height:84px}.rail-card b{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em}.rail-card p{margin-top:7px;color:#aaa;font-size:.72rem;line-height:1.4}.story{margin-top:48px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.story-card{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:24px;padding:22px}.story-card .num{color:var(--red);font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.story-card h2{font-size:1.2rem;margin-top:8px;letter-spacing:-.02em}.story-card p{margin-top:9px;color:#aaa;line-height:1.55;font-size:.92rem}.mobile-marker{position:static;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;opacity:0}.safe-note{margin-top:22px;color:#7f7f7f;font-size:.78rem;line-height:1.55;max-width:54rem}.safe-note strong{color:#c9c9c9}@media (max-width:860px){.wrap{padding:96px 14px 74px}.hero{grid-template-columns:1fr;min-height:0}.fx-badge{left:10px;top:10px;padding:8px 12px;font-size:.61rem}.fx-hub{right:10px;top:10px;padding:8px 11px;font-size:.58rem}.fx-hint{display:none}h1{max-width:11ch;font-size:clamp(2.55rem,15vw,4.8rem)}.lede{font-size:1rem}.score-strip{grid-template-columns:1fr 1fr 1fr}.stage-card{border-radius:26px;max-width:calc(100vw - 28px)}.stage-top{padding:14px 14px 0}.pill{font-size:.58rem;padding:8px 10px}.stage-meta{font-size:.56rem}.diagram{padding:0 2px}.rail{grid-template-columns:1fr 1fr;padding:0 12px 14px}.rail-card{min-height:76px;padding:10px}.story{grid-template-columns:1fr}.btn{padding:13px 16px}.node-title{font-size:20px}.node-sub{font-size:12px}}@media (max-width:420px){.score strong{font-size:1.05rem}.score span{font-size:.58rem}.rail-card p{font-size:.68rem}.stage-card{max-width:100%}.node-title{font-size:22px}.node-sub{font-size:13px}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.packet{display:none}}
+</style>
+</head>
+<body data-mobile-qa="marketplace-flow-diagram-mobile-qa-2026-07-07">
+<div class="fx-badge"><span class="dot"></span>Interactive FX</div>
+<a class="fx-hub" href="index.html">↩ All demos</a>
+<div class="fx-hint">Move pointer across the diagram</div>
+<div class="wrap">
+  <section class="hero">
+    <div>
+      <div class="kicker"><span>↔</span>Marketplace Explainer Hero</div>
+      <h1>Trade flow in <em>motion</em></h1>
+      <p class="lede">A landing-page hero pattern for explaining complex marketplaces: packages, payouts and routing decisions travel through a glowing isometric network instead of hiding inside bullet points.</p>
+      <div class="actions">
+        <button class="btn" type="button" id="boostBtn">Boost packet speed</button>
+        <button class="btn ghost" type="button" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">See use cases</button>
+      </div>
+      <div class="score-strip" aria-label="Effect strengths">
+        <div class="score"><strong>04</strong><span>Flow states</span></div>
+        <div class="score"><strong>12s</strong><span>Loop rhythm</span></div>
+        <div class="score"><strong>0</strong><span>External assets</span></div>
+      </div>
+    </div>
+    <div class="stage-card" id="stage">
+      <div class="stage-top"><div class="pill"><i></i>Live routing graph</div><div class="stage-meta">Exchange Relay / demo</div></div>
+      <div class="diagram" aria-label="Animated marketplace flow diagram">
+        <svg id="flowSvg" viewBox="0 0 680 470" role="img" aria-labelledby="svgTitle svgDesc">
+          <title id="svgTitle">Animated seller to buyer marketplace flow</title>
+          <desc id="svgDesc">A hub receives a package from a seller, routes it to stores, and sends coins to a buyer.</desc>
+          <defs>
+            <filter id="drop" x="-35%" y="-35%" width="170%" height="170%"><feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#000" flood-opacity=".45"/></filter>
+            <filter id="pipeGlow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="packetGlow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#ffd36e" flood-opacity=".8"/><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#000" flood-opacity=".3"/></filter>
+            <linearGradient id="topSeller" x1="0" x2="1"><stop offset="0" stop-color="#ff7b67"/><stop offset="1" stop-color="#E2231A"/></linearGradient>
+            <linearGradient id="topHub" x1="0" x2="1"><stop offset="0" stop-color="#bca3ff"/><stop offset="1" stop-color="#6b35ff"/></linearGradient>
+            <linearGradient id="topStore" x1="0" x2="1"><stop offset="0" stop-color="#8ff3ff"/><stop offset="1" stop-color="#2aa9ff"/></linearGradient>
+            <linearGradient id="topBuyer" x1="0" x2="1"><stop offset="0" stop-color="#ffe7a0"/><stop offset="1" stop-color="#ff9f1c"/></linearGradient>
+            <radialGradient id="hubAura" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset=".36" stop-color="#8e5cff" stop-opacity=".42"/><stop offset="1" stop-color="#8e5cff" stop-opacity="0"/></radialGradient>
+          </defs>
+          <path id="pSellerHub" class="pipe" d="M151 289 C235 245 248 212 326 218"/>
+          <path id="pHubStoreTop" class="pipe" d="M366 201 C425 148 482 124 545 143"/>
+          <path id="pHubStoreBottom" class="pipe" d="M369 251 C440 292 488 322 556 323"/>
+          <path id="pHubBuyer" class="pipe" d="M369 230 C450 218 518 236 585 257"/>
+          <path class="pipe-glow red" d="M151 289 C235 245 248 212 326 218"/>
+          <path class="pipe-glow cyan" d="M366 201 C425 148 482 124 545 143"/>
+          <path class="pipe-glow cyan" d="M369 251 C440 292 488 322 556 323"/>
+          <path class="pipe-glow gold" d="M369 230 C450 218 518 236 585 257"/>
+          <ellipse cx="340" cy="226" rx="136" ry="104" fill="url(#hubAura)" opacity=".72" class="spark"/>
+          <g class="node-shadow" transform="translate(54 246)">
+            <polygon class="cube-face" points="0,36 70,0 146,36 74,75" fill="url(#topSeller)"/>
+            <polygon class="cube-face" points="0,36 74,75 74,137 0,96" fill="#5b1512"/>
+            <polygon class="cube-face" points="146,36 74,75 74,137 146,94" fill="#350d0b"/>
+            <text class="node-title" x="74" y="65" text-anchor="middle">SELLER</text>
+            <text class="node-sub" x="74" y="87" text-anchor="middle">PACK SKU-042</text>
+          </g>
+          <g class="node-shadow" transform="translate(268 142)">
+            <polygon class="cube-face" points="0,54 74,8 154,54 76,100" fill="url(#topHub)"/>
+            <polygon class="cube-face" points="0,54 76,100 76,176 0,130" fill="#27115d"/>
+            <polygon class="cube-face" points="154,54 76,100 76,176 154,130" fill="#170936"/>
+            <circle cx="76" cy="76" r="29" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.38)"/>
+            <text class="hub-label" x="76" y="82" text-anchor="middle">HUB</text>
+            <text class="node-sub" x="76" y="118" text-anchor="middle">MATCH + ROUTE</text>
+          </g>
+          <g class="node-shadow" transform="translate(512 88)">
+            <polygon class="cube-face" points="0,32 52,4 111,32 56,62" fill="url(#topStore)"/>
+            <polygon class="cube-face" points="0,32 56,62 56,110 0,80" fill="#0d4051"/>
+            <polygon class="cube-face" points="111,32 56,62 56,110 111,79" fill="#082636"/>
+            <text class="node-title" x="56" y="56" text-anchor="middle">STORE</text>
+            <text class="node-sub" x="56" y="75" text-anchor="middle">IN STOCK</text>
+          </g>
+          <g class="node-shadow" transform="translate(525 278)">
+            <polygon class="cube-face" points="0,32 52,4 111,32 56,62" fill="url(#topStore)"/>
+            <polygon class="cube-face" points="0,32 56,62 56,110 0,80" fill="#0d4051"/>
+            <polygon class="cube-face" points="111,32 56,62 56,110 111,79" fill="#082636"/>
+            <text class="node-title" x="56" y="56" text-anchor="middle">STORE</text>
+            <text class="node-sub" x="56" y="75" text-anchor="middle">FAST SHIP</text>
+          </g>
+          <g class="node-shadow" transform="translate(560 208)">
+            <polygon class="cube-face" points="0,38 60,6 128,38 64,74" fill="url(#topBuyer)"/>
+            <polygon class="cube-face" points="0,38 64,74 64,132 0,96" fill="#63420d"/>
+            <polygon class="cube-face" points="128,38 64,74 64,132 128,94" fill="#3b2708"/>
+            <text class="node-title" x="64" y="68" text-anchor="middle">BUYER</text>
+            <text class="node-sub" x="64" y="90" text-anchor="middle">PAID</text>
+          </g>
+          <circle class="spark" cx="318" cy="119" r="4" fill="#fff" opacity=".72"/>
+          <circle class="spark" cx="510" cy="213" r="5" fill="#7ee8ff" opacity=".7"/>
+          <circle class="spark" cx="209" cy="195" r="4" fill="#ffd36e" opacity=".72"/>
+          <g id="packets" aria-hidden="true"></g>
+        </svg>
+      </div>
+      <div class="rail" aria-label="Diagram legend">
+        <div class="rail-card"><b>1. Intake</b><p>Seller sends a new item into the exchange.</p></div>
+        <div class="rail-card"><b>2. Match</b><p>The hub scores demand, stock and speed.</p></div>
+        <div class="rail-card"><b>3. Route</b><p>Stores activate as glowing branches.</p></div>
+        <div class="rail-card"><b>4. Settle</b><p>Buyer receives the order; coins close the loop.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="story" id="story">
+    <article class="story-card"><div class="num">Pattern 01</div><h2>Replace dense diagrams</h2><p>Use animated packets when a fintech, marketplace or logistics brand needs to explain a multi-party system in one glance.</p></article>
+    <article class="story-card"><div class="num">Pattern 02</div><h2>Keep the layout real</h2><p>The page still has conversion copy, CTAs and metrics; the diagram acts as a hero proof point instead of a decorative video.</p></article>
+    <article class="story-card"><div class="num">Pattern 03</div><h2>Ship without video</h2><p>The motion is SVG + CSS + a tiny JS path engine, so it remains crisp, responsive and editable without rendering or hosting 3D assets.</p></article>
+  </section>
+  <p class="safe-note"><strong>Scratch rebuild note:</strong> this demo uses original SVG geometry, fictional brand copy and procedural packet motion. It does not copy the source video, Cinema 4D scene, product name, client assets, code, logos or rendered frames.</p>
+  <div class="mobile-marker">marketplace-flow-diagram-mobile-qa-2026-07-07</div>
+</div>
+<script>
+(function(){
+  const stage=document.getElementById('stage');
+  const svg=document.getElementById('flowSvg');
+  const layer=document.getElementById('packets');
+  const boost=document.getElementById('boostBtn');
+  const pathIds=['pSellerHub','pHubStoreTop','pHubStoreBottom','pHubBuyer'];
+  const data=[
+    {path:'pSellerHub',label:'SKU',fill:'#ffffff',stroke:'#E2231A',offset:0,speed:.075,w:48},
+    {path:'pHubStoreTop',label:'ROUTE',fill:'#7ee8ff',stroke:'#baf6ff',offset:.22,speed:.058,w:58},
+    {path:'pHubStoreBottom',label:'STOCK',fill:'#7ee8ff',stroke:'#baf6ff',offset:.58,speed:.052,w:58},
+    {path:'pHubBuyer',label:'PAY',fill:'#ffd36e',stroke:'#fff2ba',offset:.4,speed:.067,w:50},
+    {path:'pHubBuyer',label:'COIN',fill:'#ffbd4a',stroke:'#fff2ba',offset:.72,speed:.067,w:54}
+  ];
+  let multiplier=1;
+  const packets=data.map(item=>{
+    const g=document.createElementNS('http://www.w3.org/2000/svg','g');
+    g.setAttribute('class','packet');
+    const rect=document.createElementNS('http://www.w3.org/2000/svg','rect');
+    rect.setAttribute('x',String(-item.w/2));rect.setAttribute('y','-13');rect.setAttribute('width',String(item.w));rect.setAttribute('height','26');rect.setAttribute('fill',item.fill);rect.setAttribute('stroke',item.stroke);rect.setAttribute('stroke-width','2');
+    const text=document.createElementNS('http://www.w3.org/2000/svg','text');
+    text.setAttribute('x','0');text.setAttribute('y','1');text.textContent=item.label;
+    g.append(rect,text);layer.appendChild(g);
+    return {...item,el:g,path:document.getElementById(item.path),len:document.getElementById(item.path).getTotalLength()};
+  });
+  let start=performance.now();
+  function frame(now){
+    const t=(now-start)/1000;
+    packets.forEach((p,i)=>{
+      const u=(p.offset+t*p.speed*multiplier)%1;
+      const pt=p.path.getPointAtLength(u*p.len);
+      const ahead=p.path.getPointAtLength(Math.min(p.len,u*p.len+2));
+      const ang=Math.atan2(ahead.y-pt.y,ahead.x-pt.x)*180/Math.PI;
+      p.el.setAttribute('transform',`translate(${pt.x.toFixed(2)} ${pt.y.toFixed(2)}) rotate(${ang.toFixed(2)})`);
+      p.el.style.opacity=String(.7+.3*Math.sin(t*3+i));
+    });
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  if(stage){
+    stage.addEventListener('pointermove',e=>{
+      const r=stage.getBoundingClientRect();
+      const x=((e.clientX-r.left)/r.width)*100;const y=((e.clientY-r.top)/r.height)*100;
+      stage.style.setProperty('--mx',x+'%');stage.style.setProperty('--my',y+'%');
+      const rx=(y-50)*-.04;const ry=(x-50)*.04;
+      stage.style.transform=`perspective(1100px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
+    stage.addEventListener('pointerleave',()=>{stage.style.transform='perspective(1100px) rotateX(0deg) rotateY(0deg)';stage.style.setProperty('--mx','50%');stage.style.setProperty('--my','45%');});
+  }
+  if(boost){
+    boost.addEventListener('click',()=>{multiplier=multiplier>1?1:2.25;boost.textContent=multiplier>1?'Return to calm loop':'Boost packet speed';});
+  }
+  if(!('getTotalLength' in SVGPathElement.prototype)){pathIds.forEach(id=>{const p=document.getElementById(id);if(p)p.style.strokeDasharray='0';});}
+})();
+</script>
+</body>
+</html>
