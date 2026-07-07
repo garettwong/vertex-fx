@@ -5,9 +5,8 @@ Garett's "links to self" WhatsApp export was scanned for X / Twitter posts.
 - **605** X/Twitter links found in total.
 - The large majority are **AI model releases** (video / image / 3D-asset generators:
   Hunyuan, Kling, ComfyUI, Krea, etc.) — interesting, but not *website* effects.
-- A clear **web-development / interactive-3D-web** subset runs through the feed. Those
-  creators are what the six new demos are built from. (X posts can't be auto-opened —
-  login wall — so these are mapped by creator + what each is well known for.)
+- A clear **web-development / interactive-3D-web** subset runs through the feed.
+- Newer demos now require a **motion audit** of each X video/post before building — not thumbnail-only matching. See [`VERTEX_FX_MOTION_AUDIT_2026-07-07.md`](VERTEX_FX_MOTION_AUDIT_2026-07-07.md) for the 2026-07-07 recheck.
 
 ## The web-dev / 3D-web creators in the feed
 
@@ -106,8 +105,8 @@ clip, so it's infinitely-looping and interactive (mouse-reactive) with no video 
 From Garett's recent X posts asking to save/rebuild strong website effects into the `vertex-fx` demo library. Created on **2026-07-05**. All four demos are rebuilt from scratch with original placeholder copy/code; no source-site assets, videos, or template code are reused.
 
 - **Scroll Liquid Scrub** (`scroll-liquid-scrub.html`) — from [@php_martin](https://x.com/php_martin/status/2073291268055236765). The post showcases a Fable 5 / Wallow bath-body concept site where page scroll scrubs through liquid dye product visuals. Rebuilt as a procedural canvas ink/plume scene where scroll progress drives colour, density, copy and product pills.
-- **Marble Ocean Play** (`marble-ocean-play.html`) — from [@aurelien_gz](https://x.com/aurelien_gz/status/2073069364572528842), showing the Marble landing page with whimsical ocean, cursor water ripples, splashes, sparkles and hidden easter eggs. Rebuilt as an illustrated ocean hero with canvas ripples and playful micro-interactions.
-- **Clixr Neon SaaS** (`clixr-neon-saas.html`) — from [@Website_tmplts](https://x.com/Website_tmplts/status/2073029187099582729), showing a dark Webflow SaaS/product template with neon portrait cards, bold typography, pricing and rounded sections. Rebuilt as a reusable dark SaaS landing-page motion pattern.
+- **Marble Ocean Play** (`marble-ocean-play.html`) — from [@aurelien_gz](https://x.com/aurelien_gz/status/2073069364572528842), showing the Marble landing page as a living illustrated world: paddling kayak, water ripples, parallax hero, dark story section, feature-phone demo, sparkles and a waving creature/easter egg. Rebuilt/refined after the full-motion audit as a scroll journey with generated illustration layers, paddle-made ripples, reactive water, feature pills/phone scene and character CTA.
+- **Clixr Neon SaaS** (`clixr-neon-saas.html`) — from [@Website_tmplts](https://x.com/Website_tmplts/status/2073029187099582729), showing a dark Webflow SaaS/product template whose key motion is a physics-like neon photo-card engine: cards fly in, explode/rearrange, fan into a curved layout, clear for typography, then lead into avatars, pricing and CTA. Rebuilt/refined after the full-motion audit as a scroll-driven card choreography, not just static tilt cards.
 - **MODUS Architecture Scroll** (`modus-architecture-scroll.html`) — from [@website_tmplts](https://x.com/website_tmplts/status/2073512272366870741), showing the MODUS Extend architecture template with dark navy editorial layout, project cards, stats, services and CTA sections. Rebuilt as a sticky-scroll architecture portfolio pattern.
 
 ## Demo 35 — AI Portal Glass Cube
@@ -158,8 +157,8 @@ Created on **2026-07-07** from [@denis_uixi](https://x.com/denis_uixi/status/207
 
 Rebuilt from scratch as **Liquid Cooling Ring** (`liquid-cooling-ring.html`) — own fictional brand/copy ("Edge Flow"), procedural canvas droplets, caustic glows, responsive conversion layout and mobile QA marker; no source images, screenshots, videos, Webflow/Cinema 4D files, code, logo, font, client copy or proprietary data-center visuals reused. The reusable pattern catalogued here is a liquid-cooling/data-center hero where an abstract water torus makes cooling capacity feel tangible without requiring hosted video or licensed 3D assets.
 
-## Demo 43 — Taste Deck Showcase
+## Demo 43 — Anti-Slop Design Switch
 
-Created on **2026-07-07** from [@vincemask](https://x.com/vincemask/status/2074154219922415700), after re-checking the attached video as a polished Taste Skill marketing-site tour rather than merely a workflow note. The source video shows a warm/light product page with floating interface mockups, a terminal install box, design-system controls, changelog cards, docs/GitHub sections and smooth presentation motion.
+Created on **2026-07-07** from [@vincemask](https://x.com/vincemask/status/2074154219922415700), after the full-motion audit corrected the earlier mistake. The post is primarily about **Taste Skill**: an anti-slop frontend framework for AI agents. The video shows the Taste Skill site and GitHub README over time: warm hero, install command, floating design examples, Works-with-agents section, design-system controls, changelog/docs, then README installation/skill tables. The important dynamic meaning is not just a pretty marketing page; it is **AI frontend taste control**: brief-read before code, anti-template rules, `DESIGN_VARIANCE`, `MOTION_INTENSITY`, and `VISUAL_DENSITY` dials.
 
-Rebuilt from scratch as **Taste Deck Showcase** (`taste-deck-showcase.html`) — own fictional brand/copy ("Aesthetic Ops" / "aesthetic-deck"), generated UI shapes, CSS 3D floating stack, terminal CTA, design dials, feature cards and mobile-safe stacked layout; no Taste Skill logo, source screenshots, README text, website assets, repo files, code, fonts, brand copy or proprietary visuals reused. The reusable pattern catalogued here is a premium AI-agent/product landing composition where the visual effect is disciplined taste: floating mockups + command card + design controls + changelog rhythm, not a fake workflow bookmark.
+Rebuilt from scratch as **Anti-Slop Design Switch** (`anti-slop-design-switch.html`) — an interactive before/after comparator where generic AI-slop output is constrained by brief-reading, anti-template rules and design dials. The old `taste-deck-showcase.html` remains as a compatibility alias with the corrected content, but the hub now points to the corrected demo. No Taste Skill logo, screenshots, README text, repo files, code, fonts, brand copy or proprietary visuals reused.
