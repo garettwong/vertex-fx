@@ -14,4 +14,19 @@
 <script>
 const routes=[{name:'Studio',title:'Studio door',copy:'The brand opens with a warm entry scene and a clear route label.',a:'#ff9a76',b:'#5c2819',x:45,y:60},{name:'Garden',title:'Garden reveal',copy:'A bright outdoor chapter replaces flat page scrolling with a character-led cut.',a:'#8cffcf',b:'#0d6b4b',x:67,y:56},{name:'Shop',title:'Shop counter',copy:'The mascot crosses the interface and lands near the conversion panel.',a:'#ffd166',b:'#8b3f17',x:35,y:62}];
 const nav=document.getElementById('nav'),scenes=document.getElementById('scenes'),stage=document.getElementById('stage'),cat=document.getElementById('cat');routes.forEach((r,i)=>{const b=document.createElement('button');b.className='pill'+(i===0?' active':'');b.textContent=r.name;b.onclick=()=>go(i);nav.appendChild(b);const s=document.createElement('div');s.className='scene'+(i===0?' active':'');s.style.setProperty('--doorA',r.a);s.style.setProperty('--doorB',r.b);s.innerHTML=`<div class="door"><div class="slab"></div></div><div class="label"><div><h2>${r.title}</h2><p>${r.copy}</p></div><span class="chip">section ${String(i+1).padStart(2,'0')}</span></div>`;scenes.appendChild(s)});let active=0,timer;function go(i){if(i===active)return;cat.classList.add('walk');stage.classList.remove('open');cat.style.setProperty('--dir',i>active?1:-1);active=i;document.querySelectorAll('.pill').forEach((p,n)=>p.classList.toggle('active',n===i));document.querySelectorAll('.scene').forEach((s,n)=>s.classList.toggle('active',n===i));const r=routes[i];cat.style.setProperty('--cat-x',r.x+'%');cat.style.setProperty('--cat-y',r.y+'%');setTimeout(()=>{cat.classList.remove('walk');stage.classList.add('open')},850);reset()}function reset(){clearInterval(timer);timer=setInterval(()=>go((active+1)%routes.length),5200)}stage.classList.add('open');reset();
-</script></body></html>
+</script><script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
+</body></html>

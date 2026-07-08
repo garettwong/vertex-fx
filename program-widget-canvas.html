@@ -15,5 +15,20 @@
 <script>
 (function(){const board=document.getElementById('board'),widgets=[...document.querySelectorAll('.widget')],reset=document.getElementById('reset'),bot=document.getElementById('botText'),lines=['Sketching a widget flow…','Dragging notes into place…','Rendering playful affordances…','Ready for exploration.'];let idx=0;setInterval(()=>{idx=(idx+1)%lines.length;bot.textContent=lines[idx]},1600);const initial=widgets.map(w=>({el:w,style:w.getAttribute('style')||''}));widgets.forEach(w=>{let ox=0,oy=0,drag=false;w.addEventListener('pointerdown',e=>{if(innerWidth<861)return;drag=true;w.setPointerCapture(e.pointerId);const r=w.getBoundingClientRect();ox=e.clientX-r.left;oy=e.clientY-r.top;w.style.zIndex=20});w.addEventListener('pointermove',e=>{if(!drag)return;const br=board.getBoundingClientRect(),wr=w.getBoundingClientRect();let x=Math.max(12,Math.min(br.width-wr.width-12,e.clientX-br.left-ox));let y=Math.max(76,Math.min(br.height-wr.height-12,e.clientY-br.top-oy));w.style.left=x+'px';w.style.top=y+'px';w.style.right='auto';w.style.bottom='auto'});w.addEventListener('pointerup',()=>{drag=false;w.style.zIndex=3})});reset.addEventListener('click',()=>initial.forEach(({el,style})=>{style?el.setAttribute('style',style):el.removeAttribute('style')}));const path=document.getElementById('stroke');let dash=360;function animate(){dash-=3;if(dash<0)dash=360;path.style.strokeDashoffset=dash;requestAnimationFrame(animate)}animate();})();
 </script>
+<script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
 </body>
 </html>

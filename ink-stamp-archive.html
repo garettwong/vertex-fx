@@ -17,4 +17,19 @@ const data=[['Lantern','#c54d37','灯'],['Rail','#28516d','軌'],['Garden','#6d7
 const strip=document.getElementById('strip');let active=0,slow=false;
 function draw(){strip.innerHTML='';data.forEach((d,i)=>{const el=document.createElement('article');el.className='stamp'+(i===active?' active':'');el.style.setProperty('--tone',d[1]);el.style.setProperty('--r',((i%2?1:-1)*(4+i%3*2))+'deg');el.innerHTML=`<div></div><div class="art" data-glyph="${d[2]}"></div><small>${d[0]}</small>`;strip.appendChild(el)});document.getElementById('captionTitle').textContent=data[active][0]+' stamp is in focus.'}
 function next(){active=(active+1)%data.length;draw()}draw();let timer=setInterval(next,1700);document.getElementById('shuffle').onclick=()=>{active=Math.floor(Math.random()*data.length);draw()};document.getElementById('calm').onclick=e=>{slow=!slow;strip.style.animationDuration=slow?'26s':'12s';e.currentTarget.textContent=slow?'Restore loop':'Calm loop'};
-</script></body></html>
+</script><script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
+</body></html>

@@ -38,5 +38,20 @@
 (()=>{const stage=document.getElementById('stage'),reed=document.getElementById('reed'),line=document.getElementById('line'),gallery=document.getElementById('gallery'),readout=document.getElementById('readout');let x=.5,v=0,target=.5,last=performance.now(),auto=true,boost=0,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;function setVars(){const px=(x*100).toFixed(2)+'%';stage.style.setProperty('--x',px);reed.style.setProperty('--x',px);line.style.setProperty('--x',px);const tilt=Math.max(-8,Math.min(8,v*85));reed.style.setProperty('--tilt',tilt.toFixed(2)+'deg');reed.style.setProperty('--stretch',(1+Math.min(.16,Math.abs(v)*2.4+boost)).toFixed(3));reed.style.setProperty('--glow',(.65+Math.min(.9,Math.abs(v)*8+boost*2)).toFixed(2));gallery.style.setProperty('--drag',((x-.5)*34).toFixed(1));readout.textContent='x '+Math.round(x*100)+' · inertia '+Math.round(Math.abs(v)*1000);}
 function pointer(e){const r=stage.getBoundingClientRect(),lo=innerWidth<560?.18:.08,hi=innerWidth<560?.82:.92;target=Math.max(lo,Math.min(hi,(e.clientX-r.left)/r.width));auto=false;boost=.08;setTimeout(()=>auto=true,2600)}stage.addEventListener('pointermove',pointer);stage.addEventListener('pointerdown',e=>{pointer(e);boost=.16});document.getElementById('pulseBtn').addEventListener('click',()=>{target=target<.5?.82:.18;auto=false;boost=.22;setTimeout(()=>auto=true,3000)});document.getElementById('snapBtn').addEventListener('click',()=>{target=.5;auto=false;boost=.1;setTimeout(()=>auto=true,1800)});function tick(now){const dt=Math.min(.04,(now-last)/1000);last=now;if(auto&&!reduced){const amp=innerWidth<560?.18:.32,small=innerWidth<560?.03:.045;target=.5+Math.sin(now*.00038)*amp+Math.sin(now*.00091)*small}const spring=(target-x)*18;v+=(spring-v*8.5)*dt;x+=v*dt;x=Math.max(.06,Math.min(.94,x));boost*=.93;setVars();requestAnimationFrame(tick)}setVars();requestAnimationFrame(tick)})();
 </script>
+<script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
 </body>
 </html>

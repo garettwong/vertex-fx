@@ -15,5 +15,20 @@
 <script>
 (()=>{const dome=document.getElementById('dome'),stage=document.getElementById('gallery'),label=document.getElementById('label');const names=['Archive','Signal','Bloom','Frame','Studio','Canyon','Arcade','Orbit','Pulse','Lagoon','Tempo','Quartz','Solace','Beacon','Prism','Field'];let off=0,target=0,down=false,start=0,startTarget=0,t=0;names.forEach((n,i)=>{const el=document.createElement('div');el.className='tile';el.dataset.label=n;el.style.setProperty('--h',String((i*39+24)%360));dome.appendChild(el)});const tiles=[...dome.children];function layout(){const r=dome.getBoundingClientRect(),cx=r.width/2,cy=r.height*.52,rx=r.width*.39,ry=r.height*.33;let best=0,bz=-9;tiles.forEach((el,i)=>{const a=(i/tiles.length*Math.PI*2+off);const z=(Math.cos(a)+1)/2;const x=cx+Math.sin(a)*rx;const y=cy-Math.cos(a)*ry*.34+Math.sin(a*2)*12;const s=.62+z*.56;el.style.left=(x-el.offsetWidth/2)+'px';el.style.top=(y-el.offsetHeight/2)+'px';el.style.transform=`scale(${s}) rotate(${Math.sin(a)*-14}deg)`;el.style.zIndex=String(Math.round(z*100));el.style.opacity=String(.34+z*.66);if(z>bz){bz=z;best=i}});tiles.forEach((el,i)=>el.classList.toggle('active',i===best));label.textContent=names[best]+' centered'}function tick(){requestAnimationFrame(tick);t+=.016;if(!down)target+=.004;off+=(target-off)*.075;layout()}function pos(e){const p=e.touches?e.touches[0]:e;return p.clientX}stage.addEventListener('pointerdown',e=>{down=true;start=pos(e);startTarget=target;stage.setPointerCapture&&stage.setPointerCapture(e.pointerId)});stage.addEventListener('pointermove',e=>{if(down)target=startTarget+(pos(e)-start)/180});stage.addEventListener('pointerup',()=>down=false);stage.addEventListener('pointercancel',()=>down=false);stage.addEventListener('wheel',e=>{e.preventDefault();target+=e.deltaY*.001},{passive:false});addEventListener('resize',layout);layout();tick();})();
 </script>
+<script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
 </body>
 </html>

@@ -14,5 +14,20 @@
 <script>
 (function(){const stage=document.getElementById('stage'),meter=document.getElementById('meterFill'),txt=document.getElementById('meterText');let auto=0,manual=false;function set(x,y){const dx=x-.5,dy=y-.54,restore=Math.max(.18,Math.min(.98,1-Math.sqrt(dx*dx+dy*dy)*1.55));stage.style.setProperty('--mx',x);stage.style.setProperty('--my',y);stage.style.setProperty('--restore',restore);meter.style.width=Math.round(restore*100)+'%';txt.textContent=Math.round(restore*100)+'%'}function move(e){manual=true;const r=stage.getBoundingClientRect(),p=e.touches?e.touches[0]:e;set(Math.max(.06,Math.min(.94,(p.clientX-r.left)/r.width)),Math.max(.08,Math.min(.88,(p.clientY-r.top)/r.height)))}stage.addEventListener('pointermove',move,{passive:true});stage.addEventListener('touchmove',move,{passive:true});function loop(){if(!manual||innerWidth<860){auto+=.018;set(.5+Math.cos(auto)*.28,.5+Math.sin(auto*1.2)*.2)}requestAnimationFrame(loop)}loop();})();
 </script>
+<script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
 </body>
 </html>

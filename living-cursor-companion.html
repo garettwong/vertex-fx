@@ -18,5 +18,20 @@
 <script>
 (()=>{const canvas=document.getElementById('ripples'),ctx=canvas.getContext('2d'),fish=document.getElementById('fish'),dot=document.getElementById('dot'),burst=document.getElementById('burst');let w=0,h=0,dpr=1,target={x:innerWidth*.62,y:innerHeight*.42},pos={...target},last={...target},rings=[];const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;function resize(){dpr=Math.min(2,devicePixelRatio||1);w=innerWidth;h=innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0)}function ripple(x,y,power=1){rings.push({x,y,r:8,a:.55*power,w:2+power*2})}function setTarget(x,y){target.x=Math.max(24,Math.min(w-24,x));target.y=Math.max(24,Math.min(h-24,y));const speed=Math.hypot(target.x-last.x,target.y-last.y);if(speed>18)ripple(target.x,target.y,Math.min(1.4,speed/80));last={...target}}addEventListener('pointermove',e=>setTarget(e.clientX,e.clientY),{passive:true});addEventListener('pointerdown',e=>{setTarget(e.clientX,e.clientY);ripple(e.clientX,e.clientY,1.8)},{passive:true});burst.addEventListener('click',()=>ripple(pos.x,pos.y,2));function idle(t){if(matchMedia('(hover:hover) and (pointer:fine)').matches)return;target.x=w*.5+Math.cos(t*.00045)*Math.min(150,w*.28);target.y=h*.42+Math.sin(t*.00072)*105}function frame(t){ctx.clearRect(0,0,w,h);idle(t);const ease=reduced?.28:.075;pos.x+=(target.x-pos.x)*ease;pos.y+=(target.y-pos.y)*ease;const angle=Math.atan2(target.y-pos.y,target.x-pos.x)*180/Math.PI;fish.style.transform=`translate3d(${pos.x}px,${pos.y}px,0) translate(-50%,-50%) rotate(${angle}deg)`;dot.style.transform=`translate(${target.x}px,${target.y}px) translate(-50%,-50%)`;rings.forEach(r=>{r.r+=reduced?1.5:2.8;r.a*=.955;ctx.beginPath();ctx.arc(r.x,r.y,r.r,0,Math.PI*2);ctx.strokeStyle=`rgba(95,255,232,${r.a})`;ctx.lineWidth=r.w;ctx.stroke();ctx.beginPath();ctx.arc(r.x,r.y,r.r*.48,0,Math.PI*2);ctx.strokeStyle=`rgba(255,92,157,${r.a*.42})`;ctx.lineWidth=1;ctx.stroke()});rings=rings.filter(r=>r.a>.02&&r.r<260);requestAnimationFrame(frame)}resize();addEventListener('resize',resize);for(let i=0;i<4;i++)setTimeout(()=>ripple(w*(.25+i*.14),h*.44,1),350+i*420);requestAnimationFrame(frame)})();
 </script>
+<script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
 </body>
 </html>

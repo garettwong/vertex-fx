@@ -21,4 +21,19 @@
 <script>
 (function(){const c=document.getElementById('sea'),ctx=c.getContext('2d'),logo=document.getElementById('logo'),island=document.getElementById('island'),kayak=document.getElementById('kayak'),creature=document.getElementById('creature');let W,H,D=1,mouse={x:.5,y:.65},ripples=[];function resize(){D=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;c.width=W*D;c.height=H*D;c.style.width=W+'px';c.style.height=H+'px';ctx.setTransform(D,0,0,D,0,0)}function drop(x,y,s=1){ripples.push({x,y,r:4,a:.75,s});if(ripples.length>120)ripples.shift()}function scrollFx(){let max=document.documentElement.scrollHeight-innerHeight,p=max?scrollY/max:0;logo.style.opacity=Math.max(0,1-p*2.8);logo.style.transform=`translate(-50%,${-50-p*55}%) scale(${1-p*.28})`;island.style.transform=`translateX(-50%) translateY(${-p*130}px) scale(${1+p*.18})`;kayak.style.left=(12+p*26)+'vw';creature.style.opacity=p>.68?1:0;creature.style.transform=p>.68?'translateY(0)':'translateY(40px)'}function draw(t){ctx.clearRect(0,0,W,H);let waterY=H*.42;let g=ctx.createLinearGradient(0,waterY,0,H);g.addColorStop(0,'rgba(90,222,245,.38)');g.addColorStop(1,'rgba(0,39,72,.78)');ctx.fillStyle=g;ctx.fillRect(0,waterY,W,H-waterY);ctx.globalCompositeOperation='screen';for(let i=0;i<22;i++){ctx.beginPath();for(let x=-20;x<=W+20;x+=18){let y=waterY+i*H*.027+Math.sin(x*.014+t*.001+i)*8+Math.sin(x*.03-t*.0007+i)*4;ctx.lineTo(x,y)}ctx.strokeStyle=i%4?'rgba(170,246,255,.08)':'rgba(255,255,255,.14)';ctx.lineWidth=1;ctx.stroke()}ripples.forEach(r=>{r.r+=1.9*r.s;r.a*=.975;ctx.beginPath();ctx.ellipse(r.x,r.y,r.r,r.r*.28,0,0,Math.PI*2);ctx.strokeStyle=`rgba(220,255,255,${r.a})`;ctx.lineWidth=Math.max(1,5-r.r*.025);ctx.stroke()});ripples=ripples.filter(r=>r.a>.025);ctx.globalCompositeOperation='source-over';requestAnimationFrame(draw)}addEventListener('pointermove',e=>{mouse.x=e.clientX;mouse.y=e.clientY;if(e.clientY>H*.42)drop(e.clientX,e.clientY,.42)});addEventListener('pointerdown',e=>{for(let i=0;i<6;i++)setTimeout(()=>drop(e.clientX,e.clientY,1.1),i*60)});addEventListener('scroll',scrollFx,{passive:true});addEventListener('resize',resize);setInterval(()=>{let r=kayak.getBoundingClientRect();drop(r.left+r.width*.5,r.top+r.height*.86,.7)},420);resize();scrollFx();requestAnimationFrame(draw)})();
 </script>
+<script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
 </body></html>

@@ -15,4 +15,19 @@ const stage=document.getElementById('stage'),fig=document.getElementById('fig'),
 function move(e){const r=stage.getBoundingClientRect();tx=((e.clientX-r.left)/r.width-.5);ty=((e.clientY-r.top)/r.height-.5)}
 stage.addEventListener('pointermove',move,{passive:true});addEventListener('pointermove',move,{passive:true});
 function tick(){cx+=(tx-cx)*.07;cy+=(ty-cy)*.07;fig.style.setProperty('--ry',(cx*12)+'deg');fig.style.setProperty('--rx',(-cy*8)+'deg');pend.style.setProperty('--angle',(cx*28+Math.sin(Date.now()/520)*7)+'deg');requestAnimationFrame(tick)}tick();
-</script></body></html>
+</script><script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
+</body></html>

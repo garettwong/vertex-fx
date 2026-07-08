@@ -33,5 +33,20 @@ body{background:#020807}.drone-page{min-height:210svh;background:radial-gradient
 (function(){const page=document.querySelector('.drone-page'),stage=document.querySelector('.drone-stage'),drone=document.querySelector('.drone'),meter=document.querySelector('.scroll-meter'),stageNo=document.getElementById('stageNo'),km=document.getElementById('km');function update(){const max=page.scrollHeight-innerHeight;const p=Math.max(0,Math.min(1,scrollY/max));meter.style.setProperty('--p',p.toFixed(3));stageNo.textContent=String(1+Math.floor(p*3)).padStart(2,'0');km.textContent=Math.round(35+p*54)+'%';drone.style.left=(30+p*40)+'%';drone.style.top=(60-Math.sin(p*Math.PI)*25)+'%';drone.style.setProperty('--tilt',(-12+p*24)+'deg')}addEventListener('scroll',update,{passive:true});update();stage.addEventListener('pointermove',e=>{const r=stage.getBoundingClientRect();drone.style.setProperty('--tilt',(((e.clientX-r.left)/r.width)-.5)*28+'deg')});const c=document.getElementById('matrix'),ctx=c.getContext('2d');let t=0;function size(){const r=c.getBoundingClientRect(),d=Math.min(2,devicePixelRatio||1);c.width=r.width*d;c.height=r.height*d;ctx.setTransform(d,0,0,d,0,0)}addEventListener('resize',size,{passive:true});size();function draw(){const w=c.clientWidth,h=c.clientHeight;ctx.clearRect(0,0,w,h);ctx.fillStyle='rgba(92,255,181,.22)';t+=.02;for(let i=0;i<90;i++){const x=(i*53+t*30)%w,y=(i*97%h);ctx.globalAlpha=.12+.18*Math.sin(t+i);ctx.fillRect(x,y,2,10+8*Math.sin(i+t))}ctx.globalAlpha=1;requestAnimationFrame(draw)}draw();})();
 
 </script>
+<script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
 </body>
 </html>

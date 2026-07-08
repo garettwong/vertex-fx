@@ -105,8 +105,10 @@ for c in cards:
     else:
         # Link the general source note page instead of inventing missing X status links.
         src = '<span class="srcgo note" data-source="FX_SOURCES.md">Source note ↗</span>'
+    href = c["href"]
+    source_href = href + ("&" if "?" in href else "?") + "source=1"
     card_html.append(
-        f'<a class="card" href="{html.escape(c["href"], quote=True)}"{qa_attr}>'
+        f'<a class="card" href="{html.escape(source_href, quote=True)}"{qa_attr}>'
         f'<div class="ct">{c["title"]}</div>'
         f'<div class="cd">{c["desc"]}</div>'
         f'<div class="crow"><span class="tag">{c["tag"]}</span><span class="date">{c["date"]}</span>{src}<span class="cgo">Open →</span></div>'

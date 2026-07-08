@@ -16,4 +16,19 @@ let mode=0,progress=0;const stage=document.getElementById('stage'),canvas=docume
 const btns=document.getElementById('modes');modes.forEach((m,i)=>{let b=document.createElement('button');b.className='mode';b.textContent=m[0];b.onclick=()=>setMode(i);btns.appendChild(b)});function setMode(i){mode=i%modes.length;progress=0;let m=modes[mode];document.documentElement.style.setProperty('--accent',m[1]);document.getElementById('caption').textContent=m[0]+' effect';document.getElementById('title').innerHTML=m[2]+' <span>'+m[3]+'</span>';document.getElementById('copy').textContent=m[4];[...btns.children].forEach((b,k)=>b.classList.toggle('active',k===mode))}setMode(0);
 function size(){const r=stage.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);canvas.width=Math.floor(r.width*d);canvas.height=Math.floor(r.height*d);ctx.setTransform(d,0,0,d,0,0)}addEventListener('resize',size,{passive:true});size();let mx=.5,my=.5;stage.addEventListener('pointermove',e=>{const r=stage.getBoundingClientRect();mx=(e.clientX-r.left)/r.width;my=(e.clientY-r.top)/r.height;card.style.setProperty('--ry',((mx-.5)*12)+'deg');card.style.setProperty('--rx',((.5-my)*10)+'deg');orb.style.setProperty('--px',(mx*100)+'%');orb.style.setProperty('--py',(my*100)+'%')},{passive:true});
 function draw(t){const w=canvas.clientWidth,h=canvas.clientHeight;ctx.clearRect(0,0,w,h);ctx.globalCompositeOperation='source-over';ctx.fillStyle='#07080d';ctx.fillRect(0,0,w,h);let m=modes[mode][0];for(let y=0;y<h;y+=8){for(let x=0;x<w;x+=8){let dx=x-w*mx,dy=y-h*my,d=Math.hypot(dx,dy);let v=Math.sin(x*.018+t*.0011)+Math.cos(y*.015-t*.0013)+Math.sin(d*.018-t*.002);if(m==='Frost')v+=Math.sin((x+y)*.04+t*.0018)*.8;if(m==='Ripple')v+=Math.sin(d*.08-t*.004)*1.6;if(m==='Plasma')v+=Math.sin(x*.05+Math.cos(y*.02)+t*.003)*1.2;if(m==='Timeshift')v+=Math.sin((x-y)*.03+t*.003)*.9;let a=Math.max(0,Math.min(1,(v+2.6)/5.2));let hue=(mode*58+x*.035+y*.025+t*.02)%360;ctx.fillStyle=`hsla(${hue},88%,${32+a*42}%,${.11+a*.36})`;let s= m==='Frost'?6:8;ctx.fillRect(x+Math.sin(v+t*.002)*3,y+Math.cos(v)*3,s,s)}}progress+=.22;if(progress>=100)setMode(mode+1);bar.style.setProperty('--w',progress+'%');requestAnimationFrame(draw)}requestAnimationFrame(draw);
-</script></body></html>
+</script><script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
+</body></html>

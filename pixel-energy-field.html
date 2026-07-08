@@ -24,5 +24,20 @@
 <script>
 (function(){const canvas=document.getElementById('field'),ctx=canvas.getContext('2d'),site=document.getElementById('site'),probe=document.getElementById('probe'),sentence=document.getElementById('sentence'),label=document.getElementById('label');let W=0,H=0,dpr=1,t=0,mouse={x:.62,y:.72,tx:.62,ty:.72,active:false};const lines=['The field is built from discrete squares, not video frames.','Cursor proximity raises the top contour and increases pixel density.','Warm signal at the base turns green and cyan as it wakes up.','The layout stays still while the generative field carries the motion.'];function lerp(a,b,n){return a+(b-a)*n}function noise(x,y,z){return Math.sin(x*1.7+z)+Math.sin(y*2.1-z*.7)+Math.sin((x+y)*1.05+z*.43)}function resize(){const r=canvas.parentElement.getBoundingClientRect();dpr=Math.min(devicePixelRatio||1,2);W=Math.max(1,r.width);H=Math.max(1,r.height);canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.width=W+'px';canvas.style.height=H+'px';ctx.setTransform(dpr,0,0,dpr,0,0)}function color(v,near){let r,g,b;if(v<.35){let p=v/.35;r=lerp(255,255,p);g=lerp(100,214,p);b=lerp(36,54,p)}else if(v<.68){let p=(v-.35)/.33;r=lerp(255,117,p);g=lerp(214,255,p);b=lerp(54,85,p)}else{let p=(v-.68)/.32;r=lerp(117,32,p);g=lerp(255,210,p);b=lerp(85,255,p)}return `rgba(${r|0},${g|0},${b|0},${(.55+near*.38).toFixed(3)})`}function draw(){t+=.016;mouse.x=lerp(mouse.x,mouse.tx,.09);mouse.y=lerp(mouse.y,mouse.ty,.09);ctx.clearRect(0,0,W,H);let step=W<700?10:12;let mx=mouse.x*W,my=mouse.y*H;for(let y=0;y<H;y+=step){for(let x=0;x<W;x+=step){let nx=x/W,ny=y/H;let base=.46+.18*Math.sin(nx*5.2+t*.7)+.1*Math.sin(nx*11.0-t*.5);let ridge=base+.09*noise(nx*4,ny*2,t);let d=Math.hypot((x-mx)/W*1.45,(y-my)/H*1.1);let influence=Math.max(0,1-d*3.1);let top=H*(.23+ridge*.42-influence*.22);let fade=1-(y-top)/(H*.78);if(y<top||fade<=0)continue;let v=Math.max(0,Math.min(1,ny*.78+nx*.24+influence*.42+.08*Math.sin(t+nx*8)));let size=step*(.45+fade*.74+influence*.72);let jitter=noise(nx*8,ny*8,t)*2.4*influence;ctx.fillStyle=color(v,influence);ctx.fillRect(x-size/2+jitter,y-size/2-jitter,size,size);if(influence>.55&&Math.random()<.015){ctx.fillStyle='rgba(255,255,255,.55)';ctx.fillRect(x-1,y-1,2,2)}}}probe.style.left=mx+'px';probe.style.top=my+'px';requestAnimationFrame(draw)}site.addEventListener('pointermove',e=>{mouse.tx=e.clientX/innerWidth;mouse.ty=e.clientY/innerHeight;mouse.active=true;let i=Math.min(lines.length-1,Math.max(0,Math.floor(mouse.tx*lines.length)));sentence.textContent=lines[i];label.textContent=i<2?'Coherence / Alignment / Truth':'Energetic Intelligence / Signal'});site.addEventListener('pointerleave',()=>{mouse.tx=.62;mouse.ty=.72});addEventListener('resize',resize);resize();draw()})();
 </script>
+<script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
 </body>
 </html>

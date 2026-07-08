@@ -33,5 +33,20 @@ body{background:#02030a}.const-page{min-height:100svh;padding:88px 0 48px;backgr
 (function(){const c=document.getElementById('stars'),ctx=c.getContext('2d'),detail=document.getElementById('detail'),buttons=[...document.querySelectorAll('[data-node]')];const data=[['Atlas redesign','Selected node exposes a compact project card and keeps the map visible.','#8294ff'],['Pulse lab','A research node can branch into prototype, writing and client proof.','#ff5b77'],['Orbit store','Commerce work gets clustered by funnel, creative and conversion.','#5cffb5'],['Field notes','Writing and references stay connected to the shipped artifacts.','#ffd166']];let active=0,t=0;function size(){const r=c.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);c.width=r.width*d;c.height=r.height*d;ctx.setTransform(d,0,0,d,0,0)}addEventListener('resize',size,{passive:true});size();buttons.forEach(b=>b.onclick=()=>setActive(+b.dataset.node));function setActive(i){active=i;buttons.forEach((b,j)=>b.classList.toggle('is-active',j===i));detail.style.setProperty('--node',data[i][2]);detail.querySelector('h3').textContent=data[i][0];detail.querySelector('p').textContent=data[i][1]}function nodes(w,h){const cx=w*.5,cy=h*.43,r=Math.min(w,h)*.31;return data.map((d,i)=>({x:cx+Math.cos(i*Math.PI*.5+t*.12)*r*(i%2?.92:1.08),y:cy+Math.sin(i*Math.PI*.5+t*.1)*r*.76,color:d[2]})).concat([{x:cx,y:cy,color:'#ffffff'}])}function draw(){const w=c.clientWidth,h=c.clientHeight;t+=.01;ctx.clearRect(0,0,w,h);const ns=nodes(w,h);ctx.lineWidth=1.3;for(let i=0;i<4;i++){ctx.strokeStyle=i===active?'rgba(255,255,255,.72)':'rgba(255,255,255,.16)';ctx.beginPath();ctx.moveTo(ns[4].x,ns[4].y);ctx.lineTo(ns[i].x,ns[i].y);ctx.stroke()}for(let i=0;i<80;i++){ctx.fillStyle='rgba(255,255,255,'+(.07+.08*Math.sin(t+i))+')';ctx.fillRect((i*73)%w,(i*127)%h,1.5,1.5)}ns.forEach((n,i)=>{ctx.beginPath();ctx.arc(n.x,n.y,i===4?10:8+(i===active?4:0),0,Math.PI*2);ctx.fillStyle=n.color;ctx.shadowColor=n.color;ctx.shadowBlur=i===active?24:12;ctx.fill();ctx.shadowBlur=0});requestAnimationFrame(draw)}draw();setInterval(()=>setActive((active+1)%4),5200)})();
 
 </script>
+<script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
 </body>
 </html>

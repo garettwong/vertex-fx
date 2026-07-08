@@ -23,4 +23,19 @@
 </div><div class="products"><span class="pill">Sour Lime</span><span class="pill">Blood Orange</span><span class="pill">Grape Riot</span></div></section></main>
 <script>
 (function(){var c=document.getElementById('ink'),x=c.getContext('2d'),bar=document.getElementById('bar'),W,H,D=1,mouse={x:.5,y:.5,down:false};var blobs=[];function resize(){D=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;c.width=W*D;c.height=H*D;c.style.width=W+'px';c.style.height=H+'px';x.setTransform(D,0,0,D,0,0);seed()}function seed(){blobs=[];for(var i=0;i<58;i++)blobs.push({x:Math.random(),y:Math.random(),r:.05+Math.random()*.18,a:Math.random()*6.28,s:.2+Math.random()*.9,h:Math.random()*360})}function progress(){var max=document.documentElement.scrollHeight-innerHeight;return max?Math.max(0,Math.min(1,scrollY/max)):0}function bg(p){var g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,'hsl('+(16+p*80)+',78%,10%)');g.addColorStop(.5,'hsl('+(190+p*120)+',75%,8%)');g.addColorStop(1,'hsl('+(275-p*80)+',80%,10%)');x.fillStyle=g;x.fillRect(0,0,W,H)}function plume(cx,cy,r,h,a){var g=x.createRadialGradient(cx,cy,0,cx,cy,r);g.addColorStop(0,'hsla('+h+',100%,62%,'+(a*.72)+')');g.addColorStop(.35,'hsla('+(h+25)+',95%,56%,'+(a*.45)+')');g.addColorStop(.72,'hsla('+(h+70)+',90%,44%,'+(a*.16)+')');g.addColorStop(1,'hsla('+h+',90%,38%,0)');x.fillStyle=g;x.beginPath();x.arc(cx,cy,r,0,Math.PI*2);x.fill()}function tick(t){var p=progress();bar.style.height=(p*100)+'%';bg(p);x.globalCompositeOperation='lighter';var time=t*.00015;for(var i=0;i<blobs.length;i++){var b=blobs[i];var drift=Math.sin(time*b.s+b.a+p*8)*.08;var px=((b.x+drift+p*.18*b.s)%1)*W;var py=((b.y+Math.cos(time*b.s+b.a)*.08+p*.38)%1)*H;var rr=(b.r*(.72+p*1.7))*Math.max(W,H);plume(px,py,rr,(b.h+p*220+i*3)%360,.10+p*.13)}var mx=mouse.x*W,my=mouse.y*H;for(var k=0;k<5;k++)plume(mx+Math.cos(t*.002+k)*W*.08,my+Math.sin(t*.002+k)*H*.08,(.18+k*.04)*Math.min(W,H),(p*360+k*55)%360,.18);x.globalCompositeOperation='source-over';x.fillStyle='rgba(0,0,0,.18)';x.fillRect(0,0,W,H);requestAnimationFrame(tick)}addEventListener('pointermove',function(e){mouse.x=e.clientX/W;mouse.y=e.clientY/H});addEventListener('resize',resize);resize();requestAnimationFrame(tick)})();
-</script></body></html>
+</script><script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
+</body></html>

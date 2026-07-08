@@ -12,4 +12,19 @@
 <script>
 const data=[{tab:'Smart time',sub:'tracking pulse',accent:'#75f0ff',accent2:'#9f7cff',title:'Pulse command',copy:'Live operating picture',bars:[48,74,55,88,62,93,70],tasks:['Focus block started','Idle drift caught','Team cadence normal'],metrics:['12k','tracked','94%','sync','07','alerts']},{tab:'Feedback',sub:'team sentiment',accent:'#ff7aa8',accent2:'#ffd166',title:'Feedback room',copy:'Sentiment, notes and shout-outs',bars:[82,62,70,57,89,76,96],tasks:['Praise queued','Retro theme ready','Manager nudge sent'],metrics:['4.8','mood','31','notes','18','wins']},{tab:'Scheduling',sub:'calendar flow',accent:'#8cffcf',accent2:'#4ea3ff',title:'Schedule mesh',copy:'Capacity and conflicts',bars:[42,55,78,67,50,84,61],tasks:['Conflict removed','Coverage locked','Standup shifted'],metrics:['21','slots','03','gaps','99%','cover']},{tab:'Visibility',sub:'project radar',accent:'#ffcf5d',accent2:'#ff6b35',title:'Visibility map',copy:'Workstreams and risk',bars:[70,88,63,75,92,58,80],tasks:['Risk owner set','Dependency clear','Roadmap shipped'],metrics:['8','teams','2','risks','14d','ahead']}];
 const tabs=document.getElementById('tabs'),mobile=document.getElementById('mobileStack'),dash=document.getElementById('dash');let active=0,fill=0,paused=false;data.forEach((d,i)=>{let b=document.createElement('button');b.className='tab'+(i===0?' active':'');b.innerHTML=`<b>${d.tab}</b><span>${d.sub}</span><i></i>`;b.onclick=()=>set(i,true);b.onmouseenter=()=>paused=true;b.onmouseleave=()=>paused=false;tabs.appendChild(b);let m=document.createElement('article');m.className='mobile-card';m.innerHTML=`<b>${d.tab}</b><p>${d.sub}</p>`;mobile.appendChild(m)});function set(i,manual){active=i;fill=manual?16:0;const d=data[i];document.documentElement.style.setProperty('--accent',d.accent);document.documentElement.style.setProperty('--accent2',d.accent2);document.getElementById('dashTitle').textContent=d.title;document.getElementById('dashSub').textContent=d.copy;document.getElementById('dashBadge').textContent=d.tab+' / active';document.getElementById('chart').innerHTML=d.bars.map(h=>`<span class="bar" style="--h:${h}%"></span>`).join('');document.getElementById('tasks').innerHTML=d.tasks.map(t=>`<div class="task"><i class="dot"></i><span>${t}</span></div>`).join('');document.getElementById('metrics').innerHTML=`<div class="metric"><b>${d.metrics[0]}</b><span>${d.metrics[1]}</span></div><div class="metric"><b>${d.metrics[2]}</b><span>${d.metrics[3]}</span></div><div class="metric"><b>${d.metrics[4]}</b><span>${d.metrics[5]}</span></div>`;document.querySelectorAll('.tab').forEach((t,n)=>t.classList.toggle('active',n===i));}function tick(){if(!paused){fill+=.42;if(fill>=100)set((active+1)%data.length,false)}document.querySelectorAll('.tab i').forEach((i,n)=>i.style.setProperty('--fill',n===active?fill+'%':'0%'));requestAnimationFrame(tick)}dash.addEventListener('pointermove',e=>{const r=dash.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;dash.style.setProperty('--tilt-x',(x*8).toFixed(2));dash.style.setProperty('--tilt-y',(y*8).toFixed(2))});dash.addEventListener('pointerleave',()=>{dash.style.setProperty('--tilt-x',0);dash.style.setProperty('--tilt-y',0)});set(0,false);tick();
-</script></body></html>
+</script><script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
+</body></html>

@@ -33,5 +33,20 @@ body{background:#f3eee7;color:#16110d}.fx-badge,.fx-hub{background:rgba(255,250,
 (function(){const c=document.getElementById('bars'),ctx=c.getContext('2d');let t=0,energy=.5;function size(){const r=c.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);c.width=Math.max(1,r.width*d);c.height=Math.max(1,r.height*d);ctx.setTransform(d,0,0,d,0,0)}addEventListener('resize',size,{passive:true});size();addEventListener('scroll',()=>{energy=Math.min(1,Math.max(.18,scrollY/420+.28))},{passive:true});function draw(){const w=c.clientWidth,h=c.clientHeight;ctx.clearRect(0,0,w,h);const n=w<520?16:26,g=w/n;t+=.018;for(let i=0;i<n;i++){const x=i*g+g*.08;const pulse=(Math.sin(t*2+i*.72)+Math.sin(t*.9+i*.27))*0.5;const bh=h*(.16+.42*(pulse*.5+.5)*energy+.15*Math.sin(t+i));const y=h-bh;ctx.fillStyle=i%3===0?'rgba(226,35,26,.9)':i%3===1?'rgba(22,17,13,.12)':'rgba(226,35,26,.35)';ctx.beginPath();ctx.roundRect(x,y,g*.58,bh,18);ctx.fill()}requestAnimationFrame(draw)}draw();const moods=['grin','wow','sleep'];document.querySelectorAll('.face-card').forEach((card,i)=>{card.addEventListener('click',()=>{let m=moods[(moods.indexOf(card.dataset.mood)+1)%moods.length];card.dataset.mood=m});setInterval(()=>{if(!card.matches(':hover'))card.dataset.mood=moods[(i+Math.floor(Date.now()/1800))%moods.length]},2100+i*170)})})();
 
 </script>
+<script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
 </body>
 </html>

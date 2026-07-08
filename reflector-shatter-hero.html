@@ -16,5 +16,20 @@
 <script>
 (()=>{const stage=document.getElementById('stage'),reflector=document.getElementById('reflector'),scene=document.getElementById('scene'),title=document.getElementById('sceneTitle'),copy=document.getElementById('sceneCopy'),frags=document.getElementById('fragments'),tabs=[...document.querySelectorAll('.tab')],next=document.getElementById('nextBtn');const data=[['Nocturne','A fictional campaign surface rendered with CSS gradients, not photos.','#2b145d','#ff5b93'],['Signal','Telemetry panes shimmer across a simulated data-glass slab.','#06252d','#6ee7ff'],['Orbit','Portfolio thumbnails bend into a luminous acrylic gallery wall.','#1b1238','#9a6bff']];let idx=0;function makeFrags(){frags.innerHTML='';for(let i=0;i<28;i++){const s=document.createElement('span');s.className='frag';s.style.setProperty('--dx',(Math.random()*620-310)+'px');s.style.setProperty('--dy',(Math.random()*420-210)+'px');s.style.setProperty('--rot',(Math.random()*520-260)+'deg');s.style.left=(35+Math.random()*30)+'%';s.style.top=(30+Math.random()*36)+'%';s.style.animationDelay=(Math.random()*120)+'ms';frags.appendChild(s)}}function show(n){idx=(n+data.length)%data.length;stage.classList.remove('shattering');void stage.offsetWidth;makeFrags();stage.classList.add('shattering');setTimeout(()=>{const d=data[idx];title.textContent=d[0];copy.textContent=d[1];scene.style.setProperty('--c1',d[2]);scene.style.setProperty('--c2',d[3]);tabs.forEach((t,i)=>t.classList.toggle('active',i===idx))},230);setTimeout(()=>stage.classList.remove('shattering'),1050)}tabs.forEach((t,i)=>t.addEventListener('click',()=>show(i)));next.addEventListener('click',()=>show(idx+1));stage.addEventListener('pointermove',e=>{const r=stage.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;reflector.style.setProperty('--mx',(x*100).toFixed(1)+'%');reflector.style.setProperty('--my',(y*100).toFixed(1)+'%');reflector.style.setProperty('--ry',((x-.5)*-10).toFixed(2)+'deg');reflector.style.setProperty('--rx',((y-.5)*8).toFixed(2)+'deg')},{passive:true});stage.addEventListener('pointerleave',()=>{reflector.style.setProperty('--rx','0deg');reflector.style.setProperty('--ry','0deg')});makeFrags();setInterval(()=>{if(document.visibilityState==='visible')show(idx+1)},6200)})();
 </script>
+<script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
 </body>
 </html>

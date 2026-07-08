@@ -31,5 +31,20 @@
 {t:'Night Market',a:'#dd284c',b:'#280f54',badge:'neon room'}
 ];const bench=document.getElementById('bench'),spot=document.getElementById('spotlight'),title=document.getElementById('bigTitle'),badge=document.getElementById('badge'),cursor=document.getElementById('cursor'),toggle=document.getElementById('toggleBtn');let active=0,auto=true,timer=0,last=performance.now();function setActive(i){active=(i+projects.length)%projects.length;const p=projects[active];spot.style.setProperty('--a',p.a);spot.style.setProperty('--b',p.b);title.textContent=p.t;badge.textContent=p.badge;document.querySelectorAll('.work').forEach(el=>el.classList.toggle('active',Number(el.dataset.i)===active));timer=0}document.querySelectorAll('.work').forEach(el=>{const go=()=>setActive(Number(el.dataset.i));el.addEventListener('mouseenter',go);el.addEventListener('focus',go);el.addEventListener('click',go)});bench.addEventListener('pointermove',e=>{const r=bench.getBoundingClientRect();spot.style.setProperty('--mx',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');spot.style.setProperty('--my',((e.clientY-r.top)/r.height*100).toFixed(1)+'%');cursor.style.setProperty('--cx',e.clientX+'px');cursor.style.setProperty('--cy',e.clientY+'px');cursor.classList.add('on')});bench.addEventListener('pointerleave',()=>cursor.classList.remove('on'));document.getElementById('nextBtn').addEventListener('click',()=>setActive(active+1));toggle.addEventListener('click',()=>{auto=!auto;toggle.textContent=auto?'Auto cycle on':'Auto cycle off'});function tick(now){const dt=(now-last)/1000;last=now;if(auto&&!matchMedia('(prefers-reduced-motion: reduce)').matches){timer+=dt;if(timer>4.6)setActive(active+1)}requestAnimationFrame(tick)}setActive(0);requestAnimationFrame(tick)})();
 </script>
+<script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
 </body>
 </html>

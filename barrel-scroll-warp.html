@@ -33,5 +33,20 @@ body{background:#05050a}.barrel-page{min-height:240svh;background:radial-gradien
 (function(){const page=document.querySelector('.barrel-page'),panels=[...document.querySelectorAll('.panel')],meter=document.querySelector('.barrel-meter');function update(){const max=page.scrollHeight-innerHeight;const p=Math.max(0,Math.min(1,scrollY/max));meter.style.setProperty('--p',p.toFixed(3));const center=p*(panels.length-1);panels.forEach((el,i)=>{const d=i-center;const y=d*104;const s=Math.max(.62,1-Math.abs(d)*.13);const rot=d*-21;const z=-Math.abs(d)*110;el.style.transform=`translate(-50%, calc(-50% + ${y}px)) rotateX(${rot}deg) translateZ(${z}px) scale(${s})`;el.style.zIndex=String(20-Math.abs(Math.round(d*10)));el.style.filter=`blur(${Math.max(0,Math.abs(d)-1)*1.2}px)`})}addEventListener('scroll',update,{passive:true});addEventListener('resize',update,{passive:true});update();})();
 
 </script>
+<script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
 </body>
 </html>

@@ -7,4 +7,19 @@
 <main><section class="hero" id="hero"><div class="sticky"><div class="progress"><i></i></div><div class="frame"><div class="speed-field"></div><div class="split"></div><div class="copy"><div class="eyebrow">Cinematic scroll system</div><h1><span class="word">Speed.</span><br><span class="word">Precision.</span><br><span class="word">Control.</span></h1><p>A brand-safe rebuild of the split-wipe / cascading-image rhythm using procedural gradient panels instead of racing footage or logos.</p></div></div><div class="strip" id="strip"></div></div></section><section class="section"><div class="notes"><article class="note"><h2>Split, then cascade.</h2><p>The hero divides into two angled halves while the bottom filmstrip resolves in sequence, creating launch-trailer pacing without borrowing any source imagery.</p></article><article class="note"><h2>Mobile keeps the control.</h2><p>On 390px screens the frame gets extra bottom room, only three tiles remain visible, and fixed hub buttons stay above the stage.</p></article></div></section></main>
 <script>
 const strip=document.getElementById('strip'),grads=['linear-gradient(135deg,#e2231a,#111 55%,#7ee9ff)','linear-gradient(135deg,#151515,#fff 48%,#e2231a)','linear-gradient(135deg,#1b1230,#ff7b00,#111)','linear-gradient(135deg,#07162c,#7ee9ff,#060606)','linear-gradient(135deg,#0b0b0b,#5c5c5c,#e2231a)','linear-gradient(135deg,#240b0b,#ffdad6,#050505)'];grads.forEach((g,i)=>{const d=document.createElement('div');d.className='tile';d.style.setProperty('--g',g);d.style.setProperty('--i',i);d.innerHTML=`<b>Sequence ${String(i+1).padStart(2,'0')}</b>`;strip.appendChild(d)});const hero=document.getElementById('hero');function update(){const r=hero.getBoundingClientRect();const max=hero.offsetHeight-innerHeight;const p=Math.max(0,Math.min(1,-r.top/max));document.documentElement.style.setProperty('--p',p.toFixed(4));}addEventListener('scroll',update,{passive:true});addEventListener('resize',update);update();
-</script></body></html>
+</script><script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
+</body></html>

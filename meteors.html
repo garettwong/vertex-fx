@@ -34,5 +34,20 @@ a{color:inherit;text-decoration:none}
 <div class="fx-hint">Watch the sky</div>
 <div class="mt-wrap"><span class="meteor" style="left:-10%;top:0%;animation-duration:2.6s;animation-delay:0.0s"></span><span class="meteor" style="left:-3%;top:13%;animation-duration:3.3s;animation-delay:0.8s"></span><span class="meteor" style="left:4%;top:26%;animation-duration:4.0s;animation-delay:1.6s"></span><span class="meteor" style="left:11%;top:39%;animation-duration:4.7s;animation-delay:2.4s"></span><span class="meteor" style="left:18%;top:12%;animation-duration:5.4s;animation-delay:3.2s"></span><span class="meteor" style="left:25%;top:25%;animation-duration:2.6s;animation-delay:4.0s"></span><span class="meteor" style="left:32%;top:38%;animation-duration:3.3s;animation-delay:4.8s"></span><span class="meteor" style="left:39%;top:11%;animation-duration:4.0s;animation-delay:0.0s"></span><span class="meteor" style="left:46%;top:24%;animation-duration:4.7s;animation-delay:0.8s"></span><span class="meteor" style="left:53%;top:37%;animation-duration:5.4s;animation-delay:1.6s"></span><span class="meteor" style="left:60%;top:10%;animation-duration:2.6s;animation-delay:2.4s"></span><span class="meteor" style="left:67%;top:23%;animation-duration:3.3s;animation-delay:3.2s"></span><span class="meteor" style="left:74%;top:36%;animation-duration:4.0s;animation-delay:4.0s"></span><span class="meteor" style="left:81%;top:9%;animation-duration:4.7s;animation-delay:4.8s"></span><span class="meteor" style="left:88%;top:22%;animation-duration:5.4s;animation-delay:0.0s"></span><span class="meteor" style="left:95%;top:35%;animation-duration:2.6s;animation-delay:0.8s"></span><span class="meteor" style="left:102%;top:8%;animation-duration:3.3s;animation-delay:1.6s"></span><span class="meteor" style="left:109%;top:21%;animation-duration:4.0s;animation-delay:2.4s"></span><h2>Meteor shower</h2></div>
 
+<script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
 </body>
 </html>

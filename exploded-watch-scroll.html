@@ -15,5 +15,20 @@
 <script>
 (function(){const exp=document.getElementById('exploded'),parts=[...document.querySelectorAll('.part')];function tick(){const r=exp.getBoundingClientRect(),vh=innerHeight,p=Math.max(0,Math.min(1,(vh*.75-r.top)/(vh+r.height*.25)));const moves=[[0,-p*135,0],[p*120,0,p*18],[-p*110,p*70,-p*10],[p*80,p*130,p*90]];parts.forEach((el,i)=>{const m=moves[i];el.style.transform=`translate(calc(-50% + ${m[0]}px),calc(-50% + ${m[1]}px)) rotate(${m[2]}deg)`})}addEventListener('scroll',tick,{passive:true});addEventListener('resize',tick);tick();})();
 </script>
+<script data-source-mode-nav>
+(function(){
+  var vault='g-fx-source-vault-79f87fe9a255b6f590cc/';
+  var params=new URLSearchParams(location.search);
+  var fromSource=params.get('source')==='1' || document.referrer.indexOf(vault)>=0;
+  if(fromSource){try{sessionStorage.setItem('vertexFxSourceMode','1')}catch(e){}}
+  try{fromSource=fromSource || sessionStorage.getItem('vertexFxSourceMode')==='1'}catch(e){}
+  if(!fromSource)return;
+  var back=vault+'?source=1';
+  document.querySelectorAll('a[href="index.html"],a[href="./"],a[href="/"]').forEach(function(a){
+    var txt=(a.textContent||'').toLowerCase();
+    if(a.classList.contains('fx-hub') || txt.indexOf('hub')>=0 || txt.indexOf('demo')>=0 || txt.indexOf('library')>=0){a.setAttribute('href',back);}
+  });
+})();
+</script>
 </body>
 </html>
