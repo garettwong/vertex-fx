@@ -22,6 +22,10 @@ except Exception:
 source_map = {}
 for card in re.findall(r'<a class="card" href="([^"]+)"[^>]*>(.*?)</a>', old_hidden, re.S):
     href, inner = card
+    # Hidden/source-view cards carry ?source=1, while public cards do not.
+    # Normalize before preserving old exact source mappings so regeneration
+    # never downgrades a known X URL to a generic source-note button.
+    href = href.split("?", 1)[0]
     m = re.search(r'class="srcgo exact" data-source="([^"]+)"', inner)
     if m:
         source_map[href] = html.unescape(m.group(1))
