@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-mobile-qa="molten-city-particle-hero-mobile-qa-2026-07-08">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="vertex-mobile-qa" content="390px no-horizontal-overflow marker: molten-city-particle-hero-mobile-qa-2026-07-08">
+<title>Molten City Particle Hero — VERTEX FX</title>
+<style>
+:root{--bg:#020307;--ink:#fff;--muted:rgba(255,255,255,.66);--line:rgba(255,255,255,.14);--red:#E2231A;--gold:#ffb75e;--cyan:#7de7ff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}*{box-sizing:border-box}html,body{margin:0;min-height:100%;overflow-x:hidden;background:var(--bg);color:var(--ink)}body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}.mobile-marker{position:fixed;left:0;top:0;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none}.fx-badge,.fx-hub{position:fixed;top:14px;z-index:70;border:1px solid var(--line);background:rgba(4,5,11,.76);backdrop-filter:blur(16px);border-radius:999px;padding:9px 13px;font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.fx-badge{left:14px}.fx-hub{right:14px;color:#fff;text-decoration:none}.page{min-height:230svh;background:radial-gradient(circle at 70% 8%,rgba(226,35,26,.20),transparent 34rem),linear-gradient(180deg,#020307,#070510 46%,#020307)}.stage{position:sticky;top:0;min-height:100svh;display:grid;grid-template-columns:minmax(0,.78fr) minmax(280px,1.02fr);gap:clamp(20px,5vw,72px);align-items:center;padding:92px clamp(16px,5vw,72px) 40px;isolation:isolate;overflow:hidden}.stage:before{content:"";position:absolute;inset:0;z-index:-3;background:linear-gradient(115deg,rgba(255,255,255,.035) 0 1px,transparent 1px 90px),radial-gradient(circle at var(--mx,54%) var(--my,44%),rgba(255,91,51,.16),transparent 20rem);background-size:90px 90px,auto}.particle-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-2;touch-action:none}.copy{max-width:620px;position:relative;z-index:2}.eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);border-radius:999px;padding:8px 12px;color:#ffd4be;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:900}.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 22px var(--red)}h1{font-size:clamp(42px,8vw,94px);line-height:.86;letter-spacing:-.07em;margin:22px 0 18px;max-width:100%;overflow-wrap:break-word}.lede{font-size:clamp(16px,2.2vw,21px);line-height:1.45;color:var(--muted);max-width:560px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.btn{border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:13px 18px;text-decoration:none;color:#fff;font-weight:900;background:rgba(255,255,255,.07);box-shadow:0 20px 50px rgba(0,0,0,.24)}.btn.primary{background:#fff;color:#050505}.panel{position:relative;z-index:2;min-width:0;border:1px solid rgba(255,255,255,.17);border-radius:30px;background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.04));box-shadow:0 34px 110px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.16);padding:clamp(18px,3.2vw,34px);overflow:hidden}.panel:before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 22% 18%,rgba(255,183,94,.20),transparent 24%),radial-gradient(circle at 84% 20%,rgba(125,231,255,.13),transparent 28%),linear-gradient(120deg,transparent,rgba(255,255,255,.08),transparent);animation:sheen 7s ease-in-out infinite;pointer-events:none}.screen{position:relative;min-height:430px;border-radius:22px;border:1px solid rgba(255,255,255,.13);background:radial-gradient(circle at 50% 62%,rgba(226,35,26,.18),transparent 30%),linear-gradient(180deg,rgba(2,3,7,.92),rgba(9,5,8,.95));overflow:hidden}.screen .horizon{position:absolute;left:8%;right:8%;bottom:34%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.62),transparent);box-shadow:0 0 30px rgba(255,255,255,.4)}.orb{position:absolute;width:180px;aspect-ratio:1;border-radius:50%;left:50%;top:33%;transform:translate(-50%,-50%);background:radial-gradient(circle at 32% 28%,#fff,#ffcc8e 18%,#e2231a 44%,rgba(226,35,26,.08) 68%,transparent 70%);filter:blur(.3px);box-shadow:0 0 82px rgba(226,35,26,.55);animation:orb 5.8s ease-in-out infinite}.wordmark{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);font-size:clamp(34px,6vw,68px);font-weight:1000;letter-spacing:-.08em;color:rgba(255,255,255,.92);text-shadow:0 0 22px rgba(255,91,51,.68)}.microgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:30px 30px;mask-image:linear-gradient(transparent,#000 25%,#000 70%,transparent)}.metrics{position:absolute;left:16px;right:16px;bottom:16px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.metric{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);border-radius:16px;padding:12px}.metric b{display:block;font-size:20px;color:#fff}.metric span{display:block;margin-top:2px;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.58)}.notes{position:relative;z-index:3;margin:26px auto 0;max-width:1120px;padding:0 clamp(16px,5vw,72px) 58px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.note{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.055);border-radius:22px;padding:18px}.note small{color:#ffd2be;text-transform:uppercase;letter-spacing:.12em;font-weight:900}.note h3{margin:10px 0 8px;font-size:18px}.note p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}@keyframes orb{50%{transform:translate(-50%,-52%) scale(1.08);filter:blur(1px)}}@keyframes sheen{50%{transform:translateX(12%) rotate(8deg)}}@media(max-width:860px){.stage{grid-template-columns:1fr;text-align:center;padding-top:84px}.copy{margin:auto}.lede{margin-left:auto;margin-right:auto}.actions{justify-content:center}.panel{width:100%;max-width:560px;margin:0 auto}.screen{min-height:360px}.metrics{grid-template-columns:1fr}.metric{padding:10px}.notes{grid-template-columns:1fr}.fx-badge,.fx-hub{font-size:10px;padding:8px 10px}.fx-badge{left:10px}.fx-hub{right:10px}h1{font-size:clamp(40px,14vw,64px)}}@media(max-width:430px){.screen{min-height:330px}.wordmark{font-size:42px}.orb{width:144px}.stage{gap:18px}.panel{border-radius:24px;padding:12px}.metrics{position:relative;left:auto;right:auto;bottom:auto;margin:210px 10px 10px}.screen .horizon{bottom:40%}}
+</style>
+</head>
+<body data-mobile-qa="molten-city-particle-hero-mobile-qa-2026-07-08">
+<span class="mobile-marker" data-mobile-qa="molten-city-particle-hero-mobile-qa-2026-07-08">molten-city-particle-hero-mobile-qa-2026-07-08</span>
+<div class="fx-badge">Particle hero</div><a class="fx-hub" href="index.html">↩ All demos</a>
+<main class="page">
+  <section class="stage" id="stage">
+    <canvas class="particle-canvas" id="field" aria-label="Interactive particle city and molten wordmark canvas"></canvas>
+    <div class="copy">
+      <div class="eyebrow"><i></i>WebGPU-scale idea / canvas-safe rebuild</div>
+      <h1>Make the whole city become the logo.</h1>
+      <p class="lede">A scratch-built landing hero pattern: point-cloud skyline, molten wordmark, cursor ripples and scroll-scrubbed terrain morphs — without borrowing any LiDAR, studio marks or engine code.</p>
+      <div class="actions"><a class="btn primary" href="#notes">Read pattern</a><a class="btn" href="index.html">Back to library</a></div>
+    </div>
+    <aside class="panel" aria-label="Particle hero preview">
+      <div class="screen">
+        <div class="microgrid"></div><div class="orb"></div><div class="horizon"></div><div class="wordmark">AURORA</div>
+        <div class="metrics"><div class="metric"><b>2.4k</b><span>live dots</span></div><div class="metric"><b>3</b><span>morph states</span></div><div class="metric"><b>0</b><span>source assets</span></div></div>
+      </div>
+    </aside>
+  </section>
+  <section class="notes" id="notes">
+    <article class="note"><small>Semantic gate</small><h3>Concrete website FX.</h3><p>The source post is about a visible studio landing page: particle city, molten wordmark, cursor wave field and scroll fly-through.</p></article>
+    <article class="note"><small>Safety</small><h3>Technique only.</h3><p>This demo uses fictional copy, generated points and a different wordmark. It does not copy Calgary LiDAR, Meridian15 branding, shaders, screenshots or code.</p></article>
+    <article class="note"><small>Mobile</small><h3>Reduced density.</h3><p>At phone width the particle count drops, controls stay inside the viewport and the canvas remains decorative behind readable copy.</p></article>
+  </section>
+</main>
+<script>
+(() => {
+  const canvas = document.getElementById('field');
+  const ctx = canvas.getContext('2d');
+  const stage = document.getElementById('stage');
+  let w=0,h=0,dpr=1,particles=[],wordPts=[],mx=.54,my=.44,scrollP=0,seed=9;
+  function rand(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296}
+  function lerp(a,b,t){return a+(b-a)*t}
+  function makeWord(){
+    const off=document.createElement('canvas'), ow=520, oh=170, octx=off.getContext('2d'); off.width=ow; off.height=oh;
+    octx.fillStyle='#000'; octx.fillRect(0,0,ow,oh); octx.fillStyle='#fff'; octx.textAlign='center'; octx.textBaseline='middle'; octx.font='900 92px Arial Black, Impact, sans-serif'; octx.fillText('AURORA',ow/2,oh/2);
+    const img=octx.getImageData(0,0,ow,oh).data; const pts=[];
+    for(let y=0;y<oh;y+=4){for(let x=0;x<ow;x+=4){if(img[(y*ow+x)*4]>120)pts.push({x:(x/ow-.5)*Math.min(w*.64,640)+w*.54,y:(y/oh-.5)*Math.min(h*.28,230)+h*.42})}}
+    wordPts=pts.length?pts:[{x:w/2,y:h/2}];
+  }
+  function skylineX(x){const n=Math.sin(x*.019)*38+Math.sin(x*.053+2)*22+Math.sin(x*.11)*10;return h*.68-n-Math.max(0,Math.sin(x*.006+1))*64}
+  function makeParticles(){
+    seed=9; makeWord(); const count=w<520?1050:2400; particles=[];
+    for(let i=0;i<count;i++){
+      const x=rand()*w; const wp=wordPts[Math.floor(rand()*wordPts.length)];
+      const cityX=x, cityY=skylineX(x)+(rand()-.5)*32; const terrX=rand()*w, terrY=h*(.58+rand()*.30)+Math.sin(terrX*.012)*44;
+      particles.push({x:rand()*w,y:rand()*h,vx:0,vy:0,cx:cityX,cy:cityY,wx:wp.x+(rand()-.5)*6,wy:wp.y+(rand()-.5)*6,tx:terrX,ty:terrY,r:rand()*1.8+.55,heat:rand()});
+    }
+  }
+  function resize(){dpr=Math.min(2,devicePixelRatio||1);w=canvas.clientWidth=innerWidth;h=canvas.clientHeight=innerHeight;canvas.width=Math.floor(w*dpr);canvas.height=Math.floor(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);makeParticles()}
+  function target(p){
+    const a=Math.min(1,scrollP*2), b=Math.max(0,(scrollP-.48)*1.9); let x=lerp(p.cx,p.wx,a), y=lerp(p.cy,p.wy,a);
+    x=lerp(x,p.tx,b); y=lerp(y,p.ty,b); const dx=x-mx*w, dy=y-my*h, dist=Math.hypot(dx,dy); const wave=Math.sin(dist*.035-performance.now()*.004)*Math.max(0,1-dist/230)*24; y+=wave; return {x,y};
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h); const g=ctx.createLinearGradient(0,0,0,h); g.addColorStop(0,'rgba(2,3,8,.98)');g.addColorStop(.6,'rgba(8,5,11,.82)');g.addColorStop(1,'rgba(2,3,7,.98)');ctx.fillStyle=g;ctx.fillRect(0,0,w,h);
+    const doc=document.documentElement; scrollP=Math.max(0,Math.min(1,(scrollY||doc.scrollTop||0)/Math.max(1,doc.scrollHeight-innerHeight)));
+    ctx.globalCompositeOperation='lighter';
+    for(const p of particles){const t=target(p);p.vx+=(t.x-p.x)*.018;p.vy+=(t.y-p.y)*.018;p.vx*=.88;p.vy*=.88;p.x+=p.vx;p.y+=p.vy;const heat=(p.heat+scrollP*.6)%1;ctx.fillStyle=heat<.42?'rgba(255,255,255,.72)':heat<.72?'rgba(255,183,94,.70)':'rgba(226,35,26,.62)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}
+    ctx.globalCompositeOperation='source-over'; requestAnimationFrame(draw);
+  }
+  addEventListener('resize',resize,{passive:true}); addEventListener('pointermove',e=>{mx=e.clientX/w;my=e.clientY/h;stage.style.setProperty('--mx',(mx*100)+'%');stage.style.setProperty('--my',(my*100)+'%')},{passive:true}); addEventListener('touchmove',e=>{const t=e.touches[0];if(t){mx=t.clientX/w;my=t.clientY/h;}},{passive:true});
+  resize(); draw();
+})();
+</script>
+</body>
+</html>
