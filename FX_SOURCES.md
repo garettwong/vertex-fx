@@ -460,3 +460,19 @@ Created on **2026-07-09** from the autonomous X FX Scout second pass. All three 
 - [@AnuragShar74342](https://x.com/AnuragShar74342/status/2074869046324146612) Sakura landing page: rejected because the caption centers on Claude Fable 5 single-prompt speed and AI-assisted web-development workflow; sakura/scroll territory also overlaps existing river/sakura demos.
 - [@athrix_codes](https://x.com/athrix_codes/status/2074848674694451490) WebGL ASCII hero repo: routed as repo/tool reference rather than an FX build because the caption foregrounds a GitHub repo and implementation source.
 - [@chhddavid](https://x.com/chhddavid/status/2075009621425799677) spotlight portfolio cursor prompt: rejected as a prompt/spec post despite the nice cursor idea.
+
+## Demo 113 — Desktop Portfolio Launcher
+
+Created on **2026-07-09** from [@heysony_](https://x.com/heysony_/status/2074941502971887670), surfaced by the X FX Scout as a concrete no-scroll portfolio homepage animation. Motion/context audit: the caption says the homepage intentionally does not start with a scroll and the video shows a macOS-like personal desktop: textured wallpaper, profile/photo area, sticky-note copy, folder icons that reveal personality/projects/resume/tools, and a bottom dock.
+
+Semantic gate verdict: **Build** — the post meaning is a visible portfolio-homepage interaction, not a workflow, prompt, repo/install, design philosophy, or template giveaway. Rebuilt from scratch as **Desktop Portfolio Launcher** (`desktop-portfolio-launcher.html`) with original HTML/CSS/JS, CSS-generated portrait/folders/windows/dock, fictional Sona portfolio copy and responsive mobile launcher layout; no source Figma/Antigravity output, personal photo, icon set, portfolio content, fonts, screenshots, video frames, code, or assets reused. Score: **88**.
+
+- **Desktop Portfolio Launcher** (`desktop-portfolio-launcher.html`) — from [@heysony_](https://x.com/heysony_/status/2074941502971887670). Semantic gate verdict: **Build** — concrete no-scroll portfolio homepage desktop metaphor; rebuilt with original CSS/JS and fictional content only.
+
+### 2026-07-09 current-pass semantic rejects / non-builds
+
+- [@madewithgsap](https://x.com/madewithgsap/status/2071941827075170652) wheel-of-images effect: concrete, but held as non-build because it overlaps existing CSS-3D gallery/ring/dome coverage and the source is a GSAP effect-promo item.
+- [@oogatwt](https://x.com/oogatwt/status/1949927310909489202) mouse-follow spotlight grid: clean and safe, but below auto-build threshold because the library already has multiple cursor/spotlight/magnetic reveal entries.
+- [@tonbistudio](https://x.com/tonbistudio/status/2046320339588899265) Kimi AI one-shot shader hero: rejected by the mandatory semantic gate because the caption/context foregrounds AI one-shot generation rather than a clean website-effect source.
+- [@sujitkoji](https://x.com/sujitkoji/status/2028521784161796539) WebGL experiments portfolio: kept as shader/reference material, not a standalone landing-page FX build this pass.
+- [@brucetista](https://x.com/brucetista/status/2021738868618539073) Replit-to-Framer WebGL intro: visually relevant, but held below build threshold due overlap with existing device/story/liquid portfolio hero patterns.
