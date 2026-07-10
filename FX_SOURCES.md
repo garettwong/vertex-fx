@@ -603,5 +603,5 @@ Created on **2026-07-10** from [@QCXINT_](https://x.com/qcxint_/status/207516465
 
 **Semantic gate verdict: Build with workflow abstraction.** The post is mixed workflow + visual demo. It is not a single page to clone, but it does contain a concrete reusable website effect: AI-generated world scenes bound into immersive scroll-scrubbed landing pages.
 
-Rebuilt from scratch as **Scroll World Triptych** (`scroll-world-triptych.html`) — original procedural CSS/canvas scenes for tea diorama, luxury villa and EV road worlds, fictional method copy, scroll-driven state changes and mobile fixed-scene fallback. No Peter Wang/scroll-world skill code, Higgsfield outputs, screenshots, video frames, Pearl & Co./Belvedere/Meridian assets, logos, copy, prompts, generated media or proprietary files were reused.
+Rebuilt from scratch as **Scroll World Triptych** (`scroll-world-triptych.html`) — original generated image assets for tea diorama, luxury villa and EV road worlds, custom frontend choreography, fictional method copy, scroll-driven state changes and mobile fixed-scene fallback. No Peter Wang/scroll-world skill code, Higgsfield outputs, screenshots, video frames, Pearl & Co./Belvedere/Meridian assets, logos, copy, prompts, source generated media or proprietary files were reused.
 
