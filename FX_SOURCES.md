@@ -685,3 +685,16 @@ Created on **2026-07-16** from the autonomous X FX Scout pass.
 - [@fra_michelini](https://x.com/fra_michelini/status/2077318155047719255) shader replication: rejected because the caption foregrounds replicating an effect rather than a finished landing-page interaction, and existing shader coverage is extensive.
 - [@yahyabuilds](https://x.com/yahyabuilds/status/2077366992135229925) Organic Ripples: rejected because the caption promotes a Framer Vault component.
 - [@itschatto](https://x.com/itschatto/status/2077378918982496450) Uptech hero: kept as reference only; concrete but the result overlaps the current animated-hero library without sufficiently extractable new motion detail.
+## Demo 152 — Arc Strike Scroll
+
+Created on **2026-07-17** from [@berozgaaraaadmi](https://x.com/berozgaaraaadmi/status/2065429189193609499), whose post is a concrete cinematic scroll-animation website concept. Motion audit: a charged diagonal strike crosses the hero, the interface shifts through scroll-linked chapters, background geometry parallaxs, energy blooms and fragments settle after the hit.
+
+Semantic gate verdict: **Build** — the caption frames a visible scroll-animation/product-concept website effect, not a workflow, prompt, repository, install instruction, taste rule or design advice. Rebuilt from scratch as **Arc Strike Scroll** (`arc-strike-scroll.html`) with original fictional copy, CSS grid, procedural energy geometry, a scroll-driven light arc and abstract shards. The source's Cyber Katana title, sword/katana models, client artwork, logos, footage, screenshots, code, fonts and source copy were not used. Score: **87**.
+
+### 2026-07-17 semantic-gate rejects / non-builds
+
+- [@utsavdotdev](https://x.com/utsavdotdev/status/2077789336385573376) chocolate GSAP progress post: rejected because the caption is a daily learning/progress log, not a distinct effect source.
+- [@AryanNarvar](https://x.com/AryanNarvar/status/2076009647807557923) BMW-inspired landing page: rejected due to brand/IP-dependent automotive source framing.
+- [@monokern](https://x.com/monokern/status/2071257133614584186) Claude Code animated site: rejected because the caption is principally an AI coding/cost workflow claim.
+- [@jagwalansh](https://x.com/jagwalansh/status/2067224091090952676) magnetic cursor: safe concrete interaction, but substantially overlaps existing Living Cursor Companion and Pixel Grid Cursor Trail demos.
+- [@Ahmad_Visuals](https://x.com/Ahmad_Visuals/status/2077412455379042688) cursor-parallax hero: safe but too generic and overlaps existing pointer-parallax demos.
