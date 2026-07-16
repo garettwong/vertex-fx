@@ -655,3 +655,18 @@ Created on **2026-07-10** from the autonomous X FX Scout evening pass. All four 
 - [@Durektor97](https://x.com/Durektor97/status/2075527697883713537), [@zeuuss_01](https://x.com/zeuuss_01/status/2075541589280039152), [@0xAIGOATexe](https://x.com/0xAIGOATexe/status/2075561927724740976) and related Claude/Fable/Higgsfield/Omma posts were rejected because the primary meaning is AI production workflow, prompt/playbook, connector setup or agency-cost comparison; the website visuals serve as tool-output proof rather than clean FX sources.
 - [@ItsTopeorIsrael](https://x.com/ItsTopeorIsrael/status/2075461411631726988) lighthouse/scanline website health-check hero was kept as reference only because the post is framed as a Day 2 build-in-public progress log and the visible effect is below the novelty threshold after existing scanner/diagnostic hero coverage.
 - [@sabosugi](https://x.com/sabosugi/status/2075489295834706100) Alien Cell shader was rejected/routed as source-code/CodePen technique material because the caption foregrounds demo/source code and the library already has strong shader/liquid/organic-cell coverage.
+
+## Demo 150 — Prismatic Glass Orbits
+
+Created on **2026-07-16** from the autonomous X FX Scout pass.
+
+- **Prismatic Glass Orbits** (`prismatic-glass-orbits.html`) — from [@Simone_dev_com](https://x.com/Simone_dev_com/status/2077392744390009181). Semantic gate verdict: **Build** — the exact caption showcases a concrete browser visual effect, “Dynamic glass rings with real-time refraction and chromatic dispersion,” not a repo, tutorial, workflow or tool promotion. Rebuilt from scratch as a fictional interface hero with CSS 3D orbital planes, an original procedural spectrum core and pointer-driven tilt; no Three.js code, shaders, screenshots, assets, labels, logos, source copy or imported media were reused. Score: **91**.
+
+### 2026-07-16 semantic rejects / non-builds
+
+- [@utsavdotdev](https://x.com/utsavdotdev/status/2077367822657921371) chocolate landing page: rejected because its #LSPPDay45 / #60DaysOfLearning framing makes it a build-in-public learning log rather than a clean FX source.
+- [@md__jj](https://x.com/md__jj/status/2077463872340988361) interactive footer: rejected because the caption explicitly sells template code through a waitlist.
+- [@0xKenny1st](https://x.com/0xKenny1st/status/2077504958027719012) animated landing page: rejected because it is primarily an AI tool/workflow and agency-income pitch.
+- [@TracyCss](https://x.com/TracyCss/status/2077345632331735536) scroll video: rejected because it promotes a Framer marketplace component.
+- [@JoshuaRDesign](https://x.com/JoshuaRDesign/status/2077460404889112858) faux-3D section: kept as reference only; visually valid but the narrow perspective-card behavior overlaps existing architectural depth and scroll-story demos.
+- [@SiddharthArni](https://x.com/SiddharthArni/status/2077412134049497376) grid/radial portfolio: kept as reference only; concrete but overlaps the existing portfolio/gallery interaction coverage and refers listeners to another designer’s UI sounds.
