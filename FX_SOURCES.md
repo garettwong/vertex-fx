@@ -700,3 +700,18 @@ Semantic gate verdict: **Build** — the caption frames a visible scroll-animati
 - [@monokern](https://x.com/monokern/status/2071257133614584186) Claude Code animated site: rejected because the caption is principally an AI coding/cost workflow claim.
 - [@jagwalansh](https://x.com/jagwalansh/status/2067224091090952676) magnetic cursor: safe concrete interaction, but substantially overlaps existing Living Cursor Companion and Pixel Grid Cursor Trail demos.
 - [@Ahmad_Visuals](https://x.com/Ahmad_Visuals/status/2077412455379042688) cursor-parallax hero: safe but too generic and overlaps existing pointer-parallax demos.
+
+## Demo 153 — Art Deco District Explorer
+
+Created on **2026-07-17** from [@videinfragroup](https://x.com/videinfragroup/status/2077763612467241222). Motion audit: a 13.5-second real-time WebGL browser exploration of a 3D Art Deco district, with smooth camera movement through buildings, streets, lighting and perspective shifts rather than pre-rendered video.
+
+Semantic gate verdict: **Build** — the caption is about a concrete interactive website visual effect (“An entire district, rendered in 3D — right in your browser”), not a workflow, prompt, repository, tool install, learning log or advice post. Rebuilt from scratch as **Art Deco District Explorer** (`art-deco-district-explorer.html`) using original procedural 2D perspective buildings, lamps, camera yaw and fictional interface/copy. No ERA branding, district layout, client properties, Art Deco assets, screenshots, footage, WebGL code, 3D models, textures, fonts or source copy were reused. Score: **89**.
+
+- **Art Deco District Explorer** (`art-deco-district-explorer.html`) — from [@videinfragroup](https://x.com/videinfragroup/status/2077763612467241222). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **89**.
+
+### 2026-07-17 semantic-gate rejects / non-builds (later pass)
+
+- [@risshibhagatt](https://x.com/risshibhagatt/status/2077630689370087490) interactive particle portfolio hero: rejected because the exact caption foregrounds a Framer AI agent + Claude workflow and configurable component rather than a clean visual-effect showcase.
+- [@Zaoui_Souhaib](https://x.com/Zaoui_Souhaib/status/2077702509775450479) Butterfly/Studio Mode background comparison: concrete and safe, but held as a reference because its butterfly/ambient-orbit territory materially overlaps existing Butterfly Course Hero, Living Aether Hero and multiple orbital/studio demos.
+- [@imananddesigner](https://x.com/imananddesigner/status/2077611719988502608) ShaderSlider: held as reference because the post promotes a configurable component collection and its image-driven shader-transition surface is asset-dependent/overlaps broad existing shader coverage.
+- [@mesh3d_gallery](https://x.com/mesh3d_gallery/status/2077636923003204025) hiring-platform WebGL site: held as reference because the curator post does not provide a sufficiently distinct, safely extractable interaction beyond existing city/portfolio/3D coverage.
