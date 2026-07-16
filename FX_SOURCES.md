@@ -670,3 +670,18 @@ Created on **2026-07-16** from the autonomous X FX Scout pass.
 - [@TracyCss](https://x.com/TracyCss/status/2077345632331735536) scroll video: rejected because it promotes a Framer marketplace component.
 - [@JoshuaRDesign](https://x.com/JoshuaRDesign/status/2077460404889112858) faux-3D section: kept as reference only; visually valid but the narrow perspective-card behavior overlaps existing architectural depth and scroll-story demos.
 - [@SiddharthArni](https://x.com/SiddharthArni/status/2077412134049497376) grid/radial portfolio: kept as reference only; concrete but overlaps the existing portfolio/gallery interaction coverage and refers listeners to another designer’s UI sounds.
+
+## Demo 151 — Scroll Wheel Parallax
+
+Created on **2026-07-16** from the autonomous X FX Scout pass.
+
+- **Scroll Wheel Parallax** (`scroll-wheel-parallax.html`) — from [@uzodev](https://x.com/uzodev/status/2077347450575008208). Semantic gate verdict: **Build** — the exact caption showcases a concrete section from a launched website: an SVG wheel behind a CTA that rotates with scroll direction plus image parallax; it is not a tutorial, workflow, repo, template sale or tool promotion. Rebuilt from scratch as an original fictional outdoor/editorial hero with procedural CSS landscape, sun, wheel spokes, directional scroll physics and independent copy; no source-site imagery, SVG artwork, logo, code, video, layout copy or client assets reused. Score: **88**.
+
+### 2026-07-16 late semantic rejects / non-builds
+
+- [@CryoberryWeb](https://x.com/CryoberryWeb/status/2077505987477684597) hero animation: concrete visual showcase, but the four-second clip does not provide enough distinct interaction detail to safely clear the novelty/motion-audit bar.
+- [@sauroww](https://x.com/sauroww/status/2077302020302840079) portfolio: kept as reference only; concrete and safe, but its page transitions/Three.js shader scope overlaps existing portfolio and shader gallery demos.
+- [@frombaris](https://x.com/frombaris/status/2077319020139725179) Dithereal WebGL components: rejected because the post promotes a reusable component collection rather than one finished website effect.
+- [@fra_michelini](https://x.com/fra_michelini/status/2077318155047719255) shader replication: rejected because the caption foregrounds replicating an effect rather than a finished landing-page interaction, and existing shader coverage is extensive.
+- [@yahyabuilds](https://x.com/yahyabuilds/status/2077366992135229925) Organic Ripples: rejected because the caption promotes a Framer Vault component.
+- [@itschatto](https://x.com/itschatto/status/2077378918982496450) Uptech hero: kept as reference only; concrete but the result overlaps the current animated-hero library without sufficiently extractable new motion detail.
