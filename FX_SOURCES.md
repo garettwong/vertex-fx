@@ -709,6 +709,14 @@ Semantic gate verdict: **Build** — the caption is about a concrete interactive
 
 - **Art Deco District Explorer** (`art-deco-district-explorer.html`) — from [@videinfragroup](https://x.com/videinfragroup/status/2077763612467241222). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **89**.
 
+## Demo 154 — Glass Fog Monogram
+
+Created on **2026-07-17** from [@greensock](https://x.com/greensock/status/2077870741882593693). Motion audit: the Clevante Site-of-the-Day reel starts with a wordmark docking into its header, then reveals a refractive glass monogram above a drifting fog field; scrolling brings in controlled per-word smoke reveals and a compact case-study drawer morph.
+
+Semantic gate verdict: **Build** — the official GSAP caption documents a concrete cinematic portfolio/website effect rather than a workflow, prompt, repo, install instruction, learning log or advice. Rebuilt from scratch as **Glass Fog Monogram** (`glass-fog-monogram.html`) with original fictional V mark, CSS glass construction, procedural canvas fog, owned copy, smoke-style word transitions and a compact color-study drawer. No Clevante logo, monogram, site code, WebGL/React/GSAP source, footage, screenshots, fonts, case-study assets or copy were used. Score: **92**.
+
+- **Glass Fog Monogram** (`glass-fog-monogram.html`) — from [@greensock](https://x.com/greensock/status/2077870741882593693). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **92**.
+
 ### 2026-07-17 semantic-gate rejects / non-builds (later pass)
 
 - [@risshibhagatt](https://x.com/risshibhagatt/status/2077630689370087490) interactive particle portfolio hero: rejected because the exact caption foregrounds a Framer AI agent + Claude workflow and configurable component rather than a clean visual-effect showcase.
