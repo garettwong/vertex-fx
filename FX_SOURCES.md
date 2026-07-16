@@ -691,6 +691,8 @@ Created on **2026-07-17** from [@berozgaaraaadmi](https://x.com/berozgaaraaadmi/
 
 Semantic gate verdict: **Build** — the caption frames a visible scroll-animation/product-concept website effect, not a workflow, prompt, repository, install instruction, taste rule or design advice. Rebuilt from scratch as **Arc Strike Scroll** (`arc-strike-scroll.html`) with original fictional copy, CSS grid, procedural energy geometry, a scroll-driven light arc and abstract shards. The source's Cyber Katana title, sword/katana models, client artwork, logos, footage, screenshots, code, fonts and source copy were not used. Score: **87**.
 
+- **Arc Strike Scroll** (`arc-strike-scroll.html`) — from [@berozgaaraaadmi](https://x.com/berozgaaraaadmi/status/2065429189193609499). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **87**.
+
 ### 2026-07-17 semantic-gate rejects / non-builds
 
 - [@utsavdotdev](https://x.com/utsavdotdev/status/2077789336385573376) chocolate GSAP progress post: rejected because the caption is a daily learning/progress log, not a distinct effect source.
