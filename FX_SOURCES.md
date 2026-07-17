@@ -750,3 +750,16 @@ Semantic gate verdict: **Build** — the post is a direct visual shader explorat
 
 - [@imananddesigner](https://x.com/imananddesigner/status/2077611719988502608) ShaderSlider: rejected as a named Framer marketplace component promotion, rather than an independently documented visual-effect post.
 - [@CorentinBerndu](https://x.com/CorentinBerndu/status/2077809091666121164) shader exploration reel: held as inspiration only because it is a general multi-experiment reel rather than a clear standalone landing-page effect.
+
+## Demo 157 — Magnetic Thread Dividers
+
+Created on **2026-07-18** from the autonomous X FX Scout pass.
+
+- **Magnetic Thread Dividers** (`magnetic-thread-dividers.html`) — from [@sauroww](https://x.com/sauroww/status/2078002394357764211). Semantic gate verdict: **Build** — the exact caption describes a concrete website work-section interaction: tensioned divider threads that actively repel the cursor through dynamic SVG/cubic-bezier manipulation; it is not a workflow, prompt, repository, installation, template sale, learning log or advice post. Rebuilt from scratch with an original fictional work-list composition, owned copy, responsive SVG curve math, mobile-safe layout and no WebGL, source code, screenshots, footage, logos, fonts, assets or source copy reused. Score: **89**.
+
+### 2026-07-18 semantic-gate rejects / non-builds
+
+- [@somratchandra](https://x.com/somratchandra/status/2078158838415683903) hanging-lamp cursor-light landing page: concrete and safe, but kept as reference only because its darkness/spotlight cursor behavior substantially overlaps the existing **Torch Reveal Principles** demo.
+- [@wamweaaa](https://x.com/wamweaaa/status/2078099753926119614) scroll/bouncy hero changes: rejected because the caption is a build-in-public quality-of-life update, not a standalone visual-effect source.
+- [@Caesargives](https://x.com/Caesargives/status/2078043545131217305), [@brn_maker](https://x.com/brn_maker/status/2078057083434647750), [@bounceidc](https://x.com/bounceidc/status/2078041639550103905) and [@RoundtableSpace](https://x.com/RoundtableSpace/status/2077917448595026357): rejected because their captions primarily promote AI builders, prompts, courses or production workflows rather than a clean reusable visual effect.
+- [@arqe_ai](https://x.com/arqe_ai/status/2078021011904311723) carousel and [@joaoportodesign](https://x.com/joaoportodesign/status/2078072220341932495) Framer process line: rejected as template/product promotion or overlapping generic process-scroll coverage.
