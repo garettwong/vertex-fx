@@ -737,3 +737,16 @@ Semantic gate verdict: **Build** — the post is about a concrete shipped homepa
 - [@utsavdotdev](https://x.com/utsavdotdev/status/2077789336385573376) chocolate GSAP progress post: rejected because its #LSPPDay46 / #60DaysOfLearning framing makes it a build-in-public learning log, not a clean FX source.
 - [@_siddhantmani](https://x.com/_siddhantmani/status/2077814769109840365) React Vibe hero: rejected because the caption primarily promotes a larger frontend component kit, not one independently documented visual-effect source.
 - [@LottieFiles](https://x.com/LottieFiles/status/2077576224659112213) motion-principles AI skill: rejected as a skill/tool promotion, despite its animation examples.
+
+## Demo 156 — ASCII Fluid Signal
+
+Created on **2026-07-17** from [@pedroscosta_](https://x.com/pedroscosta_/status/2077556630061756915). Motion audit: a continuous WebGL Navier–Stokes fluid simulation with a high-contrast ASCII-rendered highlight layer; the organic flow swirls and reforms as an immersive interactive visual surface.
+
+Semantic gate verdict: **Build** — the post is a direct visual shader exploration, not a workflow, prompt, advice, repository, install instruction or learning log. Rebuilt from scratch as **ASCII Fluid Signal** (`ascii-fluid-signal.html`) with original canvas wave-field math, generated glyphs, fictional product copy and touch/pointer controls. No OGL code, shader source, source screenshots/video, design artwork, fonts, logo, assets or copy were used. Score: **87**.
+
+- **ASCII Fluid Signal** (`ascii-fluid-signal.html`) — from [@pedroscosta_](https://x.com/pedroscosta_/status/2077556630061756915). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **87**.
+
+### 2026-07-17 semantic-gate rejects / non-builds (fluid pass)
+
+- [@imananddesigner](https://x.com/imananddesigner/status/2077611719988502608) ShaderSlider: rejected as a named Framer marketplace component promotion, rather than an independently documented visual-effect post.
+- [@CorentinBerndu](https://x.com/CorentinBerndu/status/2077809091666121164) shader exploration reel: held as inspiration only because it is a general multi-experiment reel rather than a clear standalone landing-page effect.
