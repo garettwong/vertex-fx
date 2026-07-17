@@ -723,3 +723,17 @@ Semantic gate verdict: **Build** — the official GSAP caption documents a concr
 - [@Zaoui_Souhaib](https://x.com/Zaoui_Souhaib/status/2077702509775450479) Butterfly/Studio Mode background comparison: concrete and safe, but held as a reference because its butterfly/ambient-orbit territory materially overlaps existing Butterfly Course Hero, Living Aether Hero and multiple orbital/studio demos.
 - [@imananddesigner](https://x.com/imananddesigner/status/2077611719988502608) ShaderSlider: held as reference because the post promotes a configurable component collection and its image-driven shader-transition surface is asset-dependent/overlaps broad existing shader coverage.
 - [@mesh3d_gallery](https://x.com/mesh3d_gallery/status/2077636923003204025) hiring-platform WebGL site: held as reference because the curator post does not provide a sufficiently distinct, safely extractable interaction beyond existing city/portfolio/3D coverage.
+
+## Demo 155 — Chroma Current Glass
+
+Created on **2026-07-17** from [@zdkiel_labs](https://x.com/zdkiel_labs/status/2077639304088879213), whose shipped studio-homepage post replaces a hero video with a live cursor-reactive WebGPU shader: swirl, chromatic flow, fluted glass and film grain.
+
+Semantic gate verdict: **Build** — the post is about a concrete shipped homepage visual effect and its production behavior, not a prompt, tutorial, repository/install, AI workflow, learning log or design advice. Rebuilt from scratch as **Chroma Current Glass** (`chroma-current-glass.html`) using an original canvas color-field renderer, CSS fluted-glass object, fictional interface/copy and owned interaction code. No ZDK Labs branding, source website code, WebGPU shader, video, screenshot, logo, fonts, client copy, assets or source-site layout were used. Score: **90**.
+
+- **Chroma Current Glass** (`chroma-current-glass.html`) — from [@zdkiel_labs](https://x.com/zdkiel_labs/status/2077639304088879213). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **90**.
+
+### 2026-07-17 semantic-gate rejects / non-builds (current pass)
+
+- [@utsavdotdev](https://x.com/utsavdotdev/status/2077789336385573376) chocolate GSAP progress post: rejected because its #LSPPDay46 / #60DaysOfLearning framing makes it a build-in-public learning log, not a clean FX source.
+- [@_siddhantmani](https://x.com/_siddhantmani/status/2077814769109840365) React Vibe hero: rejected because the caption primarily promotes a larger frontend component kit, not one independently documented visual-effect source.
+- [@LottieFiles](https://x.com/LottieFiles/status/2077576224659112213) motion-principles AI skill: rejected as a skill/tool promotion, despite its animation examples.
