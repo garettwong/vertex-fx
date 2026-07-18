@@ -789,3 +789,16 @@ Created on **2026-07-18** from the autonomous X FX Scout pass.
 - [@Barryakpoyibo](https://x.com/Barryakpoyibo/status/2077664203364573454) Webflow transition: concrete and safe, but held as reference because the available motion detail is too generic to clear the novelty/motion-audit bar against existing transition coverage.
 - [@greensock](https://x.com/greensock/status/2077921957337518269) Share Bien Site of the Day: concrete and safe, but held as reference because it is a multi-effect branded-site showcase; the source summary does not isolate a new reusable interaction beyond existing scroll, route-transition and WebGL coverage.
 - [@frombaris](https://x.com/frombaris/status/2078205577692328129) Dithereal: rejected as a WebGL component collection/tool promotion rather than a single finished website effect.
+
+## Demo 112 — Dither Morph Field
+
+Created on **2026-07-18** from [@sauroww](https://x.com/sauroww/status/2078374735193518583). Motion audit: a standalone creative-coding post showing a custom GLSL dithering surface layered with pointer-proximity vertex morphing and scroll-velocity distortion.
+
+Semantic gate verdict: **Build** — the caption is a concrete interactive website effect, not a tutorial, repository, install prompt or workflow post. Rebuilt from scratch as **Dither Morph Field** (`dither-morph-field.html`) with original 2D procedural dot-field math, fictional copy and independent pointer/scroll response; no R3F/GSAP/GLSL source code, screenshots, video frames, assets, fonts or original copy reused. Score: **90**.
+
+### 2026-07-18 semantic-gate rejects / non-builds
+
+- [@bounceidc](https://x.com/bounceidc/status/2078041639550103905) scroll-controlled portrait/video hero: rejected because its long caption is primarily an AI-prompt library and implementation/workflow funnel.
+- [@frombaris](https://x.com/frombaris/status/2078205577692328129) Dithereal: rejected as a React/WebGL component collection/product, not a scratch visual-effect source.
+- [@DesignElmedine](https://x.com/DesignElmedine/status/2078080092488581555) and [@tc_kreativ](https://x.com/tc_kreativ/status/2078134910749966341): motion/design philosophy posts, not FX-library items.
+- [@wamweaaa](https://x.com/wamweaaa/status/2078099753926119614): general build-in-public landing-page polish with no sufficiently distinct standalone effect.
