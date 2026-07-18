@@ -777,3 +777,15 @@ Created on **2026-07-18** from the autonomous X FX Scout pass.
 - [@4ormund](https://x.com/4ormund/status/2078111524858794288) Chart Arena: rejected for crypto/trading context.
 - [@maxim_bortnikov](https://x.com/maxim_bortnikov/status/2078052572267491574) shader experiments: held as reference because the stated Shadertoy-source mixing is asset/attribution-sensitive and overlaps the library’s substantial shader coverage.
 - [@ripplix_](https://x.com/ripplix_/status/2078102563438694567), [@IsmelFigueroa](https://x.com/IsmelFigueroa/status/2078155314512195591), and [@Fri3ndsAgency](https://x.com/Fri3ndsAgency/status/2078157058835104035): held/rejected as branded/client-site curation or asset-dependent multi-effect examples without one safely isolated new primitive.
+
+## Demo 159 — Hydration Orbit
+
+Created on **2026-07-18** from the autonomous X FX Scout pass.
+
+- **Hydration Orbit** (`hydration-orbit.html`) — from [@Kerembalku](https://x.com/Kerembalku/status/2078157324514898065). Semantic gate verdict: **Build** — the exact caption presents a concrete interactive hydration-themed 3D browser demo, not a workflow, prompt, repository, install instruction, learning log or advice post. Motion audit: a reflective fluid 3D scene with dynamic object interaction and camera movement. Rebuilt from scratch as an original fictional product hero with CSS glass, procedural orbit rings, generated water fill and pointer-responsive lighting. No Spline/Figma files, source code, screenshots, video frames, logo, assets, fonts or copy were used. Score: **88**.
+
+### 2026-07-18 semantic-gate rejects / non-builds (hydration pass)
+
+- [@Barryakpoyibo](https://x.com/Barryakpoyibo/status/2077664203364573454) Webflow transition: concrete and safe, but held as reference because the available motion detail is too generic to clear the novelty/motion-audit bar against existing transition coverage.
+- [@greensock](https://x.com/greensock/status/2077921957337518269) Share Bien Site of the Day: concrete and safe, but held as reference because it is a multi-effect branded-site showcase; the source summary does not isolate a new reusable interaction beyond existing scroll, route-transition and WebGL coverage.
+- [@frombaris](https://x.com/frombaris/status/2078205577692328129) Dithereal: rejected as a WebGL component collection/tool promotion rather than a single finished website effect.
