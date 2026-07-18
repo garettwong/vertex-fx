@@ -763,3 +763,17 @@ Created on **2026-07-18** from the autonomous X FX Scout pass.
 - [@wamweaaa](https://x.com/wamweaaa/status/2078099753926119614) scroll/bouncy hero changes: rejected because the caption is a build-in-public quality-of-life update, not a standalone visual-effect source.
 - [@Caesargives](https://x.com/Caesargives/status/2078043545131217305), [@brn_maker](https://x.com/brn_maker/status/2078057083434647750), [@bounceidc](https://x.com/bounceidc/status/2078041639550103905) and [@RoundtableSpace](https://x.com/RoundtableSpace/status/2077917448595026357): rejected because their captions primarily promote AI builders, prompts, courses or production workflows rather than a clean reusable visual effect.
 - [@arqe_ai](https://x.com/arqe_ai/status/2078021011904311723) carousel and [@joaoportodesign](https://x.com/joaoportodesign/status/2078072220341932495) Framer process line: rejected as template/product promotion or overlapping generic process-scroll coverage.
+
+## Demo 158 — Elemental Bloom
+
+Created on **2026-07-18** from the autonomous X FX Scout pass.
+
+- **Elemental Bloom** (`elemental-bloom.html`) — from [@Psalteric](https://x.com/Psalteric/status/2078094313494299004). Semantic gate verdict: **Build** — the post is a self-contained, concrete interactive canvas visual: a rock-like form dissolves into particles, reorganizes into chemical-element clusters, and reacts to the cursor. Although the author mentions GPT-assisted creation, the post’s substantive focus is the finished browser effect rather than a prompt, tool install, repository, workflow lesson or advice. Rebuilt from scratch as an original fictional material-signal study with a procedurally generated mineral bloom, owned particle physics, invented material labels and original copy. No source rock renders, chemical data, code, screenshots, video frames, fonts, logo, assets or source copy were used. Score: **86**.
+
+### 2026-07-18 semantic-gate rejects / non-builds (late pass)
+
+- [@wamweaaa](https://x.com/wamweaaa/status/2078099753926119614) scroll/bouncy hero update: rejected as a build-in-public quality-of-life update rather than a standalone effect source.
+- [@srksifat_dev](https://x.com/srksifat_dev/status/2078147130989089147) Three.js portfolio: rejected because the caption centers on an AI/Codex build workflow and stack disclosure, not one specific reusable effect.
+- [@4ormund](https://x.com/4ormund/status/2078111524858794288) Chart Arena: rejected for crypto/trading context.
+- [@maxim_bortnikov](https://x.com/maxim_bortnikov/status/2078052572267491574) shader experiments: held as reference because the stated Shadertoy-source mixing is asset/attribution-sensitive and overlaps the library’s substantial shader coverage.
+- [@ripplix_](https://x.com/ripplix_/status/2078102563438694567), [@IsmelFigueroa](https://x.com/IsmelFigueroa/status/2078155314512195591), and [@Fri3ndsAgency](https://x.com/Fri3ndsAgency/status/2078157058835104035): held/rejected as branded/client-site curation or asset-dependent multi-effect examples without one safely isolated new primitive.
