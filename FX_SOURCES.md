@@ -818,3 +818,18 @@ Semantic gate verdict: **Build** — the caption (“Most custom cursors are dec
 
 - [@revslider](https://x.com/revslider/status/2077769245723972045) DepthForge: rejected because the post is a direct promotion of a proprietary Slider Revolution template/engine.
 - [@greensock](https://x.com/greensock/status/2077921957337518269) Share Bien Site-of-the-Day: concrete and safe, but held as a multi-effect branded-site reference; it does not isolate a new primitive beyond existing library scroll, route-transition and WebGL coverage.
+
+## Demo 161 — Cartographic Drift Atlas
+
+Created on **2026-07-19** from [@Mickael_zim](https://x.com/Mickael_zim/status/2078169975722770907). Motion/context audit: the post announces a shipped no-scroll interactive portfolio with an exploratory map, hidden details and a mini game; its substantive subject is a concrete finished website interaction, not a tutorial, prompt, repository, template sale, installation funnel or workflow advice.
+
+Semantic gate verdict: **Build** — the reusable primitive is a full-viewport navigable map where waypoint selection changes the route and story state. Rebuilt from scratch as **Cartographic Drift Atlas** (`cartographic-drift-atlas.html`) with a fictional cartographic landscape, original SVG route geometry, invented place names/copy, procedural terrain lines and independent interaction logic. No Framer project, source code, screenshots, video frames, logos, fonts, maps, assets or source copy were used. Score: **88**.
+
+- **Cartographic Drift Atlas** (`cartographic-drift-atlas.html`) — from [@Mickael_zim](https://x.com/Mickael_zim/status/2078169975722770907). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **88**.
+
+### 2026-07-19 semantic-gate rejects / non-builds
+
+- [@WalhimerArt](https://x.com/WalhimerArt/status/2077964221489221994) Invisible Layer: held as reference; it is a creative-coding experiment/control surface rather than a landing-page or website interaction primitive.
+- [@ahmedthousif571](https://x.com/ahmedthousif571/status/2077804065086681496) architecture-site reel: held as a branded multi-feature client-site showcase without one isolated new effect.
+- [@GeekySud](https://x.com/GeekySud/status/2078377374991941812) scrollworld conversion: rejected because its caption centers on a named skill/workflow reference.
+- [@somratchandra](https://x.com/somratchandra/status/2077965023000055951), [@phi_sato](https://x.com/phi_sato/status/2078084512274424194), [@computeempire](https://x.com/computeempire/status/2078145337080861138), [@Webneonp](https://x.com/Webneonp/status/2078009264753504749) and [@GrowAIHub](https://x.com/GrowAIHub/status/2078339924185800922): rejected because their captions primarily frame prompts, AI-assisted workflows, game/cinematic content, WIP tooling or model capability rather than a clean reusable website-effect source.
