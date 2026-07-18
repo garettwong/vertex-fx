@@ -833,3 +833,11 @@ Semantic gate verdict: **Build** — the reusable primitive is a full-viewport n
 - [@ahmedthousif571](https://x.com/ahmedthousif571/status/2077804065086681496) architecture-site reel: held as a branded multi-feature client-site showcase without one isolated new effect.
 - [@GeekySud](https://x.com/GeekySud/status/2078377374991941812) scrollworld conversion: rejected because its caption centers on a named skill/workflow reference.
 - [@somratchandra](https://x.com/somratchandra/status/2077965023000055951), [@phi_sato](https://x.com/phi_sato/status/2078084512274424194), [@computeempire](https://x.com/computeempire/status/2078145337080861138), [@Webneonp](https://x.com/Webneonp/status/2078009264753504749) and [@GrowAIHub](https://x.com/GrowAIHub/status/2078339924185800922): rejected because their captions primarily frame prompts, AI-assisted workflows, game/cinematic content, WIP tooling or model capability rather than a clean reusable website-effect source.
+
+## Demo 162 — Aurora Signal Hero
+
+Created on **2026-07-19** from [@mrblackstudio](https://x.com/mrblackstudio/status/2078564428451119225). Motion/context audit: the exact caption, “Jeep northern lights hero. Made in @framer using shaders with blend modes.”, presents a concrete finished landing-page hero effect rather than a tutorial, workflow, prompt, repository, installation funnel or advice post. The visual arc is an atmospheric polar night with slow, luminous green/violet/blue aurora curtains drifting continuously behind the hero.
+
+Semantic gate verdict: **Build** — the reusable primitive is a procedural, blended aurora field for a cinematic hero. Rebuilt from scratch as **Aurora Signal Hero** (`aurora-signal-hero.html`) with a fictional northern station, original canvas-ribbon math, invented copy, pointer-reactive field bending and spectrum controls. No Jeep imagery, Framer project, source code, screenshots, video frames, logos, fonts, assets or original copy were used. Score: **89**.
+
+- **Aurora Signal Hero** (`aurora-signal-hero.html`) — from [@mrblackstudio](https://x.com/mrblackstudio/status/2078564428451119225). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **89**.
