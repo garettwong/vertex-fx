@@ -804,3 +804,17 @@ Semantic gate verdict: **Build** — the caption is a concrete interactive websi
 - [@frombaris](https://x.com/frombaris/status/2078205577692328129) Dithereal: rejected as a React/WebGL component collection/product, not a scratch visual-effect source.
 - [@DesignElmedine](https://x.com/DesignElmedine/status/2078080092488581555) and [@tc_kreativ](https://x.com/tc_kreativ/status/2078134910749966341): motion/design philosophy posts, not FX-library items.
 - [@wamweaaa](https://x.com/wamweaaa/status/2078099753926119614): general build-in-public landing-page polish with no sufficiently distinct standalone effect.
+
+
+## Demo 160 — Prism Cursor Modes
+
+Created on **2026-07-18** from [@RoyQuilor](https://x.com/RoyQuilor/status/2077809584215847396). Motion audit: the source video uses a dark interface to demonstrate three cursor material states—an intent signal that alters hover response, a circular refractive lens, and an illuminated vertical beam—each activated by purposeful pointer movement.
+
+Semantic gate verdict: **Build** — the caption (“Most custom cursors are decoration. These three actually react to what they're on. Built in Framer, no code needed.”) presents a concrete finished interaction showcase, not a tutorial, repository, install instruction, template sale, learning log or advice post. Rebuilt from scratch as **Prism Cursor Modes** (`prism-cursor-modes.html`) with original fictional copy, CSS lighting, procedural gradients and independent pointer/mode behavior. No Framer project, source code, screenshots, video frames, logo, assets, fonts or source copy were used. Score: **88**.
+
+- **Prism Cursor Modes** (`prism-cursor-modes.html`) — from [@RoyQuilor](https://x.com/RoyQuilor/status/2077809584215847396). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **88**.
+
+### 2026-07-18 semantic-gate rejects / non-builds (cursor pass)
+
+- [@revslider](https://x.com/revslider/status/2077769245723972045) DepthForge: rejected because the post is a direct promotion of a proprietary Slider Revolution template/engine.
+- [@greensock](https://x.com/greensock/status/2077921957337518269) Share Bien Site-of-the-Day: concrete and safe, but held as a multi-effect branded-site reference; it does not isolate a new primitive beyond existing library scroll, route-transition and WebGL coverage.
