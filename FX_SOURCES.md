@@ -796,6 +796,8 @@ Created on **2026-07-18** from [@sauroww](https://x.com/sauroww/status/207837473
 
 Semantic gate verdict: **Build** — the caption is a concrete interactive website effect, not a tutorial, repository, install prompt or workflow post. Rebuilt from scratch as **Dither Morph Field** (`dither-morph-field.html`) with original 2D procedural dot-field math, fictional copy and independent pointer/scroll response; no R3F/GSAP/GLSL source code, screenshots, video frames, assets, fonts or original copy reused. Score: **90**.
 
+- **Dither Morph Field** (`dither-morph-field.html`) — from [@sauroww](https://x.com/sauroww/status/2078374735193518583).
+
 ### 2026-07-18 semantic-gate rejects / non-builds
 
 - [@bounceidc](https://x.com/bounceidc/status/2078041639550103905) scroll-controlled portrait/video hero: rejected because its long caption is primarily an AI-prompt library and implementation/workflow funnel.
