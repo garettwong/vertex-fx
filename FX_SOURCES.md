@@ -871,3 +871,17 @@ Semantic gate verdict: **Build** — the reusable primitive is an interactive pr
 - [@somratchandra](https://x.com/somratchandra/status/2078158838415683903) hanging cursor-lamp landing page: held as a safe concrete finished effect but semantically duplicates the existing **Torch Reveal Principles** cursor-light primitive.
 - [@aduok_code](https://x.com/aduok_code/status/2078819645776162819) Canvas/WebGL cursor effect: rejected because the caption is explicitly a build/tutorial instruction.
 - [@junkbranding](https://x.com/junkbranding/status/2078273077184721005) gravity-pulled portfolio transition: held as a branded multi-effect portfolio showcase; the source does not isolate one safely scoped primitive beyond existing transition/warp coverage.
+
+## Demo 166 — Expression Blocks Hero
+
+Created on **2026-07-20** from [@ommakes](https://x.com/ommakes/status/2078848809027682562). Motion/context audit: the exact caption, “Fun webgl animation I added to my site.”, is a concrete finished personal-site visual showcase—not a tutorial, prompt, repository, installation flow, template sale, workflow or advice post. The motion arc starts with a minimal editorial introduction, paints in colored text blocks, then cycles an expressive character through distinct gesture states.
+
+Semantic gate verdict: **Build** — it adds a distinct character-expression plus block-reveal primitive, rather than duplicating the library’s cursor, shader, product, or scroll systems. Rebuilt from scratch as **Expression Blocks Hero** (`expression-blocks-hero.html`) with an original CSS-built fictional character, invented copy, hand-authored type-block reveal timing and independent mood controls. No source WebGL code, pixel avatar art, screenshots, source copy, identity, logo, fonts, imagery, assets or layout were used. Score: **88**.
+
+- **Expression Blocks Hero** (`expression-blocks-hero.html`) — from [@ommakes](https://x.com/ommakes/status/2078848809027682562). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **88**.
+
+### 2026-07-20 semantic-gate decisions (expression blocks pass)
+
+- [@Andrianja_tony](https://x.com/Andrianja_tony/status/2078761021120905580) DOM/WebGL flower-grid recreation: held because it is explicitly a learning exercise recreating another named artist's site and would be asset-dependent; it overlaps existing mosaic/gallery/card choreography.
+- [@naraya07pedro](https://x.com/naraya07pedro/status/2078869799040647205) Magelang cultural cinematic concept: held as reference because its distinctive heritage/craft/temple imagery is culturally specific and the effect is a broad multi-scene art direction rather than one safely isolated primitive.
+- [@KilianSolutions](https://x.com/KilianSolutions/status/2078850400996782228) crypto scroll experience: rejected by safety gate due to crypto context.
