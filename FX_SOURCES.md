@@ -841,3 +841,11 @@ Created on **2026-07-19** from [@mrblackstudio](https://x.com/mrblackstudio/stat
 Semantic gate verdict: **Build** — the reusable primitive is a procedural, blended aurora field for a cinematic hero. Rebuilt from scratch as **Aurora Signal Hero** (`aurora-signal-hero.html`) with a fictional northern station, original canvas-ribbon math, invented copy, pointer-reactive field bending and spectrum controls. No Jeep imagery, Framer project, source code, screenshots, video frames, logos, fonts, assets or original copy were used. Score: **89**.
 
 - **Aurora Signal Hero** (`aurora-signal-hero.html`) — from [@mrblackstudio](https://x.com/mrblackstudio/status/2078564428451119225). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **89**.
+
+## Demo 163 — Data Stream Shader
+
+Created on **2026-07-19** from [@jalcowastaken](https://x.com/jalcowastaken/status/2078584183610364166). Motion/context audit: the exact caption says the Neon Database hero video has been rebuilt as a shader. It is a concrete real-time landing-page hero material—not a tutorial, prompt, repository, install flow, or workflow/advice post. The observed arc is a continuous neon, fluid data-like flow with evolving color and dynamic motion.
+
+Semantic gate verdict: **Build** — the reusable primitive is an infrastructure-oriented live data-stream material that replaces a background video. Rebuilt from scratch as **Data Stream Shader** (`data-stream-shader.html`) with original canvas particle/flow-field math, invented interface data and fictional copy. No Neon assets, code, shader, logo, video, screenshots, fonts, or source copy were used. Score: **87**.
+
+- **Data Stream Shader** (`data-stream-shader.html`) — from [@jalcowastaken](https://x.com/jalcowastaken/status/2078584183610364166). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **87**.
