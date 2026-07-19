@@ -857,3 +857,17 @@ Created on **2026-07-19** from [@lera_aligns](https://x.com/lera_aligns/status/2
 Semantic gate verdict: **Build** — the reusable primitive is a warm editorial product ritual that turns a product card into a small spatial interaction. Rebuilt from scratch as **Tea Ritual Orchard** (`tea-ritual-orchard.html`) with invented Orchard No. 3 product copy, original CSS packet/cup/leaf geometry, procedural steam, independent pointer tilt and an original expanded pour scene. No Framer project, Dribbble layout, tea brand, source copy, screenshots, video frames, package art, fonts, imagery, code or assets were used. Score: **86**.
 
 - **Tea Ritual Orchard** (`tea-ritual-orchard.html`) — from [@lera_aligns](https://x.com/lera_aligns/status/2078537712311632221). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **86**.
+
+## Demo 165 — Citrus Orbit Lab
+
+Created on **2026-07-19** from [@rapha_nyc](https://x.com/rapha_nyc/status/2078521069204300006). Motion/context audit: the exact caption, “Summer Drink 🍹 interactive, real-time render in the browser no libraries, pure webgl, pure vibe(coding)s.”, presents a concrete finished interactive visual effect—not a tutorial, workflow, repository, installation instruction, template sale or advice post. The observed visual primitive is a responsive real-time drink scene: liquid, ice, fruit, condensation and lighting together make a browser product moment feel spatial.
+
+Semantic gate verdict: **Build** — the reusable primitive is an interactive procedural beverage/product hero. Rebuilt from scratch as **Citrus Orbit Lab** (`citrus-orbit-lab.html`) with fictional Citrus Orbit copy, independently written HTML/CSS/JS, CSS glass/liquid/ice/citrus geometry, original lighting/orbit treatments and pointer/tone interaction. No source code, WebGL shader, screenshots, video frames, brand, logo, fonts, imagery, copy or assets were used. Score: **87**.
+
+- **Citrus Orbit Lab** (`citrus-orbit-lab.html`) — from [@rapha_nyc](https://x.com/rapha_nyc/status/2078521069204300006). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **87**.
+
+### 2026-07-19 semantic-gate decisions (citrus pass)
+
+- [@somratchandra](https://x.com/somratchandra/status/2078158838415683903) hanging cursor-lamp landing page: held as a safe concrete finished effect but semantically duplicates the existing **Torch Reveal Principles** cursor-light primitive.
+- [@aduok_code](https://x.com/aduok_code/status/2078819645776162819) Canvas/WebGL cursor effect: rejected because the caption is explicitly a build/tutorial instruction.
+- [@junkbranding](https://x.com/junkbranding/status/2078273077184721005) gravity-pulled portfolio transition: held as a branded multi-effect portfolio showcase; the source does not isolate one safely scoped primitive beyond existing transition/warp coverage.
