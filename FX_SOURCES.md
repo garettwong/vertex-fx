@@ -885,3 +885,16 @@ Semantic gate verdict: **Build** — it adds a distinct character-expression plu
 - [@Andrianja_tony](https://x.com/Andrianja_tony/status/2078761021120905580) DOM/WebGL flower-grid recreation: held because it is explicitly a learning exercise recreating another named artist's site and would be asset-dependent; it overlaps existing mosaic/gallery/card choreography.
 - [@naraya07pedro](https://x.com/naraya07pedro/status/2078869799040647205) Magelang cultural cinematic concept: held as reference because its distinctive heritage/craft/temple imagery is culturally specific and the effect is a broad multi-scene art direction rather than one safely isolated primitive.
 - [@KilianSolutions](https://x.com/KilianSolutions/status/2078850400996782228) crypto scroll experience: rejected by safety gate due to crypto context.
+
+## Demo 127 — Sunset Command Atlas
+
+- **Sunset Command Atlas** (`sunset-command-atlas.html`) — from [@bryanbeomseokoh](https://x.com/bryanbeomseokoh/status/2078632829102281075). Semantic gate verdict: **Build** — the exact post is a concrete personal-portfolio interaction showcase: typing a sky command changes a halftone San Francisco scene and sending a message folds it into a paper plane. “Built with Claude” is secondary provenance, not a workflow/tutorial, repo, template or prompt offer. Rebuilt from scratch as a fictional coastal command atlas with original CSS bridge geometry, original atmosphere transitions, own copy and a paper-route animation; no Golden Gate/portfolio artwork, source shader, screenshots, personal text, code, logo, fonts, video, or other assets reused. Score: **89**.
+
+### 2026-07-20 scout decisions
+
+- **Built:** [@bryanbeomseokoh](https://x.com/bryanbeomseokoh/status/2078632829102281075) — distinct command-to-scene-to-paper-route interaction, safely abstracted and not materially duplicated by the existing passport route demo.
+- **Held:** [@qoalc](https://x.com/qoalc/status/2078828968447205382) — caption is a generic GSAP fluid-site technical demo with no safely isolated primitive above the library’s existing liquid/scroll coverage.
+- **Rejected:** [@aduok_code](https://x.com/aduok_code/status/2078819645776162819) — primarily a Canvas/WebGL coding tutorial; cursor/trail territory also overlaps existing cursor entries.
+- **Rejected:** [@zepaui](https://x.com/zepaui/status/2078711358095569052) — developer-component install/product promotion (“copy one command”), not a scratch FX source.
+- **Held:** [@samiwebflowdev](https://x.com/samiwebflowdev/status/2078906675730477239) — broad freelance agency/Webflow promo, not one distinct standalone effect.
+- **Duplicate:** [@ommakes](https://x.com/ommakes/status/2078848809027682562) — already recorded and built as Expression Blocks Hero in the prior run.
