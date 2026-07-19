@@ -849,3 +849,11 @@ Created on **2026-07-19** from [@jalcowastaken](https://x.com/jalcowastaken/stat
 Semantic gate verdict: **Build** — the reusable primitive is an infrastructure-oriented live data-stream material that replaces a background video. Rebuilt from scratch as **Data Stream Shader** (`data-stream-shader.html`) with original canvas particle/flow-field math, invented interface data and fictional copy. No Neon assets, code, shader, logo, video, screenshots, fonts, or source copy were used. Score: **87**.
 
 - **Data Stream Shader** (`data-stream-shader.html`) — from [@jalcowastaken](https://x.com/jalcowastaken/status/2078584183610364166). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **87**.
+
+## Demo 164 — Tea Ritual Orchard
+
+Created on **2026-07-19** from [@lera_aligns](https://x.com/lera_aligns/status/2078537712311632221). Motion/context audit: the exact caption presents the creator’s finished interactive tea-shop section made in Framer, framed as a nostalgic showcase of a completed website interaction rather than a tutorial, prompt, repository, template sale, installation funnel or workflow-advice post. The motion sequence combines layered botanical drift, a pointer-responsive product tilt, and a click-through tea-pour expansion.
+
+Semantic gate verdict: **Build** — the reusable primitive is a warm editorial product ritual that turns a product card into a small spatial interaction. Rebuilt from scratch as **Tea Ritual Orchard** (`tea-ritual-orchard.html`) with invented Orchard No. 3 product copy, original CSS packet/cup/leaf geometry, procedural steam, independent pointer tilt and an original expanded pour scene. No Framer project, Dribbble layout, tea brand, source copy, screenshots, video frames, package art, fonts, imagery, code or assets were used. Score: **86**.
+
+- **Tea Ritual Orchard** (`tea-ritual-orchard.html`) — from [@lera_aligns](https://x.com/lera_aligns/status/2078537712311632221). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **86**.
