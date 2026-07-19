@@ -898,3 +898,17 @@ Semantic gate verdict: **Build** — it adds a distinct character-expression plu
 - **Rejected:** [@zepaui](https://x.com/zepaui/status/2078711358095569052) — developer-component install/product promotion (“copy one command”), not a scratch FX source.
 - **Held:** [@samiwebflowdev](https://x.com/samiwebflowdev/status/2078906675730477239) — broad freelance agency/Webflow promo, not one distinct standalone effect.
 - **Duplicate:** [@ommakes](https://x.com/ommakes/status/2078848809027682562) — already recorded and built as Expression Blocks Hero in the prior run.
+
+## Demo 167 — Tide Flipbook Story
+
+Created on **2026-07-20** from [@YellowCatSys](https://x.com/YellowCatSys/status/2078167204520972584). Motion/context audit: the exact caption describes a scroll-driven surfer built from custom illustrations, whose rough flipbook motion follows a wave into the final reveal. This is a concrete branded landing-page interaction, not a workflow, prompt, repository, template/install funnel, advice post, crypto item, or source-code tutorial.
+
+Semantic gate verdict: **Build with asset-safety abstraction** — the reusable primitive is a scroll-linked, frame-by-frame editorial illustration sequence. Rebuilt from scratch as **Tide Flipbook Story** (`tide-flipbook-story.html`) with original CSS geometry, procedural rider/wave art, invented Tide copy and independent scroll state logic. No Wellness Wes illustrations, surfer imagery, wave art, logo, copy, source code, screenshots, video frames, fonts or other assets were used. Score: **87**.
+
+- **Tide Flipbook Story** (`tide-flipbook-story.html`) — from [@YellowCatSys](https://x.com/YellowCatSys/status/2078167204520972584). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **87**.
+
+### 2026-07-20 semantic-gate decisions (flipbook pass)
+
+- **Built:** [@YellowCatSys](https://x.com/YellowCatSys/status/2078167204520972584) — distinct scroll-driven flipbook narrative primitive, safely abstracted from custom source illustrations.
+- **Held:** [@somratchandra](https://x.com/somratchandra/status/2078158838415683903) — concrete, but materially duplicates **Torch Reveal Principles** (hanging cursor-light reveal).
+- **Held:** [@juli_fella](https://x.com/juli_fella/status/2078490367339438565) — liquid watercolor mouse trail overlaps existing liquid, halftone-fluid and cursor-reactive shader coverage.
