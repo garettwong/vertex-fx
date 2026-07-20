@@ -928,6 +928,21 @@ Created on **2026-07-21** from the autonomous X FX Scout pass.
 - **Rejected:** [@herosdesign1](https://x.com/herosdesign1/status/2078945864152973541) and [@efe_akhigbe](https://x.com/efe_akhigbe/status/2079204777888497829) — build-in-public/learning-log context fails the mandatory semantic gate despite usable visual media.
 
 
+## Demo 170 — Kinetic Postcard Trail
+
+Created on **2026-07-21** from [@RoyQuilor](https://x.com/RoyQuilor/status/2079255263622889543). Motion/context audit: the caption presents a stripped-back Framer hero with a clearer value proposition and a playful cursor image trail. The video is a direct demonstration of the live pointer-led visual behavior, not a tutorial, workflow, prompt, repository/install funnel, template promotion, learning log or advice post.
+
+Semantic gate verdict: **Build** — the reusable primitive is a cursor-driven collection trail that makes a quiet landing-page hero feel tactile. Rebuilt from scratch as **Kinetic Postcard Trail** (`kinetic-postcard-trail.html`) using original CSS-generated mini-poster art, invented editorial copy, independent pointer-distance spawning and fade/scatter choreography. No source images, screenshots, video frames, Framer files, code, logos, fonts, copy or other assets were used. Score: **86**.
+
+- **Kinetic Postcard Trail** (`kinetic-postcard-trail.html`) — from [@RoyQuilor](https://x.com/RoyQuilor/status/2079255263622889543). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **86**.
+
+### 2026-07-21 scout decisions (cursor trail pass)
+
+- **Built:** [@RoyQuilor](https://x.com/RoyQuilor/status/2079255263622889543) — distinct cursor-released image/poster collection primitive; existing cursor entries use grids, magnets, masks or a companion rather than transient editorial cards.
+- **Held:** [@uxbindu](https://x.com/uxbindu/status/2079080503144329398) — concrete dual-scramble text effect, but it overlaps the library's existing `scramble.html` text-scramble primitive.
+- **Held:** [@sabosugi](https://x.com/sabosugi/status/2079230089003426218) — safe procedural smoke showcase, but it overlaps existing liquid/smoke shader and morphology-background coverage.
+- **Rejected:** [@Oc_paschal_code](https://x.com/Oc_paschal_code/status/2079284611562319880) — learning-log framing fails the mandatory semantic gate.
+
 ## Demo 169 — Prism Cube Unfold
 
 Created on **2026-07-21** from [@whatismalidoing](https://x.com/whatismalidoing/status/2077150610432868398). Motion/context audit: the exact caption presents three clips from a personal portfolio—an unfolding cube loader, a scroll-linked cube background, and client-work panels on all four sides of an interactive 3D cube. It is a concrete finished website interaction showcase, not a tutorial, prompt, repository, template/install funnel, workflow or advice post.
