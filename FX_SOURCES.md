@@ -926,3 +926,20 @@ Created on **2026-07-21** from the autonomous X FX Scout pass.
 - **Built:** [@webgl_webgpu](https://x.com/webgl_webgpu/status/2079228439455002916) — distinct CRT/channel-switch landing hero primitive, rebuilt with fully procedural original broadcast states.
 - **Held:** [@dyz_ob](https://x.com/dyz_ob/status/2079212119669850345) — a concrete particle-galaxy showcase, but it materially overlaps the library's existing particle, mesh, globe and data-stream field coverage.
 - **Rejected:** [@herosdesign1](https://x.com/herosdesign1/status/2078945864152973541) and [@efe_akhigbe](https://x.com/efe_akhigbe/status/2079204777888497829) — build-in-public/learning-log context fails the mandatory semantic gate despite usable visual media.
+
+
+## Demo 169 — Prism Cube Unfold
+
+Created on **2026-07-21** from [@whatismalidoing](https://x.com/whatismalidoing/status/2077150610432868398). Motion/context audit: the exact caption presents three clips from a personal portfolio—an unfolding cube loader, a scroll-linked cube background, and client-work panels on all four sides of an interactive 3D cube. It is a concrete finished website interaction showcase, not a tutorial, prompt, repository, template/install funnel, workflow or advice post.
+
+Semantic gate verdict: **Build with asset-safety abstraction** — the reusable primitive is an interactive spatial cube that unfolds from a compact object into a readable multi-panel editorial surface. Rebuilt from scratch as **Prism Cube Unfold** (`prism-cube-unfold.html`) with original CSS 3D geometry, invented labels/copy, independent fold/unfold choreography and pointer tilt. No source portfolio content, client work, code, Figma file, screenshots, video frames, logos, fonts, media or assets were used. Score: **88**.
+
+- **Prism Cube Unfold** (`prism-cube-unfold.html`) — from [@whatismalidoing](https://x.com/whatismalidoing/status/2077150610432868398). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **88**.
+
+### 2026-07-21 scout decisions (prism pass)
+
+- **Built:** [@whatismalidoing](https://x.com/whatismalidoing/status/2077150610432868398) — distinct compact-to-spread spatial navigation primitive, safely rebuilt with no portfolio/client assets.
+- **Duplicate:** [@Shakib2O1](https://x.com/Shakib2O1/status/2075324380578525281) and [@Chimakes3d](https://x.com/Chimakes3d/status/2075161035770663256) — already recorded as Annotated Audio Hero and Desk Organizer Drawer.
+- **Duplicate:** [@videinfragroup](https://x.com/videinfragroup/status/2077763612467241222) — already recorded as Art Deco District Explorer.
+- **Held:** [@ameengl](https://x.com/ameengl/status/2079212480375746870) and [@greensock](https://x.com/greensock/status/2077870741882593693) — strong multi-effect portfolios, but not a single new safely scoped primitive above existing WebGL/fog/particle/portfolio coverage.
+- **Rejected:** [@work_with_zaid](https://x.com/work_with_zaid/status/2076911850978197805), [@shumak_manohar](https://x.com/shumak_manohar/status/2075630144883183875), [@Paul_Kinlan](https://x.com/Paul_Kinlan/status/2026264002792239413), [@rege_dev](https://x.com/rege_dev/status/1993749710642008121) and [@devongovett](https://x.com/devongovett/status/1681356754851074048) — experiments, recreations, or code/CSS-component discussions rather than a clean standalone effect source.
