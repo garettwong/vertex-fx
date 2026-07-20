@@ -912,3 +912,17 @@ Semantic gate verdict: **Build with asset-safety abstraction** — the reusable 
 - **Built:** [@YellowCatSys](https://x.com/YellowCatSys/status/2078167204520972584) — distinct scroll-driven flipbook narrative primitive, safely abstracted from custom source illustrations.
 - **Held:** [@somratchandra](https://x.com/somratchandra/status/2078158838415683903) — concrete, but materially duplicates **Torch Reveal Principles** (hanging cursor-light reveal).
 - **Held:** [@juli_fella](https://x.com/juli_fella/status/2078490367339438565) — liquid watercolor mouse trail overlaps existing liquid, halftone-fluid and cursor-reactive shader coverage.
+
+## Demo 168 — Phantom Channel Console
+
+Created on **2026-07-21** from the autonomous X FX Scout pass.
+
+- **Phantom Channel Console** (`phantom-channel-console.html`) — from [@webgl_webgpu](https://x.com/webgl_webgpu/status/2079228439455002916). Semantic gate verdict: **Build with asset-safety abstraction** — the exact post is a concrete WebGL portfolio showcase: a CRT-like television where scroll changes visual channels, while cursor movement distorts the broadcast. It is not a tutorial, prompt, repository/install funnel, template sale, workflow or advice post. The rebuild isolates the reusable interaction primitive as a fictional CRT channel-switching landing hero, using four original CSS-generated visual worlds, original scanline/curvature treatment, fictional copy and independent pointer lens behavior. No Lucerrá Studio portfolio content, videos, personal footage, 3D characters, screenshots, logo, source code, fonts, dates, copy or other source assets were used. Score: **90**.
+
+- **Phantom Channel Console** (`phantom-channel-console.html`) — from [@webgl_webgpu](https://x.com/webgl_webgpu/status/2079228439455002916). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **90**.
+
+### 2026-07-21 scout decisions
+
+- **Built:** [@webgl_webgpu](https://x.com/webgl_webgpu/status/2079228439455002916) — distinct CRT/channel-switch landing hero primitive, rebuilt with fully procedural original broadcast states.
+- **Held:** [@dyz_ob](https://x.com/dyz_ob/status/2079212119669850345) — a concrete particle-galaxy showcase, but it materially overlaps the library's existing particle, mesh, globe and data-stream field coverage.
+- **Rejected:** [@herosdesign1](https://x.com/herosdesign1/status/2078945864152973541) and [@efe_akhigbe](https://x.com/efe_akhigbe/status/2079204777888497829) — build-in-public/learning-log context fails the mandatory semantic gate despite usable visual media.
