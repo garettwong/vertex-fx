@@ -958,3 +958,19 @@ Semantic gate verdict: **Build with asset-safety abstraction** — the reusable 
 - **Duplicate:** [@videinfragroup](https://x.com/videinfragroup/status/2077763612467241222) — already recorded as Art Deco District Explorer.
 - **Held:** [@ameengl](https://x.com/ameengl/status/2079212480375746870) and [@greensock](https://x.com/greensock/status/2077870741882593693) — strong multi-effect portfolios, but not a single new safely scoped primitive above existing WebGL/fog/particle/portfolio coverage.
 - **Rejected:** [@work_with_zaid](https://x.com/work_with_zaid/status/2076911850978197805), [@shumak_manohar](https://x.com/shumak_manohar/status/2075630144883183875), [@Paul_Kinlan](https://x.com/Paul_Kinlan/status/2026264002792239413), [@rege_dev](https://x.com/rege_dev/status/1993749710642008121) and [@devongovett](https://x.com/devongovett/status/1681356754851074048) — experiments, recreations, or code/CSS-component discussions rather than a clean standalone effect source.
+
+
+## Demo 171 — Diffusion Type Field
+
+Created on **2026-07-21** from [@marchantweb](https://x.com/marchantweb/status/2079185729989513252). Motion/context audit: the exact caption announces a reaction-diffusion shader that interacts with cursor movement and content such as text. It is a standalone visual-effect showcase with no tutorial, repository, install instruction, workflow, prompt, advice or template funnel.
+
+Semantic gate verdict: **Build** — the reusable primitive is a living reaction-diffusion material that treats editorial content as part of an interactive field. Rebuilt from scratch as **Diffusion Type Field** (`diffusion-type-field.html`) with original JavaScript cellular simulation, invented Signal copy, distinct cyan/violet material palette and independent pointer/touch seeding. No source shader code, screenshots, video frames, text, logos, fonts, media or assets were used. Score: **89**.
+
+- **Diffusion Type Field** (`diffusion-type-field.html`) — from [@marchantweb](https://x.com/marchantweb/status/2079185729989513252). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **89**.
+
+### 2026-07-21 scout decisions (diffusion pass)
+
+- **Built:** [@marchantweb](https://x.com/marchantweb/status/2079185729989513252) — concrete standalone interaction showcase; the text-aware reaction-diffusion primitive materially extends the library beyond existing fluid, liquid, particle and cursor-grid entries.
+- **Held:** [@greensock](https://x.com/greensock/status/2079351129217867954) — concrete inertial scrapbook showcase, but it overlaps existing flipbook, card-stack, gallery and poster-trail navigation primitives.
+- **Rejected:** [@TaminoMartinius](https://x.com/TaminoMartinius/status/2079217596235178161) — although the water visual is concrete, the post immediately routes users to an editable CodePen/fork context; per the semantic gate, it is primarily a code/demo-sharing item rather than a clean FX-library source.
+- **Rejected:** [@kitsune_xbt](https://x.com/kitsune_xbt/status/2079313722825494792) and [@atomtanstudio](https://x.com/atomtanstudio/status/2079332617883951333) — workflow/prompt framing fails the mandatory semantic gate.
