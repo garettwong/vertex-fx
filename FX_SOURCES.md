@@ -1007,3 +1007,18 @@ Semantic gate verdict: **Build** — the reusable primitive is a readable native
 - **Rejected:** [@adrien_dorval](https://x.com/adrien_dorval/status/2079131543608459704) — explicitly promotes open-source landing pages and animation scripts, failing the semantic/safe-source gate.
 - **Rejected:** [@AmirMushich](https://x.com/AmirMushich/status/2079280097010299288) — GitHub-linked AI/tool stack showcase, not a clean standalone effect source.
 - **Rejected:** [@AmirOstowar](https://x.com/AmirOstowar/status/2079332177490432009), [@64jsx](https://x.com/64jsx/status/2079225696728002804), [@efe_akhigbe](https://x.com/efe_akhigbe/status/2079204777888497829), [@mrblackstudio](https://x.com/mrblackstudio/status/2079289457656676499), [@Romankoby88](https://x.com/Romankoby88/status/2079201613634322834) — branded/AI portfolio, build-in-public, downloadable component or template promotion contexts fail the mandatory semantic gate.
+
+## Demo 174 — Solar Dial Studio
+
+Created on **2026-07-22** from [@Andersonmancini](https://x.com/Andersonmancini/status/2079525544715051307). Motion/context audit: the exact caption presents a finished real-time lighting website showcase in which the visitor grabs a sun and its position updates the scene’s lighting and shadows. It is a concrete interactive visual demo, not a tutorial, prompt, repository/install funnel, template sale, workflow or advice post.
+
+Semantic gate verdict: **Build** — the reusable primitive is direct manipulation of a visible light source that updates a scene’s exposure and shadow direction. Rebuilt from scratch as **Solar Dial Studio** (`solar-dial-studio.html`) with original HTML/CSS studio geometry, fictional Helio content, independent pointer/touch light math and procedural reflections/shadows. No Three.js/WebGPU implementation, source site, code, screenshots, video frames, models, logos, fonts, copy, imagery or assets were used. Score: **89**.
+
+- **Solar Dial Studio** (`solar-dial-studio.html`) — from [@Andersonmancini](https://x.com/Andersonmancini/status/2079525544715051307). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **89**.
+
+### 2026-07-22 scout decisions
+
+- **Built:** [@Andersonmancini](https://x.com/Andersonmancini/status/2079525544715051307) — a safe, standalone real-time light-direction interaction; the direct draggable sun-to-shadow relationship materially extends the existing solar calculator, product-orbit and ambient-beam demos.
+- **Held:** [@chetanankola](https://x.com/chetanankola/status/2079432862269366779) — concrete and safe shader/glitch mood showcase, but it overlaps the library’s existing Shader Slide Prism, Spectral Curtain Hero, Aurora Signal Hero, Liquid Gradient and CRT/glitch treatments.
+- **Held:** [@codrops](https://x.com/codrops/status/2079555366434578613) — a case-study context for a full branded agency site; its cursor shader and broad WebGL interaction mix do not isolate a new primitive above existing cursor/shader coverage.
+- **Rejected:** [@Mal19119](https://x.com/Mal19119/status/2079560274164507079), [@HarishKotra](https://x.com/HarishKotra/status/2079588601038561689), [@nashra_naushad_](https://x.com/nashra_naushad_/status/2079597033485369723) and [@EngrSARFRAZawan](https://x.com/EngrSARFRAZawan/status/2079541531543802297) — design reflection, daily-build, project-tech-stack or prompt-led context fails the mandatory semantic gate.
