@@ -974,3 +974,19 @@ Semantic gate verdict: **Build** — the reusable primitive is a living reaction
 - **Held:** [@greensock](https://x.com/greensock/status/2079351129217867954) — concrete inertial scrapbook showcase, but it overlaps existing flipbook, card-stack, gallery and poster-trail navigation primitives.
 - **Rejected:** [@TaminoMartinius](https://x.com/TaminoMartinius/status/2079217596235178161) — although the water visual is concrete, the post immediately routes users to an editable CodePen/fork context; per the semantic gate, it is primarily a code/demo-sharing item rather than a clean FX-library source.
 - **Rejected:** [@kitsune_xbt](https://x.com/kitsune_xbt/status/2079313722825494792) and [@atomtanstudio](https://x.com/atomtanstudio/status/2079332617883951333) — workflow/prompt framing fails the mandatory semantic gate.
+
+
+## Demo 172 — Fourfold Budget Pillar
+
+Created on **2026-07-21** from [@jeenajeong](https://x.com/jeenajeong/status/2079014481171243383). Motion/context audit: the exact post caption, “Split in Four: Interactive Pillar Animation for Flexible Bill Budgeting Website for Deferit,” presents a finished, concrete fintech website interaction and links to the designer’s case study. It is not a tutorial, workflow, prompt, repository/install funnel, component giveaway, learning log or recreation.
+
+Semantic gate verdict: **Build** — the reusable primitive is an adjustable four-pillar allocation system where tangible vertical columns communicate a live split. Rebuilt from scratch as **Fourfold Budget Pillar** (`fourfold-budget-pillar.html`) with original DOM/CSS columns, fictional allocation data, custom pointer/touch redistribution math and independent art direction. No Deferit branding, source images, video frames, case-study assets, code, copy, logos, fonts or media were used. Score: **87**.
+
+- **Fourfold Budget Pillar** (`fourfold-budget-pillar.html`) — from [@jeenajeong](https://x.com/jeenajeong/status/2079014481171243383). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **87**.
+
+### 2026-07-21 scout decisions (fourfold pillars pass)
+
+- **Built:** [@jeenajeong](https://x.com/jeenajeong/status/2079014481171243383) — a concrete finished web interaction with a distinct tactile allocation primitive; no material equivalent was found in the existing demo corpus.
+- **Held:** [@algaedotworks](https://x.com/algaedotworks/status/2079283509819035687) — a concrete globular growth showcase, but the post identifies Katamari inspiration and it overlaps the existing blob/living-surface coverage; no build needed.
+- **Rejected:** [@Nora__Blake](https://x.com/Nora__Blake/status/2079415523671146787) — “this skill” framing and linked external GitHub repository make it an external skill/repo promotion, not a clean FX-library source.
+- **Rejected:** [@Alok619308](https://x.com/Alok619308/status/2078957228544139673) — explicitly a recreated animation and free component/prompt funnel, failing the semantic and source-safety gates.
