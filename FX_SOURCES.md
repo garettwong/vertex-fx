@@ -990,3 +990,20 @@ Semantic gate verdict: **Build** — the reusable primitive is an adjustable fou
 - **Held:** [@algaedotworks](https://x.com/algaedotworks/status/2079283509819035687) — a concrete globular growth showcase, but the post identifies Katamari inspiration and it overlaps the existing blob/living-surface coverage; no build needed.
 - **Rejected:** [@Nora__Blake](https://x.com/Nora__Blake/status/2079415523671146787) — “this skill” framing and linked external GitHub repository make it an external skill/repo promotion, not a clean FX-library source.
 - **Rejected:** [@Alok619308](https://x.com/Alok619308/status/2078957228544139673) — explicitly a recreated animation and free component/prompt funnel, failing the semantic and source-safety gates.
+
+## Demo 173 — System Page Atelier
+
+Created on **2026-07-21** from [@ChromiumDev](https://x.com/ChromiumDev/status/2079237122691682696). Motion/context audit: the exact caption introduces HTML-in-Canvas through a 3D page-turning book showcase, stressing selectable, accessible HTML inside a richer interactive treatment. It is an official product/API announcement, but the demonstrated page turn is a concrete landing-page interaction primitive—not a tutorial, prompt, repository/install funnel, template sale, workflow or advice post.
+
+Semantic gate verdict: **Build** — the reusable primitive is a readable native-HTML page spread with an interaction-led 3D turn. Rebuilt from scratch as **System Page Atelier** (`system-page-atelier.html`) using independent CSS 3D sheet geometry, fictional editorial copy, original geometry/color composition and standalone page-state behavior. No Chromium implementation, API, source code, screenshots, video frames, logos, fonts, text, assets or branding were used. Score: **88**.
+
+- **System Page Atelier** (`system-page-atelier.html`) — from [@ChromiumDev](https://x.com/ChromiumDev/status/2079237122691682696). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **88**.
+
+### 2026-07-21 semantic-gate decisions (page-turn pass)
+
+- **Built:** [@ChromiumDev](https://x.com/ChromiumDev/status/2079237122691682696) — official technical showcase, but the visible accessible page-turn interaction is a concrete, safely abstractable hero/editorial primitive; it materially extends existing book/flipbook entries with an interactive depth turn.
+- **Held:** [@uxbindu](https://x.com/uxbindu/status/2079080503144329398) — concrete dual-scramble type, but overlaps the existing `scramble.html` text-decode primitive.
+- **Rejected:** [@ahmedthousif571](https://x.com/ahmedthousif571/status/2079140741599904218) — freelance client/project narrative and broad cinematic scroll system, rather than one isolated reusable effect.
+- **Rejected:** [@adrien_dorval](https://x.com/adrien_dorval/status/2079131543608459704) — explicitly promotes open-source landing pages and animation scripts, failing the semantic/safe-source gate.
+- **Rejected:** [@AmirMushich](https://x.com/AmirMushich/status/2079280097010299288) — GitHub-linked AI/tool stack showcase, not a clean standalone effect source.
+- **Rejected:** [@AmirOstowar](https://x.com/AmirOstowar/status/2079332177490432009), [@64jsx](https://x.com/64jsx/status/2079225696728002804), [@efe_akhigbe](https://x.com/efe_akhigbe/status/2079204777888497829), [@mrblackstudio](https://x.com/mrblackstudio/status/2079289457656676499), [@Romankoby88](https://x.com/Romankoby88/status/2079201613634322834) — branded/AI portfolio, build-in-public, downloadable component or template promotion contexts fail the mandatory semantic gate.
