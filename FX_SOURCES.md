@@ -1022,3 +1022,18 @@ Semantic gate verdict: **Build** — the reusable primitive is direct manipulati
 - **Held:** [@chetanankola](https://x.com/chetanankola/status/2079432862269366779) — concrete and safe shader/glitch mood showcase, but it overlaps the library’s existing Shader Slide Prism, Spectral Curtain Hero, Aurora Signal Hero, Liquid Gradient and CRT/glitch treatments.
 - **Held:** [@codrops](https://x.com/codrops/status/2079555366434578613) — a case-study context for a full branded agency site; its cursor shader and broad WebGL interaction mix do not isolate a new primitive above existing cursor/shader coverage.
 - **Rejected:** [@Mal19119](https://x.com/Mal19119/status/2079560274164507079), [@HarishKotra](https://x.com/HarishKotra/status/2079588601038561689), [@nashra_naushad_](https://x.com/nashra_naushad_/status/2079597033485369723) and [@EngrSARFRAZawan](https://x.com/EngrSARFRAZawan/status/2079541531543802297) — design reflection, daily-build, project-tech-stack or prompt-led context fails the mandatory semantic gate.
+
+## Demo 175 — Glass Caustics Deck
+
+Created on **2026-07-22** from [@effect_labs](https://x.com/effect_labs/status/2079823764531925176). Motion/context audit: the exact caption introduces “Glass Caustics”—rippling pool-light patterns rendered live behind glass—and explicitly frames it as premium hero energy for SaaS and product pages. It is a concrete standalone visual-effect showcase, not a repository, install, template, workflow, prompt, crypto item, or code tutorial.
+
+Semantic gate verdict: **Build** — the reusable primitive is a pointer-reactive caustic light field contained behind a readable glass console. Rebuilt from scratch as **Glass Caustics Deck** (`glass-caustics-deck.html`) with an original JavaScript canvas light-field renderer, fictional Pelagic UI, original CSS glass-material layers and independent pointer/refraction motion. No Effect.Labs code, WebGL shader, screenshots, video frames, site copy, logos, fonts, source assets or proprietary materials were used. Score: **90**.
+
+- **Glass Caustics Deck** (`glass-caustics-deck.html`) — from [@effect_labs](https://x.com/effect_labs/status/2079823764531925176). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **90**.
+
+### 2026-07-22 scout decisions (caustics pass)
+
+- **Built:** [@effect_labs](https://x.com/effect_labs/status/2079823764531925176) — standalone landing-page material showcase with a distinct refractive caustic-behind-glass primitive, not a duplicate of existing generic liquid, cursor or holographic card effects.
+- **Held:** [@DmitryKurash](https://x.com/DmitryKurash/status/2079597925185831233) — strong browser holo-cloth tool, but its upload/export/sticker experience is an image-editing product flow and overlaps the existing Holographic Tilt Cards material treatment.
+- **Held:** [@arfath1431](https://x.com/arfath1431/status/2079647276700700748) — concrete scroll-based real-estate showcase, but it materially overlaps Estate Scroll Showcase, Cliff Home Scroll Scrub, MODUS Architecture Scroll and other existing portfolio-scroll patterns.
+- **Rejected:** [@TaminoMartinius](https://x.com/TaminoMartinius/status/2079217596235178161) — a concrete water effect, but its CodePen/fork context is a code-demo sharing funnel rather than a clean independent source.
