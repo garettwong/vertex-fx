@@ -1037,3 +1037,19 @@ Semantic gate verdict: **Build** — the reusable primitive is a pointer-reactiv
 - **Held:** [@DmitryKurash](https://x.com/DmitryKurash/status/2079597925185831233) — strong browser holo-cloth tool, but its upload/export/sticker experience is an image-editing product flow and overlaps the existing Holographic Tilt Cards material treatment.
 - **Held:** [@arfath1431](https://x.com/arfath1431/status/2079647276700700748) — concrete scroll-based real-estate showcase, but it materially overlaps Estate Scroll Showcase, Cliff Home Scroll Scrub, MODUS Architecture Scroll and other existing portfolio-scroll patterns.
 - **Rejected:** [@TaminoMartinius](https://x.com/TaminoMartinius/status/2079217596235178161) — a concrete water effect, but its CodePen/fork context is a code-demo sharing funnel rather than a clean independent source.
+
+## Demo 176 — Ember Streak Observatory
+
+Created on **2026-07-23** from [@Daniyalweb](https://x.com/Daniyalweb/status/2079976286123110555). Motion/context audit: the exact caption says “Gave the WebGL light streaks component an animate in 👀 They fade in when you scroll into view now ✨.” The post demonstrates a concrete luminous image/hero effect with a scroll-entry reveal; it is not a repository release, install instruction, prompt, workflow, tutorial, crypto item, or advice thread.
+
+Semantic gate verdict: **Build** — the reusable primitive is a field of luminous diagonal streaks that only ignites as its glass hero enters the viewport. Rebuilt from scratch as **Ember Streak Observatory** (`ember-streak-observatory.html`) with original canvas stroke rendering, original intersection-observer trigger, fictional observatory copy and CSS glass composition. No source WebGL implementation, video, screenshot, template, logo, image, font, source copy or external asset was used. Score: **87**.
+
+- **Ember Streak Observatory** (`ember-streak-observatory.html`) — from [@Daniyalweb](https://x.com/Daniyalweb/status/2079976286123110555). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **87**.
+
+### 2026-07-23 scout decisions
+
+- **Built:** [@Daniyalweb](https://x.com/Daniyalweb/status/2079976286123110555) — a standalone scroll-entry light-streak effect that materially extends the library’s scroll triggers without duplicating its pointer/cursor trails, galleries or caustic materials.
+- **Rejected:** [@Ashutosh_7x7](https://x.com/Ashutosh_7x7/status/2079879808830648455) — framed as a reusable 3D gallery component/tool and overlaps the existing dome, cylinder, spline and strip-gallery primitives.
+- **Rejected:** [@Koolestpro](https://x.com/Koolestpro/status/2079838221010120835) — business/service promotion for an end-to-end ecommerce project; the clip-path reveal is not independently framed enough to pass the semantic gate.
+- **Rejected:** [@eduardbodak](https://x.com/eduardbodak/status/2079863933708493255) — detailed GSAP implementation breakdown and paid button-component promotion; it fails the semantic gate.
+- **Held:** [@Anuj_0720](https://x.com/Anuj_0720/status/2080009857831424084) — deployed weather website is a legitimate effect showcase, but its broad weather-driven 3D world and explicit Bruno Simon inspiration are not a safely isolated, non-derivative primitive for an autonomous scratch rebuild.
