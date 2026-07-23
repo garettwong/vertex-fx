@@ -1083,3 +1083,19 @@ Semantic gate verdict: **Build** — the reusable primitive is a live draggable 
 - **Held:** [@edo_lunardi](https://x.com/edo_lunardi/status/2079959660061401506) — concrete custom-shader hero, but the available post context does not isolate a new reusable visual mechanic above existing shader, aurora, curtain and caustic coverage.
 - **Rejected:** [@bycompell](https://x.com/bycompell/status/2080037464870097349) — caption explicitly frames the scroll effect as inspired by a named learning source, so it fails the clean standalone-source gate.
 - **Held:** [@micka_design](https://x.com/micka_design/status/2080308453357305993) — broad multi-section studio-site showcase with no isolated primitive above current hover/microinteraction coverage.
+
+## Demo 178 — Moonlit Field Observatory
+
+Created on **2026-07-24** from [@webgl_webgpu](https://x.com/webgl_webgpu/status/2080308523561587000). Motion/context audit: the caption showcases Jaime Torrealba’s moonlit-field Three.js portfolio with GPU grass, volumetric smoke, procedural trees, fireflies and camera-driven movement. It is a concrete website-scene showcase, not a tutorial, repo/install funnel, workflow, prompt, crypto item or advice post.
+
+Semantic gate verdict: **Build** — the reusable primitive is an explorable nocturnal field that turns a portfolio hero into a lightweight ambient world. Rebuilt from scratch as **Moonlit Field Observatory** (`moonlit-field-observatory.html`) using an original canvas firefly field, CSS-generated moon/trees/grass/fog, fictional observatory copy and independent pointer-driven horizon movement. No Three.js implementation, source site code, screenshots, video frames, models, logos, fonts, images, assets or source copy were used. Score: **88**.
+
+- **Moonlit Field Observatory** (`moonlit-field-observatory.html`) — from [@webgl_webgpu](https://x.com/webgl_webgpu/status/2080308523561587000). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **88**.
+
+### 2026-07-24 scout decisions (night-world pass)
+
+- **Built:** [@webgl_webgpu](https://x.com/webgl_webgpu/status/2080308523561587000) — distinct, safe ambient-world hero primitive with original procedural materials and interaction; it materially extends the library beyond existing maps, static landscapes, liquid fields and parallax pages.
+- **Held / overlap:** [@flyosity](https://x.com/flyosity/status/2080158019212476443) — concrete scroll-offset scale/rotation entrance motion, but it overlaps the library’s existing scroll-linked reveal, stepper, strip and card-transition demos.
+- **Held / asset and brand risk:** [@EacanelonL](https://x.com/EacanelonL/status/2080368609948250410) — a finished showcase, but its Tesla/Optimus theme, robotic-hand asset dependency and source-repo follow-up do not isolate a clean autonomous scratch-build primitive.
+- **Held / trademark-led composition:** [@AmirOstowar](https://x.com/AmirOstowar/status/2080397671366295664) — a finished interactive-3D/glass showcase, but the Starbucks-inspired product composition is trademark-adjacent and its generic glass/3D layer overlaps existing portal, glass and product-hero entries.
+- **Held / duplicate:** [@shrshhez](https://x.com/shrshhez/status/2080138584112218392) — smooth parallax transition remains a concrete showcase but is already recorded as overlapping the library’s scroll/parallax coverage.
