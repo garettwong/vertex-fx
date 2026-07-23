@@ -1068,3 +1068,18 @@ Semantic gate verdict: **Build** — the reusable primitive is a field of lumino
 - **Rejected:** [@adrien_dorval](https://x.com/adrien_dorval/status/2080213089274785965) — open-source hero announcement that explicitly uses a background video whose rights the author does not own; fails clean-source and asset-safety gates.
 - **Rejected:** [@wshopcode](https://x.com/wshopcode/status/2080228762071826561) — primarily a Three.js implementation/tutorial claim rather than a clean finished-effect showcase.
 - **Held / generic overlap:** [@shrshhez](https://x.com/shrshhez/status/2080138584112218392) — smooth parallax portfolio transition is concrete but does not isolate a novel primitive beyond existing scroll/parallax demos.
+
+## Demo 171 — Orbiting Modules Hero
+
+Created on **2026-07-24** from [@KushnirUI](https://x.com/KushnirUI/status/2080203833179783170). Motion/context audit: the exact caption, “Hero Section Exploration – Draggable Modules,” plus the author’s follow-up (“Hit play to let the modules rearrange themselves over time, or drag them around and create your own composition”) presents a concrete finished interactive hero effect. It is not a tutorial, repository, template, workflow, prompt, install funnel or advice post. The observed interaction lets visitors directly rearrange content modules while a play state automatically moves them through authored compositions.
+
+Semantic gate verdict: **Build** — the reusable primitive is a live draggable modular composition that can also auto-compose into new spatial arrangements. It materially extends the library beyond word-throw physics, static grid layouts, card galleries, and carousel/cylinder patterns. Rebuilt from scratch as **Orbiting Modules Hero** (`orbiting-modules-hero.html`) with fictional interface copy, original CSS-generated abstract studies, independent pointer/touch drag handling and authored auto-layout states. No source code, screenshots, video frames, images, logo, fonts, source copy, assets or design files were used. Score: **89**.
+
+- **Orbiting Modules Hero** (`orbiting-modules-hero.html`) — from [@KushnirUI](https://x.com/KushnirUI/status/2080203833179783170). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **89**.
+
+### 2026-07-24 scout decisions
+
+- **Built:** [@KushnirUI](https://x.com/KushnirUI/status/2080203833179783170) — safe finished draggable/auto-rearranging hero with a distinct composition primitive.
+- **Held:** [@edo_lunardi](https://x.com/edo_lunardi/status/2079959660061401506) — concrete custom-shader hero, but the available post context does not isolate a new reusable visual mechanic above existing shader, aurora, curtain and caustic coverage.
+- **Rejected:** [@bycompell](https://x.com/bycompell/status/2080037464870097349) — caption explicitly frames the scroll effect as inspired by a named learning source, so it fails the clean standalone-source gate.
+- **Held:** [@micka_design](https://x.com/micka_design/status/2080308453357305993) — broad multi-section studio-site showcase with no isolated primitive above current hover/microinteraction coverage.
