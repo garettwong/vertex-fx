@@ -1061,3 +1061,10 @@ Semantic gate verdict: **Build** — the reusable primitive is a field of lumino
 - **Rejected:** [@theharshith_](https://x.com/theharshith_/status/2079908071724457992) — explicit Framer Marketplace component promotion; fails the clean standalone-source gate.
 - **Held / overlapping:** [@_avdept](https://x.com/_avdept/status/2080012449822941616) — a finished cursor-reactive hero showcase, but the available post audit does not isolate a distinctive mechanism beyond existing pointer/parallax/reactive-hero coverage.
 - **Held / broad asset-led narrative:** [@CallerameLionel](https://x.com/CallerameLionel/status/2080008422280319047) — a concrete cinematic restaurant site, but its luxury scroll sequence is photo-led and overlaps the library’s existing cinematic/restaurant/portfolio scroll treatments; no isolated novel primitive for an autonomous asset-free rebuild.
+
+### 2026-07-24 scout decisions (early pass — no build)
+
+- **Held / semantic duplicate:** [@YashKotha](https://x.com/YashKotha/status/2080283148554748387) — the exact caption presents a concrete interactive dither landing page and the media shows pointer-reactive dot-density ripples across hero/UI surfaces. It passes the semantic and safety gates (no repo, template, tool, install or asset funnel), but it materially overlaps the existing **Dither Morph Field** (`dither-morph-field.html`), **Halftone Fluid Hero** and **Pixel Energy Field**. No near-duplicate build.
+- **Rejected:** [@adrien_dorval](https://x.com/adrien_dorval/status/2080213089274785965) — open-source hero announcement that explicitly uses a background video whose rights the author does not own; fails clean-source and asset-safety gates.
+- **Rejected:** [@wshopcode](https://x.com/wshopcode/status/2080228762071826561) — primarily a Three.js implementation/tutorial claim rather than a clean finished-effect showcase.
+- **Held / generic overlap:** [@shrshhez](https://x.com/shrshhez/status/2080138584112218392) — smooth parallax portfolio transition is concrete but does not isolate a novel primitive beyond existing scroll/parallax demos.
