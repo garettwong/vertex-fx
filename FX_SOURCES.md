@@ -1053,3 +1053,11 @@ Semantic gate verdict: **Build** — the reusable primitive is a field of lumino
 - **Rejected:** [@Koolestpro](https://x.com/Koolestpro/status/2079838221010120835) — business/service promotion for an end-to-end ecommerce project; the clip-path reveal is not independently framed enough to pass the semantic gate.
 - **Rejected:** [@eduardbodak](https://x.com/eduardbodak/status/2079863933708493255) — detailed GSAP implementation breakdown and paid button-component promotion; it fails the semantic gate.
 - **Held:** [@Anuj_0720](https://x.com/Anuj_0720/status/2080009857831424084) — deployed weather website is a legitimate effect showcase, but its broad weather-driven 3D world and explicit Bruno Simon inspiration are not a safely isolated, non-derivative primitive for an autonomous scratch rebuild.
+
+### 2026-07-23 scout decisions (late pass — no build)
+
+- **Held / duplicate:** [@kon_coder](https://x.com/kon_coder/status/2080050252157993440) — concrete draggable WebGL cylinder slider with inertial snap, but the primitive materially overlaps the existing `ring.html`, `curved-portfolio-cylinder.html`, `curved-dome-gallery.html` and other gallery/cylinder entries. No near-duplicate build.
+- **Held / asset-dependent:** [@andreasklinger](https://x.com/andreasklinger/status/2079871380451942641) — the 4D Gaussian Splat landing-page demo is impressive, but its signature depends on a trained video-derived 4D splat and specialized renderer; it cannot be abstracted faithfully as a safe, asset-free standalone primitive.
+- **Rejected:** [@theharshith_](https://x.com/theharshith_/status/2079908071724457992) — explicit Framer Marketplace component promotion; fails the clean standalone-source gate.
+- **Held / overlapping:** [@_avdept](https://x.com/_avdept/status/2080012449822941616) — a finished cursor-reactive hero showcase, but the available post audit does not isolate a distinctive mechanism beyond existing pointer/parallax/reactive-hero coverage.
+- **Held / broad asset-led narrative:** [@CallerameLionel](https://x.com/CallerameLionel/status/2080008422280319047) — a concrete cinematic restaurant site, but its luxury scroll sequence is photo-led and overlaps the library’s existing cinematic/restaurant/portfolio scroll treatments; no isolated novel primitive for an autonomous asset-free rebuild.
