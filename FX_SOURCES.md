@@ -1109,3 +1109,16 @@ Semantic gate verdict: **Build** — the reusable primitive is an explorable noc
 - [@flyosity](https://x.com/flyosity/status/2080158019212476443) parametric scroll entrance animation: direct technique/implementation framing (“scale + rotation with baked-in spring curves translated into linear steps”) and mobile-app presentation; routed as a technique reference, not a standalone landing-page effect build.
 - [@webgl_webgpu](https://x.com/i/status/2080308523561587000) moonlit portfolio showcase: already built as **Moonlit Field Observatory** earlier in this run; exact source decision retained, no duplicate.
 - [@parvez_uiux](https://x.com/parvez_uiux/status/2080231981699481693) pacing-led landing reel: passed semantic gate but did not clear the standalone novelty threshold because the X result did not identify a distinct reusable interaction beyond broad motion pacing.
+
+## Demo 179 — Kinetic Index Hero
+
+Created on **2026-07-24** from [@rcharl03](https://x.com/rcharl03/status/2080309543058436517). Motion/context audit: the exact caption says “hero section with scroll animation and live api data all built natively in @framer @skarlo_”. The standalone post is a concrete finished hero showcase, not a tutorial, repository, template, workflow, prompt, install funnel or advice thread. Its motion keeps oversized editorial copy pinned while a vertically rushing, heavily blurred image rail and compact data cards sequence in response to scroll.
+
+Semantic gate verdict: **Build** — the reusable primitive is a kinetic evidence rail: a stable proposition gains urgency from a continuous archival visual stream while discrete live-looking metric cards rotate at the composition edge. It materially extends the library beyond generic scroll reveals, static ticker cards and dashboard tabs. Rebuilt from scratch as **Kinetic Index Hero** (`kinetic-index-hero.html`) with original CSS-generated imagery, fictional metric copy, an original timed image-rail engine and manual keyboard/button state advance. No Framer implementation, source images, screenshots, video frames, logos, fonts, source copy, API data, code or assets were used. Score: **88**.
+
+- **Kinetic Index Hero** (`kinetic-index-hero.html`) — from [@rcharl03](https://x.com/rcharl03/status/2080309543058436517). Exact source mapping for the unlisted source-view hub; semantic gate: **Build**; score: **88**.
+
+### 2026-07-24 semantic non-build decisions (late pass)
+
+- **Held / overlapping:** [@AhmedAtEffekt](https://x.com/AhmedAtEffekt/status/2080349588377256197) — strong finished hero choreography, but the signature phone/hand depth sequence is asset-led and overlaps existing phone-device and layered hero patterns; no autonomous near-duplicate build.
+- **Held / overlapping:** [@slashie_](https://x.com/slashie_/status/2080341294396719548) — finished virtual portfolio experience, but its first-person 3D museum requires a broad environment/navigation system and overlaps existing explorable city/world/portfolio primitives; held rather than produce a shallow replica.
