@@ -1099,3 +1099,13 @@ Semantic gate verdict: **Build** — the reusable primitive is an explorable noc
 - **Held / asset and brand risk:** [@EacanelonL](https://x.com/EacanelonL/status/2080368609948250410) — a finished showcase, but its Tesla/Optimus theme, robotic-hand asset dependency and source-repo follow-up do not isolate a clean autonomous scratch-build primitive.
 - **Held / trademark-led composition:** [@AmirOstowar](https://x.com/AmirOstowar/status/2080397671366295664) — a finished interactive-3D/glass showcase, but the Starbucks-inspired product composition is trademark-adjacent and its generic glass/3D layer overlaps existing portal, glass and product-hero entries.
 - **Held / duplicate:** [@shrshhez](https://x.com/shrshhez/status/2080138584112218392) — smooth parallax transition remains a concrete showcase but is already recorded as overlapping the library’s scroll/parallax coverage.
+
+## Demo — Fluid Capsule Playground (2026-07-24)
+
+- **Fluid Capsule Playground** (`fluid-capsule-playground.html`) — from [@world_is_web](https://x.com/world_is_web/status/2080307070897619296). Semantic gate verdict: **Build** — the exact caption (“Did a couple more tweaks. It’s quite fun to play with. (made with three.js btw)”) is a concrete interactive visual website showcase with a live playful surface, not a tutorial, workflow, prompt, repo/install, or design-advice post. Rebuilt only the general interaction primitive as an original HTML/CSS/JS fictional material hero: a glass capsule, procedural liquid orb, pointer-pulled atmosphere and tap pressure rings. No source can/product artwork, brand, code, Three.js implementation, screenshots, video frames, fonts, copy, assets, or live-site material were reused. Score: **87**.
+
+### 2026-07-24 semantic rejects / non-builds
+
+- [@flyosity](https://x.com/flyosity/status/2080158019212476443) parametric scroll entrance animation: direct technique/implementation framing (“scale + rotation with baked-in spring curves translated into linear steps”) and mobile-app presentation; routed as a technique reference, not a standalone landing-page effect build.
+- [@webgl_webgpu](https://x.com/i/status/2080308523561587000) moonlit portfolio showcase: already built as **Moonlit Field Observatory** earlier in this run; exact source decision retained, no duplicate.
+- [@parvez_uiux](https://x.com/parvez_uiux/status/2080231981699481693) pacing-led landing reel: passed semantic gate but did not clear the standalone novelty threshold because the X result did not identify a distinct reusable interaction beyond broad motion pacing.
